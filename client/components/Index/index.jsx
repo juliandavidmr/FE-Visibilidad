@@ -10,12 +10,22 @@ export default class IndexComponent extends Component {
   }
 
   render() {
-    const { todos, actions, children } = this.props
+    const { semilleros, actions, children } = this.props
 
     return (
       <div>
         <Header />
-        {children}        
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        {
+          semilleros.map((item, i) => {
+            return <h1 key={item.id}>{item.msg}</h1>
+          })
+        }
+        {children}
       </div>
     )
   }

@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { IndexLink } from 'react-router'
 import IndexComponent from '../../components/Index'
-import * as TodoActions from '../../actions/todos'
+import * as SemilleroActions from '../../actions/semilleros'
 import './style.css'
 
 class Index extends Component {
   render() {
-    const { todos, actions, children } = this.props
+    const { semilleros, actions, children } = this.props
     return (
       <div>
-        <IndexComponent />
+        <IndexComponent semilleros={semilleros} />
+
         {children}
       </div>
     )
@@ -19,14 +19,15 @@ class Index extends Component {
 }
 
 function mapStateToProps(state) {
+  console.log("mapStateToProps: ", state);
   return {
-    todos: state.todos
+    semilleros: state.semilleros
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(TodoActions, dispatch)
+    actions: bindActionCreators(SemilleroActions, dispatch)
   }
 }
 
