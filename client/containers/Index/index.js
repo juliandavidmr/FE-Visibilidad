@@ -1,21 +1,17 @@
-
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { IndexLink, NavLink } from 'react-router'
-import Header from '../../components/Header'
-import MainSection from '../../components/MainSection'
+import { IndexLink } from 'react-router'
+import IndexComponent from '../../components/Index'
 import * as TodoActions from '../../actions/todos'
-import style from './style.css'
+import './style.css'
 
-class App extends Component {
+class Index extends Component {
   render() {
     const { todos, actions, children } = this.props
     return (
-      <div className={style.normal}>
-        <li><IndexLink to="/index">Home</IndexLink></li>
-        <Header addTodo={actions.addTodo} />
-        <MainSection todos={todos} actions={actions} />
+      <div>
+        <IndexComponent />
         {children}
       </div>
     )
@@ -37,4 +33,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App)
+)(Index)
