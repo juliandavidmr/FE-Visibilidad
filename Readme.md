@@ -1,5 +1,7 @@
-# FE-Visibilidad
-FrontEnd del sistema de visibilidad de semilleros de investigación de la universidad de la Amazonia, usando con ReactJS
+
+# Frontend Boilerplate
+
+A boilerplate of things that mostly shouldn't exist.
 
 ## Contains
 
