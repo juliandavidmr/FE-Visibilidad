@@ -7,12 +7,12 @@ import './style.css'
 
 class Index extends Component {
   render() {
-    const { semilleros, actions, children } = this.props
+    const { semilleros, actions, children } = this.props;
     return (
       <div>
         <IndexComponent semilleros={semilleros} />
 
-        {children}
+        { children }
       </div>
     )
   }

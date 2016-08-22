@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../../constants/filters'
 
 import Header from './Header/header.component.jsx';
+import Content from './Content/content.component.jsx';
 
 export default class IndexComponent extends Component {
   constructor(props, context) {
@@ -15,9 +16,7 @@ export default class IndexComponent extends Component {
     return (
       <div>
         <Header />
-        <br />
-        <br />
-        <br />
+        <Content />
         <br />
         <br />
         {
