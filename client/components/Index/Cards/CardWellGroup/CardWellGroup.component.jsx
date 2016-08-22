@@ -12,6 +12,34 @@ export default class CardWellGroup extends Component {
 		this._handleClick = this._handleClick.bind(this);
 		this._handleChangeText = this._handleChangeText.bind(this);
 	}
+	
+  componentWillMount() {
+
+  }
+
+  componentDidMount() {
+
+  }
+
+  componentWillReceiveProps(nextProps) {
+
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+
+  }
+
+  componentWillUnmount() {
+
+  }
 
 	_handleClick(event) {
 		console.log("Click", this);
@@ -19,7 +47,6 @@ export default class CardWellGroup extends Component {
 
 	_handleChangeText(event) {
 		this.setState({ text: event.target.value });
-		// console.log(event.target.value);
 	}
 
 	render() {
@@ -51,7 +78,7 @@ export default class CardWellGroup extends Component {
 									</li>
 								);
 							})
-						}					
+						}
 					</ul>
 				</form>
 			</div>

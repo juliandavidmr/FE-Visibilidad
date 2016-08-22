@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 
 import CardListGroup from '../Cards/CardListGroup/CardListGroup.component.jsx';
 import CardWellGroup from '../Cards/CardWellGroup/CardWellGroup.component.jsx';
+import CardPanel from '../Cards/CardPanel/CardPanel.component.jsx';
+import CardPanelInput from '../Cards/CardPanelInput/CardPanelInput.component.jsx';
 
 export default class Content extends Component {
 	constructor(props, context) {
@@ -19,36 +21,15 @@ export default class Content extends Component {
 							text: 'Google'
 						}]} />
 
-						<CardWellGroup />
+						<CardWellGroup title="Un Card Well" />
+						<CardWellGroup title="Un Card Well 2" />
 
-						<div className="panel panel-default">
-							<div className="panel-heading">
-								<a href="#" className="pull-right">View all</a>
-								<h4>More Templates</h4>
-							</div>
-							<div className="panel-body">
-								<img src="//placehold.it/150x150" className="img-circle pull-right"/>
-								<a href="#">Free @Bootply</a>
-								<div className="clearfix"></div>
-								There a load of new free Bootstrap 3 ready templates at Bootply. All of these templates are free and don't require extensive customization to the Bootstrap baseline.
-								<hr/>
-								<ul className="list-unstyled">
-									<li>
-										<a href="http://www.bootply.com/templates">Dashboard</a>
-									</li>
-									<li>
-										<a href="http://www.bootply.com/templates">Darkside</a>
-									</li>
-									<li>
-										<a href="http://www.bootply.com/templates">Greenfield</a>
-									</li>
-								</ul>
-							</div>
-						</div>
+						<CardPanel title="Un Panel tipo Card" />
 
 					</div>
 
 					<div className="col-md-4 col-sm-6">
+						
 						<div className="well">
 							<form className="form">
 								<h4>Sign-up</h4>
@@ -61,84 +42,47 @@ export default class Content extends Component {
 							</form>
 						</div>
 
-						<div className="panel panel-default">
-							<div className="panel-heading">
-								<a href="#" className="pull-right">View all</a>
-								<h4>Bootply Editor &amp; Code Library</h4>
-							</div>
-							<div className="panel-body">
-								<p>
-									<img src="//placehold.it/150x150" className="img-circle pull-right"/>
-									<a href="#">The Bootstrap Playground</a>
-								</p>
-								<div className="clearfix"></div>
-								<hr/>
-								Design, build, test, and prototype using Bootstrap in real-time from your Web browser. Bootply combines the power of hand-coded HTML, CSS and JavaScript with the benefits of responsive design using Bootstrap. Find and showcase Bootstrap-ready snippets in the 100% free Bootply.com code repository.
-							</div>
-						</div>
+						<CardPanel title="Otro panel Card" />
 
-						<div className="panel panel-default">
-							<div className="panel-heading">
-								<a href="#" className="pull-right">View all</a>
-								<h4>Portlet Heading</h4>
-							</div>
-							<div className="panel-body">
-								<ul className="list-group">
-									<li className="list-group-item">Modals</li>
-									<li className="list-group-item">Sliders / Carousel</li>
-									<li className="list-group-item">Thumbnails</li>
-								</ul>
-							</div>
-						</div>
+ 						<CardListGroup title="Portlet Heading" linkUpHref="#" linkUpText="Ver todo" items={[{
+							href: 'javascript:void(0)',
+							text: 'Modals'
+						}, {
+							href: 'javascript:void(0)',
+							text: 'Sliders / Carousel'
+						}, {
+							href: 'javascript:void(0)',
+							text: 'Thumbnails'
+						}]} />
+
 					</div>
 
 					<div className="col-md-4 col-sm-6">
-						<div className="panel panel-default">
-							<div className="panel-heading">
-								<a href="#" className="pull-right">View all</a>
-								<h4>Portlet Heading</h4>
-							</div>
-							<div className="panel-body">
-								<ul className="list-group">
-									<li className="list-group-item">Bootply Playground</li>
-									<li className="list-group-item">Bootstrap Editor</li>
-									<li className="list-group-item">Bootstrap Templates</li>
-								</ul>
-							</div>
-						</div>
 
-						<div className="panel panel-default">
-							<div className="panel-heading">
-								<a href="#" className="pull-right">View all</a>
-								<h4>Stackoverflow</h4>
-							</div>
-							<div className="panel-body">
-								<img src="//placehold.it/150x150" className="img-circle pull-right"/>
-								<a href="#">Keyword: Bootstrap</a>
-								<div className="clearfix"></div>
-								<hr/>
+					 	<CardListGroup title="Portlet Heading" linkUpHref="#" linkUpText="Ver todo" items={[{
+							href: 'javascript:void(0)',
+							text: 'Bootply Playground'
+						}, {
+							href: 'javascript:void(0)',
+							text: 'Bootstrap Editor'
+						}, {
+							href: 'javascript:void(0)',
+							text: 'Bootstrap Templates'
+						}]} />
 
-								<p>If you're looking for help with Bootstrap code, the
-									<code>twitter-bootstrap</code>
-									tag at
-									<a href="http://stackoverflow.com/questions/tagged/twitter-bootstrap">Stackoverflow</a>
-									is a good place to find answers.</p>
-
-								<hr/>
-								<form>
-									<div className="input-group">
-										<div className="input-group-btn">
-											<button className="btn btn-default">+1</button>
-											<button className="btn btn-default">
-												<i className="glyphicon glyphicon-share"></i>
-											</button>
-										</div>
-										<input type="text" className="form-control" placeholder="Add a comment.."/>
-									</div>
-								</form>
-
-							</div>
-						</div>
+						<CardPanelInput title="Un panel con input" a={
+							{
+								text:'Ver todo', 
+								href: '#Ver'
+							}
+						} img="//placehold.it/30x30" 
+						subtitle={
+							{
+								text: 'Un subtitulo', 
+								href: '#'
+							}
+						} 
+						content="If you're looking for help with Bootstrap code, the <code>twitter-bootstrap</code> tag at <a href='http://stackoverflow.com/questions/tagged/twitter-bootstrap'>Stackoverflow</a>"/>
 
 						<div className="panel panel-default">
 							<div className="panel-heading">
