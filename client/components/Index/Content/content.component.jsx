@@ -1,8 +1,11 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+
+import CardListGroup from '../Cards/CardListGroup/CardListGroup.component.jsx';
+import CardWellGroup from '../Cards/CardWellGroup/CardWellGroup.component.jsx';
 
 export default class Content extends Component {
 	constructor(props, context) {
-		super(props, context)
+		super(props, context);
 	}
 
 	render() {
@@ -10,49 +13,13 @@ export default class Content extends Component {
 			<div className="container" id="main">
 				<div className="row">
 					<div className="col-md-4 col-sm-6">
-						<div className="panel panel-default">
-							<div className="panel-heading">
-								<a href="#" className="pull-right">View all</a>
-								<h4>Bootstrap Examples</h4>
-							</div>
-							<div className="panel-body">
-								<div className="list-group">
-									<a href="http://bootply.com/tagged/modal" className="list-group-item">Modal / Dialog</a>
-									<a href="http://bootply.com/tagged/datetime" className="list-group-item">Datetime Examples</a>
-									<a href="http://bootply.com/tagged/datatable" className="list-group-item">Data Grids</a>
-								</div>
-							</div>
-						</div>
 
-						<div className="well">
-							<form className="form-horizontal" role="form">
-								<h4>What's New</h4>
-								<div className="form-group" style={{
-									padding: '14px'
-								}}>
-									<textarea className="form-control" placeholder="Update your status"></textarea>
-								</div>
+            <CardListGroup linkUpHref="#" linkUpText="Ver todo" items={[{
+							href: 'www.google.com',
+							text: 'Google'
+						}]} />
 
-								<button className="btn btn-success pull-right" type="button">Post</button>
-								<ul className="list-inline">
-									<li>
-										<a href="#">
-											<i className="glyphicon glyphicon-align-left"></i>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<i className="glyphicon glyphicon-align-center"></i>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<i className="glyphicon glyphicon-align-right"></i>
-										</a>
-									</li>
-								</ul>
-							</form>
-						</div>
+						<CardWellGroup />
 
 						<div className="panel panel-default">
 							<div className="panel-heading">
