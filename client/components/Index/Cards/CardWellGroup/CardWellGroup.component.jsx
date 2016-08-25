@@ -12,34 +12,6 @@ export default class CardWellGroup extends Component {
 		this._handleClick = this._handleClick.bind(this);
 		this._handleChangeText = this._handleChangeText.bind(this);
 	}
-	
-  componentWillMount() {
-
-  }
-
-  componentDidMount() {
-
-  }
-
-  componentWillReceiveProps(nextProps) {
-
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-
-  }
-
-  componentWillUpdate(nextProps, nextState) {
-
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-
-  }
-
-  componentWillUnmount() {
-
-  }
 
 	_handleClick(event) {
 		console.log("Click", this);
@@ -62,10 +34,10 @@ export default class CardWellGroup extends Component {
 					<div className="form-group" style={{
 						padding: '14px'
 					}}>
-						<textarea className="form-control" placeholder={textarea.placeholder} onChange={this._handleChangeText}></textarea>
+						<textarea className="form-control" placeholder={textarea.placeholder} onChange={() => this._handleChangeText}></textarea>
 					</div>
 
-					<button className="btn btn-success pull-right" type="button" onClick={this._handleClick}>{button.text}</button>
+					<button className="btn btn-success pull-right" type="button" onClick={() => this._handleClick}>{button.text}</button>
 
 					<ul className="list-inline">
 						{

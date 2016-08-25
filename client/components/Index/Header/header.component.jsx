@@ -1,10 +1,48 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
 
 export default class Header extends Component {
 	constructor(props, context) {
 		super(props, context);
 
-	}
+		this.state = {
+			autenticado: false,
+			notificaciones: [{
+				href: '#',
+				badge: 40,
+				text: 'link1',
+				className: 'badge pull-right'
+			}, {
+				href: '#',
+				badge: 40,
+				text: 'link2',
+				className: 'badge pull-right'
+			}, {
+				href: '#',
+				badge: 33,
+				text: 'link3',
+				className: 'label label-info pull-right'
+			}],
+			buttonSelect: [{
+				classIcon: 'glyphicon glyphicon-home',
+				href: '#',
+				text: 'Perfil',
+				style: { color: '#1111dd' },
+				divider: false
+			}, {
+				classIcon: 'glyphicon glyphicon-dashboard',
+				href: '#',
+				text: 'Dashboard',
+				style: { color: '#0000aa' },
+				divider: false
+			}, {
+				classIcon: 'glyphicon glyphicon-inbox',
+				href: '#',
+				text: 'Paginas',
+				style: { color: '#11dd11' },
+				divider: true
+			}]
+		};
+	}	
 
 	render() {
 		return (
@@ -41,26 +79,20 @@ export default class Header extends Component {
 										<i className="glyphicon glyphicon-bell"></i>
 									</a>
 									<ul className="dropdown-menu">
-										<li>
-											<a href="#">
-												<span className="badge pull-right">40</span>Link</a>
-										</li>
-										<li>
-											<a href="#">
-												<span className="badge pull-right">2</span>Link</a>
-										</li>
-										<li>
-											<a href="#">
-												<span className="badge pull-right">0</span>Link</a>
-										</li>
-										<li>
-											<a href="#">
-												<span className="label label-info pull-right">1</span>Link</a>
-										</li>
-										<li>
-											<a href="#">
-												<span className="badge pull-right">13</span>Link</a>
-										</li>
+										{
+											this.state.notificaciones.map((item, i) => {
+												return (
+													<li key={i}>
+														<a href={item.href}>
+															<span className={item.className}>
+																{item.badge}
+															</span>
+															{item.text}
+														</a>
+													</li>
+												);
+											})
+										}
 									</ul>
 								</li>
 								<li>
@@ -82,40 +114,35 @@ export default class Header extends Component {
 					<div className="col-md-12">
 						<div className="navbar-header">
 
-							<a href="#" style={{
-								marginLeft: '15px'
-							}} className="navbar-btn btn btn-default btn-plus dropdown-toggle" data-toggle="dropdown">
-								<i className="glyphicon glyphicon-home" style={{
-									color: '#dd1111'
-								}}></i>
+
+							<a href="#" style={{ marginLeft: '15px'	}} className="navbar-btn btn btn-default btn-plus dropdown-toggle" data-toggle="dropdown">
+								<i className="glyphicon glyphicon-home" style={{ color: '#dd1111'	}}></i>
 								Home
 								<small>
 									<i className="glyphicon glyphicon-chevron-down"></i>
 								</small>
 							</a>
 							<ul className="nav dropdown-menu">
-								<li>
-									<a href="#">
-										<i className="glyphicon glyphicon-user" style={{
-											color: '#1111dd'
-										}}></i>
-										Profile</a>
-								</li>
-								<li>
-									<a href="#">
-										<i className="glyphicon glyphicon-dashboard" style={{
-											color: '#0000aa'
-										}}></i>
-										Dashboard</a>
-								</li>
-								<li>
-									<a href="#">
-										<i className="glyphicon glyphicon-inbox" style={{
-											color: '#11dd11'
-										}}></i>
-										Pages</a>
-								</li>
+								{
+									this.state.buttonSelect.map((item, i) => {
+										var divider = '';
+										if (item.divider) {
+											divider = <li className="nav-divider"></li>;																						
+										}
+
+										return (											
+											<li key={i}>
+												<a href={item.href}>
+													<i className={item.classIcon} style={item.style}></i>
+													{item.text}
+												</a>
+											</li>
+										);
+									})
+								}
+
 								<li className="nav-divider"></li>
+								
 								<li>
 									<a href="#">
 										<i className="glyphicon glyphicon-cog" style={{
@@ -155,6 +182,6 @@ export default class Header extends Component {
 				</div>
 
 			</div>
-		)
+		);
 	}
 }

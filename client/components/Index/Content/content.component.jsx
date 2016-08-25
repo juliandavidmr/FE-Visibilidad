@@ -59,32 +59,21 @@ export default class Content extends Component {
 
 					<div className="col-md-4 col-sm-6">
 
-					<CardListGroup title="Portlet Heading" linkUpHref="#" linkUpText="Ver todo" items={[{
-							href: 'javascript:void(0)',
-							text: 'Bootply Playground'
-						}, {
-							href: 'javascript:void(0)',
-							text: 'Bootstrap Editor'
-						}, {
-							href: 'javascript:void(0)',
-							text: 'Bootstrap Templates'
-						}]} />
+						<CardListGroup title="Portlet Heading" linkUpHref="#" linkUpText="Ver todo" items={[{
+								href: 'javascript:void(0)',
+								text: 'Bootply Playground'
+							}, {
+								href: 'javascript:void(0)',
+								text: 'Bootstrap Editor'
+							}, {
+								href: 'javascript:void(0)',
+								text: 'Bootstrap Templates'
+							}]} />
 
-					<CardPanelInput title="Un panel con input" a={
-							{
-								text:'Ver todo', 
-								href: '#Ver'
-							}
-						} img="//placehold.it/30x30" 
-						subtitle={
-							{
-								text: 'Un subtitulo', 
-								href: '#'
-							}
-						} 
-						content="If you're looking for help with Bootstrap code, the <code>twitter-bootstrap</code> tag at <a href='http://stackoverflow.com/questions/tagged/twitter-bootstrap'>Stackoverflow</a>"/>
+						<CardPanelInput title="Un panel con input" a={{ text:'Ver todo', href: '#Ver' }} img="//placehold.it/30x30"	subtitle={{	text: 'Un subtitulo', href: '#'}} 
+							content="If you're looking for help with Bootstrap code, the <a href='http://stackoverflow.com/questions/tagged/twitter-bootstrap'>Stackoverflow</a>"/>
 
-            <CardListGroup title="Otro Card list group" linkUpHref="#" linkUpText="Ver todo" items={[{
+						<CardListGroup title="Otro Card list group" linkUpHref="#" linkUpText="Ver todo" items={[{
 							href: 'www.google.com',
 							text: 'Google'
 						}, {
@@ -427,6 +416,6 @@ export default class Content extends Component {
 				</div>
 
 			</div>
-		)
+		);
 	}
 }

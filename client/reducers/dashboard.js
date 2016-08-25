@@ -10,15 +10,11 @@ const initialState = [{
 }];
 
 export default handleActions({
-  'fetch semilleros' (state, action) {
-    console.log("Holaaaaaaa");
+  'signin' (state, action) {
+    console.log("Signin");
     
     return [{
-      msg: "Hola 11111",
-      id: 1
-    }, {
-      msg: "Julian 22222",
-      id: 2
+      data: "un dato del reducer dashboard.js"
     }];
     /*$.get(action, function (result) {
       return result;

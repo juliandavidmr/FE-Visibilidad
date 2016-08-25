@@ -76,6 +76,6 @@ class MainSection extends Component {
       </section>
     )
   }
-}
+};
 
-export default MainSection
+export default MainSection;

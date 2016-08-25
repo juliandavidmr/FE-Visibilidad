@@ -12,34 +12,6 @@ class Input extends Component {
     this._handleChangeText = this._handleChangeText.bind(this);
   }
 
-  componentWillMount () {
-
-  }
-
-  componentDidMount () {
-
-  }
-
-  componentWillReceiveProps (nextProps) {
-
-  }
-
-  shouldComponentUpdate (nextProps, nextState) {
-
-  }
-
-  componentWillUpdate (nextProps, nextState) {
-
-  }
-
-  componentDidUpdate (prevProps, prevState) {
-
-  }
-
-  componentWillUnmount () {
-
-  }
-
   _handleChangeText(event) {
     if (this.state.isRequired) {
 
