@@ -59,7 +59,7 @@ export default class Content extends Component {
 
 					<div className="col-md-4 col-sm-6">
 
-					 	<CardListGroup title="Portlet Heading" linkUpHref="#" linkUpText="Ver todo" items={[{
+					<CardListGroup title="Portlet Heading" linkUpHref="#" linkUpText="Ver todo" items={[{
 							href: 'javascript:void(0)',
 							text: 'Bootply Playground'
 						}, {
@@ -70,7 +70,7 @@ export default class Content extends Component {
 							text: 'Bootstrap Templates'
 						}]} />
 
-						<CardPanelInput title="Un panel con input" a={
+					<CardPanelInput title="Un panel con input" a={
 							{
 								text:'Ver todo', 
 								href: '#Ver'
@@ -84,19 +84,13 @@ export default class Content extends Component {
 						} 
 						content="If you're looking for help with Bootstrap code, the <code>twitter-bootstrap</code> tag at <a href='http://stackoverflow.com/questions/tagged/twitter-bootstrap'>Stackoverflow</a>"/>
 
-						<div className="panel panel-default">
-							<div className="panel-heading">
-								<a href="#" className="pull-right">View all</a>
-								<h4>Top Items</h4>
-							</div>
-							<div className="panel-body">
-								<div className="list-group">
-									<a href="http://bootply.com/tagged/bootstrap-3" className="list-group-item active">Bootstrap 3</a>
-									<a href="http://bootply.com/tagged/snippets" className="list-group-item">Snippets</a>
-									<a href="http://bootply.com/tagged/example" className="list-group-item">Examples</a>
-								</div>
-							</div>
-						</div>
+            <CardListGroup title="Otro Card list group" linkUpHref="#" linkUpText="Ver todo" items={[{
+							href: 'www.google.com',
+							text: 'Google'
+						}, {
+							href: 'www.hotmail.com',
+							text: 'Hotmail'
+						}]} />
 
 					</div>
 

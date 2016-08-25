@@ -44,7 +44,6 @@ class Input extends Component {
     if (this.state.isRequired) {
 
     } else {
-
     }
   }
 
