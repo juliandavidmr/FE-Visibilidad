@@ -1,13 +1,17 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component, PropTypes, applyMiddleware } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import DashBoardComponent from '../../components/Dashboard';
 import * as DashBoardActions from '../../actions/dashboard';
+// import thunkMiddleware from 'redux-thunk';
 
 class DashBoard extends Component {
   constructor(props) {
     super(props);
-
+    
+    this.state = {
+      isAuth: false // está autenticado?
+    };
   }
 
   componentWillMount() {
@@ -19,10 +23,20 @@ class DashBoard extends Component {
   }
 
   render() {
+    const { dashboard, actions } = this.props;
+    
+    // actions.signin;
+
     return (
       <div>
         <h1>DashBoard</h1>
-        <DashBoardComponent User={{email: 'anlijudavid@hotmail.com', rol: 'admin'}} />
+        <p>
+          {
+            JSON.stringify(dashboard)
+          }
+        </p>
+        <button onClick={actions.signin}>Click</button>
+        <DashBoardComponent User={{ email: 'anlijudavid@hotmail.com', rol: 'admin' }} />
       </div>
     );
   }

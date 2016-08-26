@@ -4,6 +4,6 @@ import {
 
 export const getUser = createAction('get user');
 export const logout = createAction('logout');
-export const signin = createAction('sigin');
+export const signin = createAction('signin');
 
 
