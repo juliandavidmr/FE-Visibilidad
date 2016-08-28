@@ -1,31 +1,36 @@
 import fetch from 'isomorphic-fetch';
 import { handleActions } from 'redux-actions';
+import Immutable from 'immutable';
 
-const initialState = [
-  {
-    msg: "Hola",
-    id: 1
-  }, {
-    msg: "Julian",
-    id: 2
-  }
-];
+const initialState = new Immutable.Map({
+  email: '',
+  password: '',
+  isLoggingIn: false,
+  isLoggedIn: false,
+  error: null
+});
 
 
 export default handleActions({
-  'signin' (state, action) {
-    console.log("Signin");
+  'signin'(state, action) {
+    console.log("Signin, state: ", state);
 
-    setTimeout(() => {
-      console.log('Hola');
+    return state.merge({
+      email: 'anlijudavid',
+      password: '',
+      isLoggingIn: false,
+      isLoggedIn: false,
+      error: null
+    });
 
-      // Aqui hay que poner un despachador o algun return que funcione 
-    }, 1000);
+    /*return dispatch => {
+      dispatch({ data: 'data cualquiera', type: 'LOGIN' });
+    };*/
 
-    return {
-      data: 'un dato del reducer dashboard.js',
-      date: (new Date()).toTimeString()
-    };
+    /* return {
+       data: 'un dato del reducer dashboard.js',
+       date: (new Date()).toTimeString()
+     };*/
     /*$.get(action, function (result) {
       return result;
     }*/

@@ -13,7 +13,6 @@ FrontEnd del sistema de visibilidad de semilleros de investigación de la univer
 - [x] [Rucksack](http://simplaio.github.io/rucksack/docs)
 - [x] [React Router Redux](https://github.com/reactjs/react-router-redux)
 - [x] [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension)
-- [ ] Redux effects
 - [x] TodoMVC example
 
 ## Setup
