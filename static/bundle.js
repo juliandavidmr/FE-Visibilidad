@@ -58,7 +58,7 @@ webpackJsonp([1],[
 	    _react2.default.createElement(_reactRouter.Route, { path: '/', component: _Index2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: 'dashboard', component: _DashBoard2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: 'login', component: _Login2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: '*', component: _NoMatch2.default })
+	    _react2.default.createElement(_reactRouter.Route, { path: '*', component: _Index2.default })
 	  )
 	), document.getElementById('root'));
 
