@@ -22,7 +22,7 @@ ReactDOM.render(
       <Route path="/" component={Index}></Route>
       <Route path="dashboard" component={DashBoard}></Route>
       <Route path="login" component={Login}></Route>
-      <Route path="*" component={NoMatch}/>
+      <Route path="*" component={Index}/>
     </Router>
   </Provider>,
   document.getElementById('root')
