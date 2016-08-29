@@ -15,7 +15,7 @@ class NavBar extends Component {
     this.setState({
       open: !this.state.open
     });
-  };
+  }
 
   render() {
 
@@ -220,7 +220,7 @@ class NavBar extends Component {
                             <small className="pull-right">60%</small>
                           </h3>
                           <div className="progress xs">
-                            <div className="progress-bar progress-bar-red" style={{width: '60%'}} role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                            <div className="progress-bar progress-bar-red" style={{ width: '60%' }} role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                               <span className="sr-only">60% Complete</span>
                             </div>
                           </div>
@@ -260,7 +260,7 @@ class NavBar extends Component {
                     <img src="dist/img/user2-160x160.jpg" className="img-circle" alt="User Image"/>
                     <p>
                       Alexander Pierce - Web Developer
-                      <small>Member since Nov. 2012</small>
+                      <small>Member since Nov.2012</small>
                     </p>
                   </li>
 

@@ -9,6 +9,7 @@ import App from './containers/App';
 import Index from './containers/Index';
 import DashBoard from './containers/DashBoard';
 import Login from './containers/Login';
+import NoMatch from './containers/NoMatch';
 
 import configure from './store';
 
@@ -18,10 +19,10 @@ const history = syncHistoryWithStore(browserHistory, store);
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={App}></Route>
-      <Route path="index" component={Index}></Route>
+      <Route path="/" component={Index}></Route>
       <Route path="dashboard" component={DashBoard}></Route>
       <Route path="login" component={Login}></Route>
+      <Route path="*" component={NoMatch}/>
     </Router>
   </Provider>,
   document.getElementById('root')

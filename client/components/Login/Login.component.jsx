@@ -13,7 +13,7 @@ class LoginComponent extends Component {
 
   constructor(props) {
     super(props);
-        
+
   }
 
   componentWillReceiveProps(nextProps) {
