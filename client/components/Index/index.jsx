@@ -17,8 +17,6 @@ export default class IndexComponent extends Component {
       <div>
         <Header />
         <Content />
-        <br />
-        <br />
         {
           semilleros.map((item, i) => {
             return <h1 key={item.id}>{item.msg}</h1>;

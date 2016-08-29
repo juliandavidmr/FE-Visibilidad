@@ -42,7 +42,7 @@ export default class Header extends Component {
 				divider: true
 			}]
 		};
-	}	
+	}
 
 	render() {
 		return (
