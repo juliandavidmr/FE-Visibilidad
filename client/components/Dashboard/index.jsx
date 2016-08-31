@@ -21,7 +21,6 @@ export default class DashBoardComponent extends Component {
 
     return (
       <div>
-        <link rel="stylesheet" href="/assets/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>
         <link rel="stylesheet" href="/assets/js/plugins/jvectormap/jquery-jvectormap-1.2.2.css"/>
