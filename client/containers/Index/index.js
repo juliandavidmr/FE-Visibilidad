@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import IndexComponent from '../../components/Index';
-import Index2Component from '../../components/Index2';
 import * as SemilleroActions from '../../actions/semilleros';
 import './style.css';
 
@@ -20,7 +19,7 @@ class Index extends Component {
 
     return (
       <div>
-        <Index2Component />
+        <IndexComponent />
 
         { children }
       </div>
