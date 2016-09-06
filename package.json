@@ -37,6 +37,7 @@
     "redux-actions": "^0.9.1"
   },
   "dependencies": {
+    "axios": "^0.14.0",
     "formous": "^0.8.7",
     "react-bootstrap": "^0.30.3",
     "react-tap-event-plugin": "^1.0.0",

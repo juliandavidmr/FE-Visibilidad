@@ -3,9 +3,11 @@ import Formous from 'formous';
 
 class ErrorText extends Component {
   render() {
-    return <div style={{ color: '#f00' }}>
-      {this.props.errorText}
-    </div>
+    return (
+      <div style={{ color: '#f00' }}>
+        {this.props.errorText}
+      </div>
+    );
   }
 }
 
@@ -46,14 +48,14 @@ class LoginComponent extends Component {
     } = this.props;
 
     return <div>
-      <form onSubmit={formSubmit(this.handleSubmit)}>
+      <form onSubmit={formSubmit(this.handleSubmit) }>
         <div>
           <input
             placeholder="email"
             type="text"
             value={ email.value }
             { ...email.events }
-          />
+            />
           <ErrorText { ...email.failProps } />
         </div>
         <div>
@@ -62,7 +64,7 @@ class LoginComponent extends Component {
             type="text"
             value={password.value}
             { ...password.events }
-          />
+            />
           <ErrorText { ...password.failProps } />
         </div>
         <div>
@@ -80,38 +82,38 @@ const formousOptions = {
         {
           critical: true,
           failProps: {
-            errorText: 'email is required.',
+            errorText: 'email is required.'
           },
           test(value) {
             return value !== '';
-          },
+          }
         }
-      ],
+      ]
     },
 
-    password: {      
+    password: {
       tests: [
         {
           critical: true,
           failProps: {
-            errorText: 'password should be a number.',
+            errorText: 'password should be a number.'
           },
           test(value) {
             return /^\d*$/.test(value);
-          },
+          }
         },
         {
           critical: false,
           failProps: {
-            errorText: 'Are you sure you\'re that old? :o',
+            errorText: 'Are you sure you\'re that old? :o'
           },
           test(value) {
             return +value < 120;
-          },
-        },
-      ],
-    },
-  },
+          }
+        }
+      ]
+    }
+  }
 };
 
 export default Formous(formousOptions)(LoginComponent)

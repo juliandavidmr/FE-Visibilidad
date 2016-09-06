@@ -18,6 +18,16 @@ class Login extends Component {
 
   }
 
+  _handleClick() {
+    const { actions } = this.props;
+
+    actions.login({email: 'elemail@hotmail.com', password: '321123'}).then(() => {
+      console.log('===>>=>==> ', this.props.login);
+    }).catch(err => {
+      console.log('>>=>==> ', err);
+    });
+  }
+
   render() {
     const { login, actions } = this.props;
 
@@ -32,7 +42,7 @@ class Login extends Component {
           }
         </p>
         
-        <button onClick={() => actions.login({email: 'elemail@hotmail.com', password: '321123'})}>Click</button>
+        <button onClick={this._handleClick.bind(this)}>Click</button>
         <LoginComponent />
       </div>
     );
@@ -41,6 +51,7 @@ class Login extends Component {
 
 function mapStateToProps(state) {
   console.log("Los state de login:", state);
+
   return {
     login: state.login
   };
