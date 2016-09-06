@@ -3,6 +3,8 @@ import React, {Component, PropTypes} from 'react';
 import HeaderComponent from './Header/Header.component.jsx';
 import MenuComponent from './Menu/Menu.component.jsx';
 import SliderComponent from './Slider/Slider.component.jsx';
+import ServiceComponent from './Service/Service.component.jsx';
+import AboutComponent from './About/About.component.jsx';
 
 class IndexComponent extends Component {
 	constructor(props) {
@@ -17,89 +19,48 @@ class IndexComponent extends Component {
 					<i className="fa fa-angle-up"></i>
 				</a>
 
-				<HeaderComponent/>
+				<HeaderComponent socials={[
+					{
+						class: 'fa fa-facebook',
+						link: '/una direccion de facebook'
+					}, {
+						class: 'fa fa-twitter',
+						link: '/una direccion de twitter'
+					}, {
+						class: 'fa fa-google-plus',
+						link: '/una direccion de google plus'
+					}, {
+						class: 'fa fa-linkedin',
+						link: '/una direccion de linkedin'
+					}, {
+						class: 'fa fa-youtube',
+						link: '/una direccion de youtube'
+					}
+				]}/>
 
-				<MenuComponent/>
+				<MenuComponent titulo="Visibilidad"/>
 
 				<SliderComponent slides={[
-          {
-            id: 1,
-            img: 'assets/assets/img/slider/1.jpg',
-            titulo: 'Titulo de prueba',
-            resumen: 'un resumen cualqueira',
-            descripcion: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-            link: 'in link'
-          }, {
-            id: 2,
-            img: 'assets/assets/img/slider/2.jpg',
-            titulo: 'Titulo de prueba 2',
-            resumen: 'un resumen cualqueira2',
-            descripcion: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
-            link: 'in lin22222k'
-          }
-        ]}/>
+					{
+						id: 1,
+						img: 'assets/assets/img/slider/1.jpg',
+						titulo: 'Titulo de prueba',
+						resumen: 'un resumen cualquiera',
+						descripcion: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+						link: 'in link'
+					}, {
+						id: 2,
+						img: 'assets/assets/img/slider/2.jpg',
+						titulo: 'Titulo de prueba 2',
+						resumen: 'un resumen cualquiera2',
+						descripcion: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
+						link: 'in lin22222k'
+					}
+				]}/>
 
-				<section id="mu-service">
-					<div className="container">
-						<div className="row">
-							<div className="col-lg-12 col-md-12">
-								<div className="mu-service-area">
-									<div className="mu-service-single">
-										<span className="fa fa-book"></span>
-										<h3>Learn Online</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Minima officiis, deleniti dolorem exercitationem praesentium, est!</p>
-									</div>
-									<div className="mu-service-single">
-										<span className="fa fa-users"></span>
-										<h3>Expert Teachers</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Minima officiis, deleniti dolorem exercitationem praesentium, est!</p>
-									</div>
-									<div className="mu-service-single">
-										<span className="fa fa-table"></span>
-										<h3>Best Classrooms</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Minima officiis, deleniti dolorem exercitationem praesentium, est!</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
+				<ServiceComponent/>
 
-				<section id="mu-about-us">
-					<div className="container">
-						<div className="row">
-							<div className="col-md-12">
-								<div className="mu-about-us-area">
-									<div className="row">
-										<div className="col-lg-6 col-md-6">
-											<div className="mu-about-us-left">
-												<div className="mu-title">
-													<h2>About Us</h2>
-												</div>
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Rerum pariatur fuga eveniet soluta aspernatur rem, nam voluptatibus voluptate voluptates sapiente, inventore.Voluptatem, maiores esse molestiae.</p>
-												<ul>
-													<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-													<li>Saepe a minima quod iste libero rerum dicta!</li>
-													<li>Voluptas obcaecati, iste porro fugit soluta consequuntur.Veritatis?</li>
-													<li>Ipsam deserunt numquam ad error rem unde, omnis.</li>
-													<li>Repellat assumenda adipisci pariatur ipsam eos similique, explicabo.</li>
-												</ul>
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Perspiciatis quaerat harum facilis excepturi et?Mollitia!</p>
-											</div>
-										</div>
-										<div className="col-lg-6 col-md-6">
-											<div className="mu-about-us-right">
-												<a id="mu-abtus-video" href="https://www.youtube.com/embed/HN3pm9qYAUs" target="mutube-video">
-													<img src="assets/assets/img/about-us.jpg" alt="img"/>
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
+				<AboutComponent/>
 
 				<section id="mu-abtus-counter">
 					<div className="container">

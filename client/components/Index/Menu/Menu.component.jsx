@@ -7,6 +7,8 @@ class MenuComponent extends Component {
 	}
 
 	render() {
+		const {titulo, menu} = this.props;
+
 		return (
 			<div>
 				<section id="mu-menu">
@@ -22,29 +24,31 @@ class MenuComponent extends Component {
 
 								<a className="navbar-brand" href="index.html">
 									<i className="fa fa-university"></i>
-									<span>Varsity</span>
+									<span>
+										{titulo}
+									</span>
 								</a>
 							</div>
 							<div id="navbar" className="navbar-collapse collapse">
 								<ul id="top-menu" className="nav navbar-nav navbar-right main-nav">
 									<li className="active">
-										<a href="index.html">Home</a>
+										<a href="/">Principal</a>
 									</li>
 									<li className="dropdown">
-										<a href="#" className="dropdown-toggle" data-toggle="dropdown">Course
+										<a href="#" className="dropdown-toggle" data-toggle="dropdown">Noticias
 											<span className="fa fa-angle-down"></span>
 										</a>
 										<ul className="dropdown-menu" role="menu">
 											<li>
-												<a href="course.html">Course Archive</a>
+												<a href="course.html">Recientes</a>
 											</li>
 											<li>
-												<a href="course-detail.html">Course Detail</a>
+												<a href="course-detail.html">Categorias</a>
 											</li>
 										</ul>
 									</li>
 									<li>
-										<a href="gallery.html">Gallery</a>
+										<a href="/eventos">Eventos</a>
 									</li>
 									<li className="dropdown">
 										<a href="#" className="dropdown-toggle" data-toggle="dropdown">Blog
@@ -91,13 +95,13 @@ class MenuComponent extends Component {
 						</div>
 					</div>
 				</div>
-
 			</div>
-
 		);
 	}
 }
 
-MenuComponent.propTypes = {};
+MenuComponent.propTypes = {
+	titulo: PropTypes.string.isRequired
+};
 
 export default MenuComponent;

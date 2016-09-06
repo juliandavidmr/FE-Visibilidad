@@ -31,21 +31,6 @@ class SliderComponent extends Component {
             );
           })
         }
-
-				<div className="mu-slider-single">
-					<div className="mu-slider-img">
-						<figure>
-							<img src="assets/assets/img/slider/3.jpg" alt="img"/>
-						</figure>
-					</div>
-					<div className="mu-slider-content">
-						<h4>Exclusivly For Education</h4>
-						<span></span>
-						<h2>Education For Everyone</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Dolor amet error eius reiciendis eum sint unde eveniet deserunt est debitis corporis temporibus recusandae accusamus.</p>
-						<a href="#" className="mu-read-more-btn">Read More</a>
-					</div>
-				</div>
 			</section>
 		);
 	}

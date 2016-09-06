@@ -7,6 +7,8 @@ class HeaderComponent extends Component {
 	}
 
 	render() {
+		const { socials } = this.props;
+
 		return (
 			<header id="mu-header">
 				<div className="container">
@@ -18,31 +20,17 @@ class HeaderComponent extends Component {
 										<div className="mu-header-top-right">
 											<nav>
 												<ul className="mu-top-social-nav">
-													<li>
-														<a href="#">
-															<span className="fa fa-facebook"></span>
-														</a>
-													</li>
-													<li>
-														<a href="#">
-															<span className="fa fa-twitter"></span>
-														</a>
-													</li>
-													<li>
-														<a href="#">
-															<span className="fa fa-google-plus"></span>
-														</a>
-													</li>
-													<li>
-														<a href="#">
-															<span className="fa fa-linkedin"></span>
-														</a>
-													</li>
-													<li>
-														<a href="#">
-															<span className="fa fa-youtube"></span>
-														</a>
-													</li>
+													{
+														socials.map((item, i) => {
+															return (
+																<li key={i}>
+																	<a href={item.link}>
+																		<span className={item.class}></span>
+																	</a>
+																</li>
+															);
+														})
+													}												
 												</ul>
 											</nav>
 										</div>
