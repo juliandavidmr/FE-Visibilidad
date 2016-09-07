@@ -27,9 +27,11 @@ export default class DashBoardComponent extends Component {
           <div className="wrapper">
             <NavBar/>
             <SideMenu/>
+
             {
               children
             }
+            
             <Footer />
           </div>
         </div>

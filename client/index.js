@@ -15,12 +15,14 @@ import Index from './containers/Index';
 import Header from './containers/Header';
 import Login from './containers/Login';
 
+import ListarRoles from './containers/DashBoard/Childrens/Rol/Listar.container.jsx';
+import InsertarRol from "./containers/Dashboard/Childrens/Rol/Insertar.container.jsx";
+
 import NoMatch from './containers/NoMatch'; // 404 o no encontrado
 
 /*                DashBoard
 */
 import DashBoard from './containers/DashBoard';
-import * as ChildrensDashboard from './containers/DashBoard/childrens';
 
 import configure from './store';
 
@@ -41,11 +43,12 @@ ReactDOM.render(
       </Route>
 
       <Route path="dashboard" component={DashBoard}>
-        <Route path="*" component={ChildrensDashboard.Content}/>
+        <Route path="rol" component={InsertarRol} />
 
         <Route path="/registrar" component={Eventos}>
           <Route path="publicacion" component={About}/>
         </Route>
+
         <Route path="/ver" component={Eventos}>
           <Route path="publicacion" component={About}/>
         </Route>

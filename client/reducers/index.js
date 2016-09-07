@@ -6,11 +6,13 @@ import todos from './todos';
 import semilleros from './semilleros';
 import dashboard  from './dashboard';
 import login  from './login';
+import rol from './rol';
 
 export default combineReducers({
   routing,
   todos,
   semilleros,
   dashboard,
-  login
+  login,
+  rol
 });

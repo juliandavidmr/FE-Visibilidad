@@ -13,14 +13,6 @@ class DashBoard extends Component {
     };
   }
 
-  componentWillMount() {
-
-  }
-
-  componentDidMount() {
-
-  }
-
   render() {
     const { dashboard, actions } = this.props;
 

@@ -43,28 +43,4 @@ export function login(userData) {
         dispatch(loginError(error));
         throw error;
       });
-
-    /* fetch('https://api.flickr.com/services/feeds/photos_public.gne?tags=kitten&format=json', {
-      method: 'get',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email: userData.email,
-        password: userData.password,
-      }),
-    }).then(response => {
-      if (response.status >= 200 && response.status < 300) {
-        console.log('Response =', response);
-        dispatch(loginSuccess(response));
-      } else {
-        const error = new Error(response.statusText);
-        error.response = response;
-        dispatch(loginError(error));
-        throw error;
-      }
-    }).catch(error => {
-      console.log('request failed', error);
-    });*/
 }

@@ -4,7 +4,6 @@ class Content extends Component {
   constructor(props) {
     super(props);
 
-    console.log('Componente content loading.');
   }
 
   render() {
@@ -159,15 +158,6 @@ class Content extends Component {
                             0%</span>
                           <h5 className="description-header">$10,390.90</h5>
                           <span className="description-text">TOTAL COST</span>
-                        </div>
-                      </div>
-
-                      <div className="col-sm-3 col-xs-6">
-                        <div className="description-block border-right">
-                          <span className="description-percentage text-green">
-                            20%</span>
-                          <h5 className="description-header">$24,813.53</h5>
-                          <span className="description-text">TOTAL PROFIT</span>
                         </div>
                       </div>
 
