@@ -1,4 +1,3 @@
-import fetch from 'isomorphic-fetch';
 import axios from 'axios';
 
 import { LOGGED_FAILED, LOGIN_ATTEMPT, LOGGED_SUCCESSFULLY } from '../constants/login';

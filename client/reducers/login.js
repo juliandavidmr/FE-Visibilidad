@@ -14,7 +14,7 @@ const initialState = new Immutable.Map({
 
 export function user(state = initialState, action) {
   // console.log('action: ', action);
-  
+
   switch (action.type) {
     case LOGIN_ATTEMPT:
       return state.merge({
