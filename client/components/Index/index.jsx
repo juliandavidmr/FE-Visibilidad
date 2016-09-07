@@ -17,31 +17,6 @@ class IndexComponent extends Component {
   render() {
     return (
       <div>
-        <a className="scrollToTop" href="#">
-          <i className="fa fa-angle-up"></i>
-        </a>
-
-        <HeaderComponent socials={[
-          {
-            class: 'fa fa-facebook',
-            link: '/una direccion de facebook'
-          }, {
-            class: 'fa fa-twitter',
-            link: '/una direccion de twitter'
-          }, {
-            class: 'fa fa-google-plus',
-            link: '/una direccion de google plus'
-          }, {
-            class: 'fa fa-linkedin',
-            link: '/una direccion de linkedin'
-          }, {
-            class: 'fa fa-youtube',
-            link: '/una direccion de youtube'
-          }
-        ]}/>
-
-        <MenuComponent titulo="Visibilidad"/>
-
         <SliderComponent slides={[
           {
             id: 1,

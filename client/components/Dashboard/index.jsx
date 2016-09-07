@@ -1,7 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 
 import NavBar from './NavBar/NavBar.component.jsx';
-import Content from './Content/Content.component.jsx';
 import SideMenu from './SideMenu/Sidemenu.component.jsx';
 import Footer from './Footer/Footer.component.jsx';
 
@@ -15,13 +14,10 @@ export default class DashBoardComponent extends Component {
   }
 
   render() {
-    const {actions} = this.props;
-
-    const stylesUrl = {};
+    const {actions, children} = this.props;
 
     return (
       <div>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>
         <link rel="stylesheet" href="/assets/js/plugins/jvectormap/jquery-jvectormap-1.2.2.css"/>
         <link rel="stylesheet" href="/assets/css/AdminLTE.min.css"/>
@@ -31,7 +27,9 @@ export default class DashBoardComponent extends Component {
           <div className="wrapper">
             <NavBar/>
             <SideMenu/>
-            <Content/>
+            {
+              children
+            }
             <Footer />
           </div>
         </div>

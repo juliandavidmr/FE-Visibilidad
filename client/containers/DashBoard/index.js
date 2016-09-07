@@ -29,13 +29,7 @@ class DashBoard extends Component {
         <DashBoardComponent User={{ email: 'anlijudavid@hotmail.com', rol: 'admin' }} />
 
         {
-          /*<p>
-            {
-              JSON.stringify(dashboard)
-            }
-          </p>
-          <button onClick={actions.signin}>Click</button>
-          */
+          this.props.children
         }
       </div>
     );

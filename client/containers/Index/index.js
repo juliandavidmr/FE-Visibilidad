@@ -13,17 +13,9 @@ class Index extends Component {
   }
 
   render() {
-    const { semilleros, actions, children } = this.props;
+    const { semilleros, actions } = this.props;
 
-    console.log('Actions=>', actions);
-
-    return (
-      <div>
-        <IndexComponent />
-
-        { children }
-      </div>
-    );
+    return <IndexComponent />;
   }
 }
 

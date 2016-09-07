@@ -4,6 +4,7 @@ class Content extends Component {
   constructor(props) {
     super(props);
 
+    console.log('Componente content loading.');
   }
 
   render() {

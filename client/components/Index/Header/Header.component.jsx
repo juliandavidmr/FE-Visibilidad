@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { Link } from 'react-router';
+
 class HeaderComponent extends Component {
   constructor(props) {
     super(props);
@@ -24,9 +26,9 @@ class HeaderComponent extends Component {
                             socials.map((item, i) => {
                               return (
                                 <li key={i}>
-                                  <a href={item.link}>
+                                  <Link to={item.link}>
                                     <span className={item.class}></span>
-                                  </a>
+                                  </Link>
                                 </li>
                               );
                             })

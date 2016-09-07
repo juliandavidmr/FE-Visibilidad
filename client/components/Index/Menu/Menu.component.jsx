@@ -1,5 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 
+import { Link } from 'react-router';
+
 class MenuComponent extends Component {
 	constructor(props) {
 		super(props);
@@ -7,7 +9,7 @@ class MenuComponent extends Component {
 	}
 
 	render() {
-		const {titulo, menu} = this.props;
+		const { titulo, menu } = this.props;
 
 		return (
 			<div>
@@ -25,14 +27,16 @@ class MenuComponent extends Component {
 								<a className="navbar-brand" href="index.html">
 									<i className="fa fa-university"></i>
 									<span>
-										{titulo}
+										{
+											titulo
+										}
 									</span>
 								</a>
 							</div>
 							<div id="navbar" className="navbar-collapse collapse">
 								<ul id="top-menu" className="nav navbar-nav navbar-right main-nav">
-									<li className="active">
-										<a href="/">Principal</a>
+									<li>
+										<Link to="/index" activeClassName="active">Principal</Link>
 									</li>
 									<li className="dropdown">
 										<a href="#" className="dropdown-toggle" data-toggle="dropdown">Noticias
@@ -40,15 +44,15 @@ class MenuComponent extends Component {
 										</a>
 										<ul className="dropdown-menu" role="menu">
 											<li>
-												<a href="course.html">Recientes</a>
+												<a href="/eventos/recientes">Recientes</a>
 											</li>
 											<li>
-												<a href="course-detail.html">Categorias</a>
+												<a href="/eventos/categorias">Categorias</a>
 											</li>
 										</ul>
 									</li>
 									<li>
-										<a href="/eventos">Eventos</a>
+										<Link to="/eventos" activeClassName="active">Eventos</Link>
 									</li>
 									<li className="dropdown">
 										<a href="#" className="dropdown-toggle" data-toggle="dropdown">Blog
@@ -64,10 +68,10 @@ class MenuComponent extends Component {
 										</ul>
 									</li>
 									<li>
-										<a href="contact.html">Contact</a>
+										<a href="/contacto">Contacto</a>
 									</li>
 									<li>
-										<a href="404.html">404 Page</a>
+										<a href="/dasdsasdf">404 Page</a>
 									</li>
 									<li>
 										<a href="#" id="mu-search-icon">
@@ -101,7 +105,8 @@ class MenuComponent extends Component {
 }
 
 MenuComponent.propTypes = {
-	titulo: PropTypes.string.isRequired
+	titulo: PropTypes.string.isRequired,
+	menu: PropTypes.array
 };
 
 export default MenuComponent;
