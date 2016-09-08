@@ -35,6 +35,20 @@ class Menu extends Component {
             ]
           } />
 
+          <ItemMenu title="Rol" tree={
+            [
+              {
+                text: 'Ver listado',
+                href: '/dashboard/rol/listar',
+                icon: 'fa fa-circle-o'
+              }, {
+                text: 'Registrar',
+                href: '/dashboard/rol/insertar',
+                icon: 'fa fa-circle-o'
+              }
+            ]
+          } />
+
           <ItemMenu title="Layout Options" icon="fa fa-files-o" tree={
             [
               {

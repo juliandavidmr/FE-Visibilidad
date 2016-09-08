@@ -15,6 +15,7 @@ import Index from './containers/Index';
 import Header from './containers/Header';
 import Login from './containers/Login';
 
+import Rol from './containers/DashBoard/Childrens/Rol/index.jsx';
 import ListarRoles from './containers/DashBoard/Childrens/Rol/Listar.container.jsx';
 import InsertarRol from './containers/DashBoard/Childrens/Rol/Insertar.container.jsx';
 
@@ -30,7 +31,7 @@ const store = configure();
 const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render(
-  <Provider store={store} onUpdate={() => window.scrollTo(0, 0)}>
+  <Provider store={store} onUpdate={() => window.scrollTo(0, 0) }>
     <Router history={history}>
 
       <Route path="/" component={Header}>
@@ -43,7 +44,10 @@ ReactDOM.render(
       </Route>
 
       <Route path="dashboard" component={DashBoard}>
-        <Route path="rol" component={InsertarRol} />
+        <Route path="rol" component={Rol}>
+          <Route path="listar" component={ListarRoles}/>
+          <Route path="insertar" component={InsertarRol}/>
+        </Route>
 
         <Route path="/registrar" component={Eventos}>
           <Route path="publicacion" component={About}/>

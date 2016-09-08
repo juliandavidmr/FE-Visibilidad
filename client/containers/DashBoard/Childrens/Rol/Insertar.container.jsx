@@ -13,23 +13,35 @@ class InsertarRol extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      descripcion: ''
+    };
+
     this._handleClick = this._handleClick.bind(this);
+    this._onChangeInput = this._onChangeInput.bind(this);
   }
 
   _handleClick() {
     console.log('Rgistrando');
-    
+
     const { actions } = this.props;
 
-    actions.registrar({data: 'data a registrar en el rol'}).then(() => {
+    actions.registrar({ descripcion: this.state.descripcion }).then(() => {
       console.log('insert rol ===>>=>==> ', this.props.rol);
     }).catch(err => {
       console.log('>>=>==> ', err);
     });
   }
 
+  _onChangeInput(event) {
+    this.setState({
+      descripcion: event.target.value
+    });
+  }
+
   render() {
     const { rol } = this.props;
+    var data = 'data init';
 
     return (
       <div className="content-wrapper">
@@ -39,8 +51,14 @@ class InsertarRol extends Component {
             JSON.stringify(rol)
           }
         </p>
-        
-        <InsertarComponent onClickRegistrar={this._handleClick}/>
+
+        {
+          this.state.descripcion
+        }
+
+        <InsertarComponent onChangeText={this._onChangeInput} />
+
+        <button type="button" onClick={ this._handleClick }>Insertar</button>
       </div>
     );
   }

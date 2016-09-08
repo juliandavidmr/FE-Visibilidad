@@ -1,5 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 
+import { Link } from 'react-router';
+
 class ItemMenu extends Component {
   constructor(props) {
     super(props);
@@ -11,7 +13,6 @@ class ItemMenu extends Component {
     };
 
     this._handleClick = this._handleClick.bind(this);
-    this._activeSubItem = this._activeSubItem.bind(this);
   }
 
   componentDidMount() {
@@ -36,33 +37,6 @@ class ItemMenu extends Component {
     });
   }
 
-  /**
-   * Este metodo aun no funciona, debe permitir seleccionar un item y cambiar el estado del string 
-   * 
-   * @param {any} item_select
-   */
-  _activeSubItem(item_select) {
-    console.log("Click en item");
-
-    let itemss = [];
-
-    this.state.tree.map((item, i) => {
-      if (item.text == item_select.text) {
-        console.log("Item activado", item, item_select);
-        item.active = 'active';
-      } else {
-        item.active = '';
-      }
-      itemss.push(item);
-    });
-
-    console.log(item_select);
-
-    this.setState({
-      tree: itemss
-    });
-  }
-
   render() {
     const { title, icon, span } = this.props;
 
@@ -80,13 +54,13 @@ class ItemMenu extends Component {
         </a>
         <ul className="treeview-menu">
           {
-            this.state.tree? this.state.tree.map((item, i) => {
+            this.state.tree ? this.state.tree.map((item, i) => {
               return (
-                <li key={i} onClick={ this._activeSubItem.bind(item.text) } className={item.active}>
-                  <a href="javascript:void(0)">
+                <li key={i}>
+                  <Link to={item.href} activeClassName="active">
                     <i className={item.icon}></i>
                     {item.text}
-                  </a>
+                  </Link>
                 </li>
               );
             }) : ''
@@ -100,7 +74,7 @@ class ItemMenu extends Component {
 ItemMenu.propTypes = {
   title: PropTypes.string.isRequired,
   icon: PropTypes.string,
-  span: PropTypes.any,  
+  span: PropTypes.any,
 };
 
 export default ItemMenu;

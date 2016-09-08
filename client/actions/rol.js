@@ -49,7 +49,7 @@ export function listar() {
 		axios.get(ROL_GET_ROLES)
 		.then(response => {
 			if (response.status >= 200 && response.status < 300) {
-				console.log('=>=> Response rol: ', response);
+				console.log('=>=> Response listar rol: ', response);
 				dispatch(rolesRequest(response));
 			} else {
 				const error = new Error(response.statusText);
@@ -71,7 +71,7 @@ export function registrar(rol_data) {
 	return dispatch =>
 		axios.post(ROL_POST_ROL, {
 			rol_idrol: 102,
-			rol_nombrerol: 'holSlalal'
+			rol_nombrerol: rol_data.descripcion
 		})
 		.then(function(response) {
 			if (response.status >= 200 && response.status < 300) {

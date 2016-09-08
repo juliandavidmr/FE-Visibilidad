@@ -6,15 +6,7 @@ import Menu from './Menu/Menu.component.jsx';
 class SideMenu extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      open: false
-    };
-  }
 
-  handleToggle() {
-    this.setState({
-      open: !this.state.open
-    });
   }
 
   render() {

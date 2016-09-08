@@ -4,36 +4,24 @@ class ListarRolesComponent extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      descripcion: ''
-    };
-
-    this.onChange = this.onChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  onChange(event) {
-    this.setState({
-      descripcion: event.target.value
-    });
+  handleChange(e) {
+    this.props.onChangeText(e);
   }
 
   render() {
     const { onClickRegistrar } = this.props;
 
     return (
-      <div className="content-wrapper">
-        {
-          this.state.descripcion
-        }
-        <input type="text" name="" value={this.state.descripcion} placeholder="" onChange={this.onChange} />
-        <button type="button" onClick={ onClickRegistrar }>Insertar</button>
-      </div>
+      <input type="text" name="" placeholder="" onChange={this.handleChange} />            
     );
   }
 }
 
 ListarRolesComponent.propTypes = {
-  onClickRegistrar: PropTypes.func.isRequired
+  onChangeText: PropTypes.func.isRequired
 };
 
 export default ListarRolesComponent;
