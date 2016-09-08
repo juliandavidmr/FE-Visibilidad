@@ -33,7 +33,7 @@ class IndexComponent extends Component {
             descripcion: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
             link: 'in lin22222k'
           }
-        ]}/>
+        ]} />
 
         <ServiceComponent/>
 

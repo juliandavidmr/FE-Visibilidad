@@ -26,7 +26,7 @@ class ListarRolesComponent extends Component {
           this.state.descripcion
         }
         <input type="text" name="" value={this.state.descripcion} placeholder="" onChange={this.onChange} />
-        <button type="button" onClick={onClickRegistrar}>Insertar</button>
+        <button type="button" onClick={ onClickRegistrar }>Insertar</button>
       </div>
     );
   }

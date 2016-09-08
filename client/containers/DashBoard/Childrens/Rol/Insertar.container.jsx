@@ -17,7 +17,8 @@ class InsertarRol extends Component {
   }
 
   _handleClick() {
-    console.log('Rgistrando')
+    console.log('Rgistrando');
+    
     const { actions } = this.props;
 
     actions.registrar({data: 'data a registrar en el rol'}).then(() => {

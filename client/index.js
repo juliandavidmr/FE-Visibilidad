@@ -16,7 +16,7 @@ import Header from './containers/Header';
 import Login from './containers/Login';
 
 import ListarRoles from './containers/DashBoard/Childrens/Rol/Listar.container.jsx';
-import InsertarRol from "./containers/Dashboard/Childrens/Rol/Insertar.container.jsx";
+import InsertarRol from './containers/DashBoard/Childrens/Rol/Insertar.container.jsx';
 
 import NoMatch from './containers/NoMatch'; // 404 o no encontrado
 
@@ -30,7 +30,7 @@ const store = configure();
 const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={store} onUpdate={() => window.scrollTo(0, 0)}>
     <Router history={history}>
 
       <Route path="/" component={Header}>
