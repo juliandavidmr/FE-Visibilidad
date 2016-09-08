@@ -47,21 +47,21 @@ export function rol_post_request(response) {
 export function listar() {
 	return dispatch =>
 		axios.get(ROL_GET_ROLES)
-		.then(response => {
-			if (response.status >= 200 && response.status < 300) {
-				console.log('=>=> Response listar rol: ', response);
-				dispatch(rolesRequest(response));
-			} else {
-				const error = new Error(response.statusText);
-				error.response = response;
+			.then(response => {
+				if (response.status >= 200 && response.status < 300) {
+					console.log('=>=> Response listar rol: ', response);
+					dispatch(rolesRequest(response));
+				} else {
+					const error = new Error(response.statusText);
+					error.response = response;
+
+					dispatch(errorListar(error));
+				}
+			}).catch(err => {
+				const error = new Error(err);
 
 				dispatch(errorListar(error));
-			}
-		}).catch(err => {
-			const error = new Error(err);
-
-			dispatch(errorListar(error));
-		});
+			});
 }
 
 export function registrar(rol_data) {
@@ -72,21 +72,20 @@ export function registrar(rol_data) {
 			rol_idrol: Math.floor((Math.random() * 100) + 1),
 			rol_nombrerol: rol_data.descripcion
 		})
-		.then(function(response) {
-			if (response.status >= 200 && response.status < 300) {
-				console.log('=>=> Response registrar rol: ', response);
-				dispatch(rol_post_request(response));
-			} else {
-				const error = new Error(response.statusText);
-				error.response = response;
+			.then(function (response) {
+				if (response.status >= 200 && response.status < 300) {
+					console.log('=>=> Response registrar rol: ', response);
+					dispatch(rol_post_request(response));
+				} else {
+					const error = new Error(response.statusText);
+					error.response = response;
 
-				dispatch(errorListar(error));
-			}
-		})
-		.catch(function(error) {
-			const err = new Error(error);
-			err.response = response;
+					dispatch(errorListar(error));
+				}
+			})
+			.catch(function (error) {
+				const err = new Error(error);
 
-			dispatch(errorListar(err));
-		});
+				dispatch(errorListar(err));
+			});
 }

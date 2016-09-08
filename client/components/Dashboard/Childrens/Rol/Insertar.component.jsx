@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 
-class ListarRolesComponent extends Component {
+class InsertarSemilleroComponent extends Component {
 	constructor(props) {
 		super(props);
 
@@ -42,8 +42,8 @@ class ListarRolesComponent extends Component {
 	}
 }
 
-ListarRolesComponent.propTypes = {
+InsertarSemilleroComponent.propTypes = {
 	onChangeText: PropTypes.func.isRequired
 };
 
-export default ListarRolesComponent;
+export default InsertarSemilleroComponent;

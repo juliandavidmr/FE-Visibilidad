@@ -1,27 +1,48 @@
+import { combineReducers } from 'redux';
 
-import { handleActions } from 'redux-actions';
+import {
+  LISTAR_SEMILLEROS,
+  VER_SEMILLERO,
+  INSERTAR_SEMILLERO,
+  ELIMINAR_SEMILLERO,
+  ERROR_ACTUALIZAR_SEMILLERO,
+  ERROR_INSERTAR_SEMILLERO,
+  ERROR_ELIMINAR_SEMILLERO,
+  SUCCESSFULL_DELETE_SEMILLERO,
+  SUCCESSFULL_UPDATE_SEMILLERO,
+  SUCCESSFULL_INSERT_SEMILLERO,
+  ERROR_LISTAR_SEMILLERO
+} from '../constants/semilleros';
 
-const initialState = [{
-  msg: "Hola",
-  id: 1
-}, {
-  msg: "Julian",
-  id: 2
-}];
+import Immutable from 'immutable';
 
-export default handleActions({
-  'fetch semilleros' (state, action) {
-    console.log("Holaaaaaaa");
-    
-    return [{
-      msg: "Hola 11111",
-      id: 1
-    }, {
-      msg: "Julian 22222",
-      id: 2
-    }];
-    /*$.get(action, function (result) {
-      return result;
-    }*/
+const initialState = new Immutable.Map({
+  data_list_semilleros: [],
+  error: null,
+  result: false
+});
+
+export function semillero(state = initialState, action) {
+  switch (action.type) {
+    case LISTAR_SEMILLEROS:
+      return state.merge({
+        data_list_semilleros: action.response.data,
+        error: null,
+        result: true
+      });
+    case INSERTAR_SEMILLERO:
+      return state.merge({
+        data_list_semilleros: [],
+        err: null,
+        result: true
+      });
+    default:
+      return state;
   }
-}, initialState);
+}
+
+const Reducer = combineReducers({
+  semillero
+});
+
+export default Reducer;

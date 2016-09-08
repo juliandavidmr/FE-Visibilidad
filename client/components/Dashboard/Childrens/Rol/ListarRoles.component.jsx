@@ -6,11 +6,16 @@ class ListarRolesComponent extends Component {
 	constructor(props) {
 		super(props);
 
+		this.handleClickRow = this.handleClickRow.bind(this);
+	}
+
+	handleClickRow(row) {
+		console.log('Click en row ', row);
 	}
 
 	render() {
 		//Row select setting
-		var selectRowProp = {
+		const selectRowProp = {
 			mode: "checkbox", //checkbox for multi select, radio for single select.
 			clickToSelect: true, //click row will trigger a selection on that row.
 			bgColor: "rgb(238, 193, 213)" //selected row background color
@@ -48,9 +53,23 @@ class ListarRolesComponent extends Component {
 									<h3 className="box-title">Listado de roles</h3>
 
 									<div className="box-body">
-										<BootstrapTable data={tabla_datos} striped={true} hover={true} condensed={true} pagination={true} selectRow={selectRowProp} insertRow={false} deleteRow={false} columnFilter={true} searchPlaceholder="Buscar" search={true}>
-											<TableHeaderColumn dataField="rol_idrol" isKey={true} dataAlign="right" dataSort={true}>ID</TableHeaderColumn>
-											<TableHeaderColumn dataField="rol_nombrerol" dataSort={true}>Nombre</TableHeaderColumn>
+										<BootstrapTable data={tabla_datos}
+											striped={true}
+											hover={true}
+											condensed={true}
+											pagination={true}
+											selectRow={selectRowProp}
+											insertRow={false}
+											deleteRow={false}
+											columnFilter={true}
+											searchPlaceholder="Buscar"
+											search={true}>
+											<TableHeaderColumn
+												dataField="ROL_IDROL"
+												isKey={true}
+												dataAlign="right"
+												dataSort={true}>ID</TableHeaderColumn>
+											<TableHeaderColumn dataField="ROL_NOMBREROL" dataSort={true}>Nombre</TableHeaderColumn>
 										</BootstrapTable>
 									</div>
 								</div>

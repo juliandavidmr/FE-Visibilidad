@@ -37,8 +37,6 @@ class ListarRoles extends Component {
   }
 
   render() {
-    const { rol } = this.props;
-
     return (
       <ListarRolesComponent tabla_datos={this.state.tabla_datos} />
     );
