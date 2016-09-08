@@ -13,49 +13,40 @@ class ListarRoles extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      tabla_datos: []
+    };
   }
 
+  // Antes de renderizar el componente
   componentWillMount() {
-
-  }
-
-  componentDidMount() {
-
-  }
-
-  _handleClick() {
     const { actions } = this.props;
 
     actions.listar().then(() => {
-      console.log('list roles ===>>=>==> ', this.props.rol);
+      console.log('list roles ===>>=>==> ', this.props.rol.rol);
+
+      this.setState({
+        tabla_datos: JSON.parse(JSON.stringify(this.props.rol.rol.get('data_list_roles').toArray()))
+      });
     }).catch(err => {
-      console.log('>>=>==> ', err);
+      console.log('ERROR> ', err);
     });
+  }
+
+  componentDidMount() {
   }
 
   render() {
     const { rol } = this.props;
 
-    // this.props.rol();
-
     return (
-      <div className="content-wrapper">
-        <h1>rol</h1>
-        <p>
-          {
-            JSON.stringify(rol)
-          }
-        </p>
-        
-        <button onClick={this._handleClick.bind(this)}>Click</button>
-        <ListarRolesComponent />
-      </div>
+      <ListarRolesComponent tabla_datos={this.state.tabla_datos} />
     );
   }
 }
 
 function mapStateToProps(state) {
-  console.log("Los state de rol:", state);
+  // console.log("Los state de rol:", state);
 
   return {
     rol: state.rol

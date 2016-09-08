@@ -25,12 +25,12 @@ export function errorListar(error) {
 	};
 }
 
-// REQUEST ROLES: 
+// REQUEST ROLES:
 export function rolesRequest(response) {
 	return dispatch => {
 		dispatch({
 			response,
-			type: INSERTAR_ROL
+			type: LISTAR_ROLES
 		});
 	};
 }
@@ -58,8 +58,7 @@ export function listar() {
 				dispatch(errorListar(error));
 			}
 		}).catch(err => {
-			const error = new Error(response.statusText);
-			error.response = response;
+			const error = new Error(err);
 
 			dispatch(errorListar(error));
 		});
@@ -67,10 +66,10 @@ export function listar() {
 
 export function registrar(rol_data) {
 	console.log('Rol registrar data: ', rol_data);
-	
+
 	return dispatch =>
 		axios.post(ROL_POST_ROL, {
-			rol_idrol: 102,
+			rol_idrol: Math.floor((Math.random() * 100) + 1),
 			rol_nombrerol: rol_data.descripcion
 		})
 		.then(function(response) {

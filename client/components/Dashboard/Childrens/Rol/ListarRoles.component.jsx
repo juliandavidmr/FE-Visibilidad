@@ -1,54 +1,70 @@
 import React, {Component, PropTypes} from 'react';
 
+import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
+
 class ListarRolesComponent extends Component {
-  constructor(props) {
-    super(props);
+	constructor(props) {
+		super(props);
 
-  }
+	}
 
+	render() {
+		//Row select setting
+		var selectRowProp = {
+			mode: "checkbox", //checkbox for multi select, radio for single select.
+			clickToSelect: true, //click row will trigger a selection on that row.
+			bgColor: "rgb(238, 193, 213)" //selected row background color
+		};
 
-  render() {
-    const { tabla } = this.props;
+		const {tabla_datos} = this.props;
 
-    return (
-      <div className="content-wrapper">
-        <div className="container">
-          <h2>Bordered Table List roles</h2>
-          <p>The.table-bordered className adds borders to a table: </p>
-          <table className="table table-bordered">
-            <thead>
-              <tr>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Email</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>John</td>
-                <td>Doe</td>
-                <td>john @example.com</td>
-              </tr>
-              <tr>
-                <td>Mary</td>
-                <td>Moe</td>
-                <td>mary @example.com</td>
-              </tr>
-              <tr>
-                <td>July</td>
-                <td>Dooley</td>
-                <td>july @example.com</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    );
-  }
+		// console.log('tabla datos: ', tabla_datos);
+
+		return (
+			<div>
+				<section className="content-header">
+					<h1>
+						Dashboard
+						<small>Roles</small>
+					</h1>
+					<ol className="breadcrumb">
+						<li>
+							<a href="#">
+								<i className="fa fa-dashboard"></i>
+								Dashboard</a>
+						</li>
+						<li>
+							<a href="#">Rol</a>
+						</li>
+						<li className="active">Listar</li>
+					</ol>
+				</section>
+
+				<section className="content">
+					<div className="row">
+						<div className="col-xs-12">
+							<div className="box">
+								<div className="box-header">
+									<h3 className="box-title">Listado de roles</h3>
+
+									<div className="box-body">
+										<BootstrapTable data={tabla_datos} striped={true} hover={true} condensed={true} pagination={true} selectRow={selectRowProp} insertRow={false} deleteRow={false} columnFilter={true} searchPlaceholder="Buscar" search={true}>
+											<TableHeaderColumn dataField="rol_idrol" isKey={true} dataAlign="right" dataSort={true}>ID</TableHeaderColumn>
+											<TableHeaderColumn dataField="rol_nombrerol" dataSort={true}>Nombre</TableHeaderColumn>
+										</BootstrapTable>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		);
+	}
 }
 
 ListarRolesComponent.propTypes = {
-  tabla: PropTypes.array.isRequired
+	tabla_datos: PropTypes.any.isRequired
 };
 
 export default ListarRolesComponent;

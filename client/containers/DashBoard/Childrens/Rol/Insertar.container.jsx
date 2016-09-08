@@ -2,83 +2,65 @@
   Contenedor para Insertar un rol
 */
 
-import React, {Component, PropTypes, applyMiddleware } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import React, {Component, PropTypes, applyMiddleware} from 'react';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 
 import InsertarComponent from '../../../../components/Dashboard/Childrens/Rol/Insertar.component.jsx';
 import * as RolActions from '../../../../actions/rol.js';
 
 class InsertarRol extends Component {
-  constructor(props) {
-    super(props);
+	constructor(props) {
+		super(props);
 
-    this.state = {
-      descripcion: ''
-    };
+		this.state = {
+			descripcion: ''
+		};
 
-    this._handleClick = this._handleClick.bind(this);
-    this._onChangeInput = this._onChangeInput.bind(this);
-  }
+		this._handleClick = this._handleClick.bind(this);
+		this._onChangeInput = this._onChangeInput.bind(this);
+	}
 
-  _handleClick() {
-    console.log('Rgistrando');
+	_handleClick() {
+		console.log('Rgistrando');
 
-    const { actions } = this.props;
+		const {actions} = this.props;
 
-    actions.registrar({ descripcion: this.state.descripcion }).then(() => {
-      console.log('insert rol ===>>=>==> ', this.props.rol);
-    }).catch(err => {
-      console.log('>>=>==> ', err);
-    });
-  }
+		actions.registrar({descripcion: this.state.descripcion}).then(() => {
+			console.log('insert rol ===>>=>==> ', this.props.rol);
+		}).catch(err => {
+			console.log('>>=>==> ', err);
+		});
+	}
 
-  _onChangeInput(event) {
-    this.setState({
-      descripcion: event.target.value
-    });
-  }
+	_onChangeInput(event) {
+		this.setState({descripcion: event.target.value});
+	}
 
-  render() {
-    const { rol } = this.props;
-    var data = 'data init';
+	render() {
+		const {rol} = this.props;
+		var data = 'data init';
 
-    return (
-      <div className="content-wrapper">
-        <h1>rol</h1>
-        <p>
-          {
-            JSON.stringify(rol)
-          }
-        </p>
+		return (
+			<form>
+				<InsertarComponent onChangeText={this._onChangeInput}/>
 
-        {
-          this.state.descripcion
-        }
-
-        <InsertarComponent onChangeText={this._onChangeInput} />
-
-        <button type="button" onClick={ this._handleClick }>Insertar</button>
-      </div>
-    );
-  }
+				<button type="button" className="btn btn-primary" onClick={this._handleClick}>Insertar</button>
+			</form>
+		);
+	}
 }
 
 function mapStateToProps(state) {
-  // console.log("Los state de rol:", state);
+	// console.log("Los state de rol:", state);
 
-  return {
-    rol: state.rol
-  };
+	return {rol: state.rol};
 }
 
 function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(RolActions, dispatch)
-  };
+	return {
+		actions: bindActionCreators(RolActions, dispatch)
+	};
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(InsertarRol);
+export default connect(mapStateToProps, mapDispatchToProps)(InsertarRol);
