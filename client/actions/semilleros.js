@@ -69,7 +69,7 @@ export function registrar(semillero_data) {
     axios.post(SEMILLERO_POST_SEMILLERO)
       .then(response => {
         if (response.status >= 200 && response.status < 300) {
-          console.log('Response registrar rol: ', response);
+          console.log('Response registrar semillero: ', response);
           dispatch(semillero_post_request(response));
         } else {
           const error = new Error(response.statusText);
