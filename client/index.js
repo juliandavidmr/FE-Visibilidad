@@ -30,11 +30,13 @@ import configure from './store';
 const store = configure();
 const history = syncHistoryWithStore(browserHistory, store);
 
+const basename = '/';
+
 ReactDOM.render(
   <Provider store={store} onUpdate={() => window.scrollTo(0, 0) }>
     <Router history={history}>
 
-      <Route path="/FE-Visibilidad/" component={Header}>
+      <Route path={basename} component={Header}>
         <IndexRoute component={Index}/>
         
         <Route path="/acercade" component={About}/>

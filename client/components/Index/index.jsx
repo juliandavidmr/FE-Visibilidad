@@ -242,7 +242,11 @@ class IndexComponent extends Component {
           </div>
         </section>
 
-        <SemillerosComponent title="Semilleros de investigación" list={list_semilleros}/>
+        <SemillerosComponent 
+          title="Semilleros de investigación" 
+          description="Lorem ipsum dolor sit amet, consectetur adipisicing elit.Culpa, repudiandae, suscipit repellat minus molestiae ea." 
+          list={list_semilleros}
+        />
 
         <section id="mu-testimonial">
           <div className="container">

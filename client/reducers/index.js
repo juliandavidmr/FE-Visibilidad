@@ -7,6 +7,7 @@ import semilleros from './semilleros';
 import dashboard  from './dashboard';
 import login  from './login';
 import rol from './rol';
+import noticia from './noticia';
 
 export default combineReducers({
   routing,
@@ -14,5 +15,6 @@ export default combineReducers({
   semilleros,
   dashboard,
   login,
-  rol
+  rol,
+  noticia
 });

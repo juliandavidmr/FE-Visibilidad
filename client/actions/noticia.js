@@ -1,58 +1,59 @@
 import axios from 'axios';
 
 import {
-  LISTAR_SEMILLEROS,
-  VER_SEMILLERO,
-  INSERTAR_SEMILLERO,
-  ELIMINAR_SEMILLERO,
-  ERROR_ACTUALIZAR_SEMILLERO,
-  ERROR_INSERTAR_SEMILLERO,
-  ERROR_ELIMINAR_SEMILLERO,
-  SUCCESSFULL_DELETE_SEMILLERO,
-  SUCCESSFULL_UPDATE_SEMILLERO,
-  SUCCESSFULL_INSERT_SEMILLERO,
-  ERROR_LISTAR_SEMILLERO
-} from '../constants/semilleros';
+  VER_NOTICIA,
+  INSERTAR_NOTICIA,
+  ELIMINAR_NOTICIA,
+  LISTAR_NOTICIAS,
+  ERROR_INSERTAR_NOTICIA,
+  ERROR_ACTUALIZAR_NOTICIA,
+  ERROR_ELIMINAR_NOTICIA,
+  ERROR_LISTAR_NOTICIAS,
+  ERROR_NOTICIA,
+  SUCCESSFULL_INSERT_NOTICIA,
+  SUCCESSFULL_UPDATE_NOTICIA,
+  SUCCESSFULL_DELETE_NOTICIA
+} from '../constants/noticia';
 
 import {
-  SEMILLERO_GET_SEMILLEROS,
-  SEMILLERO_POST_SEMILLERO,
-  SEMILLERO_DELETE_SEMILLERO
+  NOTICIA_GET_NOTICIAS,
+  NOTICIA_POST_NOTICIA,
+  NOTICIA_DELETE_NOTICIA
 } from '../constants/api';
 
 export function errorListar(error) {
   return {
     error,
-    type: ERROR_LISTAR_SEMILLERO
+    type: ERROR_LISTAR_NOTICIAS
   };
 }
 
-export function semillero_listar_request(response) {
+export function noticia_listar_request(response) {
   return dispatch => {
     dispatch({
       response,
-      type: LISTAR_SEMILLEROS
+      type: LISTAR_NOTICIAS
     });
   };
 }
 
-export function semillero_post_request(response) {
+export function noticia_post_request(response) {
   return dispatch => {
     dispatch({
       response,
-      type: SUCCESSFULL_INSERT_SEMILLERO
+      type: SUCCESSFULL_INSERT_NOTICIA
     });
   };
 }
 
 export function listar() {
   return dispatch =>
-    axios.get(SEMILLERO_GET_SEMILLEROS)
+    axios.get(NOTICIA_GET_NOTICIAS)
       .then(response => {
         if (response.status >= 200 && response.status < 300) {
-          console.log('Response listar semilleros: ', response);
+          console.log('Response listar NOTICIAs: ', response);
 
-          dispatch(semillero_listar_request(response));
+          dispatch(noticia_listar_request(response));
         } else {
           const error = new Error(response.statusText);
           error.response = response;
@@ -65,13 +66,14 @@ export function listar() {
       });
 }
 
-export function registrar(semillero_data) {
+
+export function registrar(noticia_data) {
   return dispatch => {
-    axios.post(SEMILLERO_POST_SEMILLERO)
+    axios.post(NOTICIA_POST_NOTICIA)
       .then(response => {
         if (response.status >= 200 && response.status < 300) {
-          console.log('Response registrar semillero: ', response);
-          dispatch(semillero_post_request(response));
+          console.log('Response registrar noticia: ', response);
+          dispatch(noticia_post_request(response));
         } else {
           const error = new Error(response.statusText);
           error.response = response;

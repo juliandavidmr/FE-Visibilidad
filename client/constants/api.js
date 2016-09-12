@@ -1,6 +1,13 @@
 var URL = 'http://172.16.31.150/semilleros/api';
 
 /**
+ * Asignacion noticia 
+ */
+export const NOTICIA_GET_NOTICIAS = URL + '/noticia/get_noticia';
+export const NOTICIA_POST_NOTICIA = URL + '/noticia/insert_noticia';
+export const NOTICIA_DELETE_NOTICIA = URL + '/noticia/delete_noticia';
+
+/**
  * Asignacion tareas 
  */
 export const ASIGNACION_TAREAS_GET_ASIGNACION_TAREAS = URL + '/asignaciontarea/get_asignaciontarea';
