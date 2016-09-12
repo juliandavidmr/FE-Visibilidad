@@ -1,5 +1,5 @@
 
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
@@ -34,8 +34,9 @@ ReactDOM.render(
   <Provider store={store} onUpdate={() => window.scrollTo(0, 0) }>
     <Router history={history}>
 
-      <Route path="/" component={Header}>
-        <Route path="/index" component={Index}/>
+      <Route path="/FE-Visibilidad/" component={Header}>
+        <IndexRoute component={Index}/>
+        
         <Route path="/acercade" component={About}/>
         <Route path="/eventos" component={Eventos}>
           <Route path="recientes" component={About}/>

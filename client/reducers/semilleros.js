@@ -32,7 +32,7 @@ export function semillero(state = initialState, action) {
       });
     case INSERTAR_SEMILLERO:
       return state.merge({
-        data_list_semilleros: [],
+        data_list_semilleros: action.response.data, // Valores del registro insertado
         err: null,
         result: true
       });

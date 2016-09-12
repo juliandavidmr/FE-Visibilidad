@@ -7,14 +7,32 @@ import './style.css';
 
 class Index extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      list_semilleros: []
+    };
+  }
+
+
   componentWillMount() {
     const { actions } = this.props;
-    console.log('fetchSemilleros=>', actions.fetchSemilleros());
+    
+    actions.listar().then(() => {
+      var l = this.props.semilleros.semillero.toJS();
+
+      if (l.data_list_semilleros) {
+        console.log('fetchSemilleros=>', l.data_list_semilleros);
+
+        this.setState({
+          list_semilleros: this.props.semilleros.semillero.toJS()
+        });
+      }
+    });
   }
 
   render() {
-    const { semilleros, actions } = this.props;
-
     return <IndexComponent />;
   }
 }
