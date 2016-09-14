@@ -39,7 +39,7 @@ class Index extends Component {
       var n = this.props.noticias.noticia.toJS();
 
       if (n.data_list_noticias) {
-        console.log('fetchNoticias =>', l.data_list_noticias);
+        console.log('fetchNoticias =>', n.data_list_noticias);
 
         this.setState({
           list_noticias: n.data_list_noticias
