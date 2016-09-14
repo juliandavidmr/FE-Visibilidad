@@ -1,6 +1,13 @@
 var URL = 'http://172.16.31.150/semilleros/api';
 
 /**
+ * Correo enviado 
+ */
+export const CORREO_ENVIADO_GET_CORREOS_ENVIADOS = URL + '/correosenviados/get_correosenviados';
+export const CORREO_ENVIADO_POST_CORREO_ENVIADO = URL + '/correosenviados/insert_correosenviados';
+export const CORREO_ENVIADO_DELETE_CORREO_ENVIADO = URL + '/correosenviados/delete_correosenviados';
+
+/**
  * Asignacion noticia 
  */
 export const NOTICIA_GET_NOTICIAS = URL + '/noticia/get_noticia';
