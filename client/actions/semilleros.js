@@ -20,10 +20,17 @@ import {
   SEMILLERO_DELETE_SEMILLERO
 } from '../constants/api';
 
-export function errorListar(error) {
+export function error_listar(error) {
   return {
     error,
     type: ERROR_LISTAR_SEMILLERO
+  };
+}
+
+export function error_post_insert(error) {
+  return {
+    error,
+    type: ERROR_INSERTAR_SEMILLERO
   };
 }
 
@@ -57,11 +64,11 @@ export function listar() {
           const error = new Error(response.statusText);
           error.response = response;
 
-          dispatch(errorListar(error));
+          dispatch(error_listar(error));
         }
       }).catch(err => {
         const error = new Error(err);
-        dispatch(errorListar(error));
+        dispatch(error_listar(error));
       });
 }
 
@@ -76,12 +83,12 @@ export function registrar(semillero_data) {
           const error = new Error(response.statusText);
           error.response = response;
 
-          dispatch(errorListar(error));
+          dispatch(error_post_insert(error));
         }
       }).catch(error => {
         const err = new Error(error);
 
-        dispatch(errorListar(err));
+        dispatch(error_post_insert(err));
       });
   };
 }

@@ -1,71 +1,78 @@
-var URL = 'http://172.16.31.150/semilleros/api';
+var PREFIX = 'http://172.16.31.150/semilleros/api';
+
+/**
+ * Cuenta de correo 
+ */
+export const CUENTA_CORREO_GET_CUENTA_CORREO = PREFIX + '/cuentacorreo/get_cuentacorreo';
+export const CUENTA_CORREO_POST_CUENTA_CORREO = PREFIX + '/cuentacorreo/insert_cuentacorreo';
+export const CUENTA_CORREO_DELETE_CUENTA_CORREO = PREFIX + '/cuentacorreo/delete_cuentacorreo';
 
 /**
  * Nivel 
  */
-export const TIPO_CURSO_GET_TIPOS_CURSO = URL + '/tipocurso/get_tipocurso';
-export const TIPO_CURSO_POST_TIPO_CURSO = URL + '/tipocurso/insert_tipocurso';
-export const TIPO_CURSO_DELETE_TIPO_CURSO = URL + '/tipocurso/delete_tipocurso';
+export const TIPO_CURSO_GET_TIPOS_CURSO = PREFIX + '/tipocurso/get_tipocurso';
+export const TIPO_CURSO_POST_TIPO_CURSO = PREFIX + '/tipocurso/insert_tipocurso';
+export const TIPO_CURSO_DELETE_TIPO_CURSO = PREFIX + '/tipocurso/delete_tipocurso';
 
 /**
  * Nivel 
  */
-export const NIVEL_GET_NIVELES = URL + '/nivel/get_nivel';
-export const NIVEL_POST_NIVEL = URL + '/nivel/insert_nivel';
-export const NIVEL_DELETE_NIVEL = URL + '/nivel/delete_nivel';
+export const NIVEL_GET_NIVELES = PREFIX + '/nivel/get_nivel';
+export const NIVEL_POST_NIVEL = PREFIX + '/nivel/insert_nivel';
+export const NIVEL_DELETE_NIVEL = PREFIX + '/nivel/delete_nivel';
 
 /**
  * Correo enviado 
  */
-export const CORREO_ENVIADO_GET_CORREOS_ENVIADOS = URL + '/correosenviados/get_correosenviados';
-export const CORREO_ENVIADO_POST_CORREO_ENVIADO = URL + '/correosenviados/insert_correosenviados';
-export const CORREO_ENVIADO_DELETE_CORREO_ENVIADO = URL + '/correosenviados/delete_correosenviados';
+export const CORREO_ENVIADO_GET_CORREOS_ENVIADOS = PREFIX + '/correosenviados/get_correosenviados';
+export const CORREO_ENVIADO_POST_CORREO_ENVIADO = PREFIX + '/correosenviados/insert_correosenviados';
+export const CORREO_ENVIADO_DELETE_CORREO_ENVIADO = PREFIX + '/correosenviados/delete_correosenviados';
 
 /**
  * Asignacion noticia 
  */
-export const NOTICIA_GET_NOTICIAS = URL + '/noticia/get_noticia';
-export const NOTICIA_POST_NOTICIA = URL + '/noticia/insert_noticia';
-export const NOTICIA_DELETE_NOTICIA = URL + '/noticia/delete_noticia';
+export const NOTICIA_GET_NOTICIAS = PREFIX + '/noticia/get_noticia';
+export const NOTICIA_POST_NOTICIA = PREFIX + '/noticia/insert_noticia';
+export const NOTICIA_DELETE_NOTICIA = PREFIX + '/noticia/delete_noticia';
 
 /**
  * Asignacion tareas 
  */
-export const ASIGNACION_TAREAS_GET_ASIGNACION_TAREAS = URL + '/asignaciontarea/get_asignaciontarea';
-export const ASIGNACION_TAREAS_POST_ASIGNACION_TAREA = URL + '/asignaciontarea/insert_asignaciontarea';
-export const ASIGNACION_TAREAS_DELETE_ASIGNACION_TAREA = URL + '/asignaciontarea/delete_asignaciontarea';
+export const ASIGNACION_TAREAS_GET_ASIGNACION_TAREAS = PREFIX + '/asignaciontarea/get_asignaciontarea';
+export const ASIGNACION_TAREAS_POST_ASIGNACION_TAREA = PREFIX + '/asignaciontarea/insert_asignaciontarea';
+export const ASIGNACION_TAREAS_DELETE_ASIGNACION_TAREA = PREFIX + '/asignaciontarea/delete_asignaciontarea';
 
 /**
  * ROLES
  */
-export const ROL_GET_ROLES = URL + '/rol/get_rol';
-export const ROL_POST_ROL = URL + '/rol/insert_rol';
-export const ROL_DELETE_ROL = URL + '/rol/delete_rol';
+export const ROL_GET_ROLES = PREFIX + '/rol/get_rol';
+export const ROL_POST_ROL = PREFIX + '/rol/insert_rol';
+export const ROL_DELETE_ROL = PREFIX + '/rol/delete_rol';
 
 /**
  * Semilleros
  */
-export const SEMILLERO_GET_SEMILLEROS = URL + '/semillero/get_semillero';
-export const SEMILLERO_POST_SEMILLERO = URL + '/semillero/insert_semillero';
-export const SEMILLERO_DELETE_SEMILLERO = URL + '/semillero/delete_semillero';
+export const SEMILLERO_GET_SEMILLEROS = PREFIX + '/semillero/get_semillero';
+export const SEMILLERO_POST_SEMILLERO = PREFIX + '/semillero/insert_semillero';
+export const SEMILLERO_DELETE_SEMILLERO = PREFIX + '/semillero/delete_semillero';
 
 /**
  * Actividades
  */
-export const ACTIVIDAD_GET_ACTIVIDADES = URL + '/actividad/get_actividad';
-export const ACTIVIDAD_POST_ACTIVIDAD = URL + '/actividad/insert_actividad';
-export const ACTIVIDAD_DELETE_ACTIVIDAD = URL + '/actividad/delete_actividad';
+export const ACTIVIDAD_GET_ACTIVIDADES = PREFIX + '/actividad/get_actividad';
+export const ACTIVIDAD_POST_ACTIVIDAD = PREFIX + '/actividad/insert_actividad';
+export const ACTIVIDAD_DELETE_ACTIVIDAD = PREFIX + '/actividad/delete_actividad';
 
 /**
  * Adjunto tareas
  */
-export const ACTIVIDAD_GET_ADJUNTO_TAREAS = URL + '/actividad/get_adjunto_tareas';
-export const ACTIVIDAD_POST_ADJUNTO_TAREAS = URL + '/actividad/insert_adjunto_tareas';
-export const ACTIVIDAD_DELETE_ADJUNTO_TAREAS = URL + '/actividad/delete_adjunto_tareas';
+export const ACTIVIDAD_GET_ADJUNTO_TAREAS = PREFIX + '/actividad/get_adjunto_tareas';
+export const ACTIVIDAD_POST_ADJUNTO_TAREAS = PREFIX + '/actividad/insert_adjunto_tareas';
+export const ACTIVIDAD_DELETE_ADJUNTO_TAREAS = PREFIX + '/actividad/delete_adjunto_tareas';
 
 /**
  * Competencias
  */
-export const COMPETENCIA_GET_COMPETENCIAS = URL + '/competencia/get_competencia';
-export const COMPETENCIA_POST_COMPETENCIA = URL + '/competencia/insert_competencia';
-export const COMPETENCIA_DELETE_COMPETENCIA = URL + '/competencia/delete_competencia';
+export const COMPETENCIA_GET_COMPETENCIAS = PREFIX + '/competencia/get_competencia';
+export const COMPETENCIA_POST_COMPETENCIA = PREFIX + '/competencia/insert_competencia';
+export const COMPETENCIA_DELETE_COMPETENCIA = PREFIX + '/competencia/delete_competencia';
