@@ -53,7 +53,6 @@ export function asignacion_tareas_post_request(response) {
   };
 }
 
-
 export function listar() {
   return dispatch =>
     axios.get(ASIGNACION_TAREAS_GET_ASIGNACION_TAREAS)

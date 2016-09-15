@@ -25,13 +25,13 @@ const initialState = new Immutable.Map({
 
 export function semillero(state = initialState, action) {
   switch (action.type) {
-    case LISTAR_SEMILLEROS:
+    case LISTAR_CUENTAS_CORREOS:
       return state.merge({
         data_list_semilleros: action.response.data,
         error: null,
         result: true
       });
-    case INSERTAR_SEMILLERO:
+    case INSERTAR_CUENTA_CORREO:
       return state.merge({
         data_list_semilleros: action.response.data, // Valores del registro insertado
         err: null,

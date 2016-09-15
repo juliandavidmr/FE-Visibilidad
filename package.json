@@ -1,5 +1,5 @@
 {
-  "name": "frontend-boilerplate",
+  "name": "frontend-visibilidad",
   "version": "1.0.0",
   "private": true,
   "description": "A boilerplate of things that shouldn't exist",
@@ -40,6 +40,7 @@
     "axios": "^0.14.0",
     "express": "^4.14.0",
     "formous": "^0.8.7",
+    "immutable": "^3.8.1",
     "react-bootstrap": "^0.30.3",
     "react-bootstrap-table": "^2.5.1",
     "react-notification-system": "^0.2.10",

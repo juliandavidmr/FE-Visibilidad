@@ -1,6 +1,20 @@
 var URL = 'http://172.16.31.150/semilleros/api';
 
 /**
+ * Nivel 
+ */
+export const TIPO_CURSO_GET_TIPOS_CURSO = URL + '/tipocurso/get_tipocurso';
+export const TIPO_CURSO_POST_TIPO_CURSO = URL + '/tipocurso/insert_tipocurso';
+export const TIPO_CURSO_DELETE_TIPO_CURSO = URL + '/tipocurso/delete_tipocurso';
+
+/**
+ * Nivel 
+ */
+export const NIVEL_GET_NIVELES = URL + '/nivel/get_nivel';
+export const NIVEL_POST_NIVEL = URL + '/nivel/insert_nivel';
+export const NIVEL_DELETE_NIVEL = URL + '/nivel/delete_nivel';
+
+/**
  * Correo enviado 
  */
 export const CORREO_ENVIADO_GET_CORREOS_ENVIADOS = URL + '/correosenviados/get_correosenviados';

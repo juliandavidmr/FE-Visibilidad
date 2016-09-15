@@ -8,6 +8,7 @@ import React from 'react';
 /**
  * Paginas
  */
+import Container from './containers/container.jsx';
 import About from './containers/About';
 import App from './containers/App';
 import Eventos from './containers/Eventos';
@@ -18,6 +19,10 @@ import Login from './containers/Login';
 import Rol from './containers/DashBoard/Childrens/Rol/index.jsx';
 import ListarRoles from './containers/DashBoard/Childrens/Rol/Listar.container.jsx';
 import InsertarRol from './containers/DashBoard/Childrens/Rol/Insertar.container.jsx';
+
+import Nivel from './containers/DashBoard/Childrens/Nivel/index.jsx';
+import InsertarNivel from './containers/DashBoard/Childrens/Nivel/Insertar.container.jsx';
+import ListarNiveles from './containers/DashBoard/Childrens/Nivel/Listar.container.jsx';
 
 import NoMatch from './containers/NoMatch'; // 404 o no encontrado
 
@@ -35,10 +40,10 @@ const basename = '/';
 ReactDOM.render(
   <Provider store={store} onUpdate={() => window.scrollTo(0, 0) }>
     <Router history={history}>
-
+      
       <Route path={basename} component={Header}>
         <IndexRoute component={Index}/>
-        
+
         <Route path="/acercade" component={About}/>
         <Route path="/eventos" component={Eventos}>
           <Route path="recientes" component={About}/>
@@ -59,6 +64,12 @@ ReactDOM.render(
         <Route path="/ver" component={Eventos}>
           <Route path="publicacion" component={About}/>
         </Route>
+
+        <Route path="nivel" component={Nivel}>
+          <Route path="insertar" component={InsertarNivel} />
+          <Route path="listar" component={ListarNiveles} />
+        </Route>
+        
       </Route>
 
       <Route path="login" component={Login}></Route>

@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 
-class InsertarSemilleroComponent extends Component {
+class InsertarTipoCursoComponent extends Component {
 	constructor(props) {
 		super(props);
 
@@ -23,7 +23,7 @@ class InsertarSemilleroComponent extends Component {
 
 							<div className="box-body">
 								<div className="form-group">
-									<label>Nombre rol</label>
+									<label>Nombre del tipo de curso</label>
 									<div className="input-group">
 										<div className="input-group-addon">
 											<i className="fa fa-laptop"></i>
@@ -35,13 +35,13 @@ class InsertarSemilleroComponent extends Component {
 						</div>
 					</div>
 				</div>
-			</div>			
+			</div>
 		);
 	}
 }
 
-InsertarSemilleroComponent.propTypes = {
+InsertarTipoCursoComponent.propTypes = {
 	onChangeText: PropTypes.func.isRequired
 };
 
-export default InsertarSemilleroComponent;
+export default InsertarTipoCursoComponent;

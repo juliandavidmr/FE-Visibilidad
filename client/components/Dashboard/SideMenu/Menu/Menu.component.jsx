@@ -48,6 +48,20 @@ class Menu extends Component {
               }
             ]
           } />
+          
+          <ItemMenu title="Nivel" tree={
+            [
+              {
+                text: 'Ver niveles',
+                href: '/dashboard/nivel/listar',
+                icon: 'fa fa-circle-o'
+              }, {
+                text: 'Registrar',
+                href: '/dashboard/nivel/insertar',
+                icon: 'fa fa-circle-o'
+              }
+            ]
+          } />
 
           <ItemMenu title="Layout Options" icon="fa fa-files-o" tree={
             [

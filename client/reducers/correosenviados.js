@@ -14,6 +14,8 @@ import {
   ERROR_CORREOS_ENVIADOS
 } from '../constants/correosenviados';
 
+import Immutable from 'immutable';
+
 const initialState = new Immutable.Map({
   data_list_correosenviados: [],
   error: null,

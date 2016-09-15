@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
-class ListarRolesComponent extends Component {
+class ListarTipoCursoComponent extends Component {
 	constructor(props) {
 		super(props);
 
@@ -30,7 +30,7 @@ class ListarRolesComponent extends Component {
 				<div className="col-xs-12">
 					<div className="box">
 						<div className="box-header">
-							<h3 className="box-title">Listado de roles</h3>
+							<h3 className="box-title">Listado de TipoCurso</h3>
 
 							<div className="box-body">
 								<BootstrapTable data={tabla_datos}
@@ -44,12 +44,15 @@ class ListarRolesComponent extends Component {
 									columnFilter={true}
 									searchPlaceholder="Buscar"
 									search={true}>
+
 									<TableHeaderColumn
 										dataField="ROL_IDROL"
 										isKey={true}
 										dataAlign="right"
 										dataSort={true}>ID</TableHeaderColumn>
+
 									<TableHeaderColumn dataField="ROL_NOMBREROL" dataSort={true}>Nombre</TableHeaderColumn>
+
 								</BootstrapTable>
 							</div>
 						</div>
@@ -60,8 +63,8 @@ class ListarRolesComponent extends Component {
 	}
 }
 
-ListarRolesComponent.propTypes = {
+ListarTipoCursoComponent.propTypes = {
 	tabla_datos: PropTypes.any.isRequired
 };
 
-export default ListarRolesComponent;
+export default ListarTipoCursoComponent;

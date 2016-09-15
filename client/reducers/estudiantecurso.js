@@ -24,13 +24,13 @@ const initialState = new Immutable.Map({
 
 export function estudiantecurso(state = initialState, action) {
   switch (action.type) {
-    case LISTAR_SEMILLEROS:
+    case LISTAR_ESTUDIANTE_CURSOS:
       return state.merge({
         data_list_estudiantecurso: action.response.data,
         error: null,
         result: true
       });
-    case INSERTAR_SEMILLERO:
+    case INSERTAR_ESTUDIANTE_CURSO:
       return state.merge({
         data_list_estudiantecurso: action.response.data, // Valores del registro insertado
         err: null,

@@ -2,18 +2,18 @@
   Contenedor para Insertar un rol
 */
 
-import React, {Component, PropTypes, applyMiddleware} from 'react';
-import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux';
+import React, { Component, PropTypes, applyMiddleware } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-import InsertarComponent from '../../../../components/Dashboard/Childrens/Rol/Insertar.component.jsx';
-import * as RolActions from '../../../../actions/rol.js';
+import InsertarComponent from '../../../../components/Dashboard/Childrens/TipoCurso/Insertar.component.jsx';
+import * as TipoCursoActions from '../../../../actions/tipo';
 
 import * as Notification from '../../../../components/MiniComponents/Notifications.js';
 
 import NotificationSystem from 'react-notification-system';
 
-class InsertarRol extends Component {
+class InsertarTipoCurso extends Component {
   constructor(props) {
     super(props);
 
@@ -82,8 +82,11 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(RolActions, dispatch)
+    actions: bindActionCreators(TipoCursoActions, dispatch)
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(InsertarRol);
+export default connect(
+  mapStateToProps, 
+  mapDispatchToProps
+)(InsertarTipoCurso);

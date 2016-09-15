@@ -48,7 +48,7 @@ export function listar() {
   return dispatch =>
     axios.get(ROL_GET_ROLES)
       .then(response => {
-        if (response.status >= 200 && response.status < 300) {
+        if (response.status >= 200 && response.status < 300 && response.data.result) {
           console.log('=>=> Response listar rol: ', response);
           dispatch(rolesRequest(response));
         } else {
@@ -73,7 +73,7 @@ export function registrar(rol_data) {
       rol_nombrerol: rol_data.descripcion
     })
       .then(function (response) {
-        if (response.status >= 200 && response.status < 300) {
+        if (response.status >= 200 && response.status < 300 && response.data.result) {
           console.log('=>=> Response registrar rol: ', response);
           dispatch(rol_post_request(response));
         } else {
