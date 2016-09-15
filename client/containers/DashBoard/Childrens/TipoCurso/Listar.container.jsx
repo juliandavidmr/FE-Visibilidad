@@ -6,10 +6,10 @@ import React, {Component, PropTypes, applyMiddleware } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import ListarRolesComponent from '../../../../components/Dashboard/Childrens/Rol/ListarRoles.component.jsx';
-import * as RolActions from '../../../../actions/rol.js';
+import ListarTipoCursoComponent from '../../../../components/Dashboard/Childrens/TipoCurso/ListarTipoCurso.component.jsx';
+import * as TipoCursoActions from '../../../../actions/tipocurso.js';
 
-class ListarRoles extends Component {
+class ListarTipoCurso extends Component {
   constructor(props) {
     super(props);
 
@@ -24,10 +24,10 @@ class ListarRoles extends Component {
     const { actions } = this.props;
 
     actions.listar().then(() => {
-      console.log('list roles ===>>=>==> ', this.props.rol.rol);
+      console.log('list tiposcurso ===>>=>==> ', this.props.tipocurso.tipocurso.toJS());
 
       this.setState({
-        tabla_datos: JSON.parse(JSON.stringify(this.props.rol.rol.get('data_list_roles').toArray())),
+        tabla_datos: this.props.tipocurso.tipocurso.toJS().data_list_tipocurso,
         cargando: false
       });
     }).catch(err => {
@@ -45,7 +45,7 @@ class ListarRoles extends Component {
           this.state.cargando ? <div className="col-md-3">
             <div className="box box-danger">
               <div className="box-header">
-                <h3 className="box-title">Cargando roles</h3>
+                <h3 className="box-title">Cargando tipos de cursos</h3>
               </div>
               <div className="box-body">
                 Espere por favor...
@@ -58,7 +58,7 @@ class ListarRoles extends Component {
           </div> : ''
         }
 
-        <ListarRolesComponent tabla_datos={this.state.tabla_datos} />
+        <ListarTipoCursoComponent tabla_datos={this.state.tabla_datos} />
       </div>
     );
   }
@@ -68,17 +68,17 @@ function mapStateToProps(state) {
   // console.log("Los state de rol:", state);
 
   return {
-    rol: state.rol
+    tipocurso: state.tipocurso
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(RolActions, dispatch)
+    actions: bindActionCreators(TipoCursoActions, dispatch)
   };
 }
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ListarRoles);
+)(ListarTipoCurso);

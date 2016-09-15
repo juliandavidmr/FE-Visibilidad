@@ -8,11 +8,11 @@ export const CUENTA_CORREO_POST_CUENTA_CORREO = PREFIX + '/cuentacorreo/insert_c
 export const CUENTA_CORREO_DELETE_CUENTA_CORREO = PREFIX + '/cuentacorreo/delete_cuentacorreo';
 
 /**
- * Nivel 
+ * Tipo curso 
  */
-export const TIPO_CURSO_GET_TIPOS_CURSO = PREFIX + '/tipocurso/get_tipocurso';
-export const TIPO_CURSO_POST_TIPO_CURSO = PREFIX + '/tipocurso/insert_tipocurso';
-export const TIPO_CURSO_DELETE_TIPO_CURSO = PREFIX + '/tipocurso/delete_tipocurso';
+export const TIPO_CURSO_GET_TIPOS_CURSO = PREFIX + '/tipo_curso/get_tipo_curso';
+export const TIPO_CURSO_POST_TIPO_CURSO = PREFIX + '/tipo_curso/insert_tipo_curso';
+export const TIPO_CURSO_DELETE_TIPO_CURSO = PREFIX + '/tipo_curso/delete_tipo_curso';
 
 /**
  * Nivel 

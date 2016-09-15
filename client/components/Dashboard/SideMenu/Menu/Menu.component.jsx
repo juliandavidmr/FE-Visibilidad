@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 
 import React, {Component, PropTypes} from 'react';
@@ -48,7 +48,7 @@ class Menu extends Component {
               }
             ]
           } />
-          
+
           <ItemMenu title="Nivel" tree={
             [
               {
@@ -58,6 +58,20 @@ class Menu extends Component {
               }, {
                 text: 'Registrar',
                 href: '/dashboard/nivel/insertar',
+                icon: 'fa fa-circle-o'
+              }
+            ]
+          } />
+
+        <ItemMenu title="Tipos de curso" tree={
+            [
+              {
+                text: 'Listar tipos de curso',
+                href: '/dashboard/tipocurso/listar',
+                icon: 'fa fa-circle-o'
+              }, {
+                text: 'Registrar',
+                href: '/dashboard/tipocurso/insertar',
                 icon: 'fa fa-circle-o'
               }
             ]

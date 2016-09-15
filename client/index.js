@@ -24,6 +24,10 @@ import Nivel from './containers/DashBoard/Childrens/Nivel/index.jsx';
 import InsertarNivel from './containers/DashBoard/Childrens/Nivel/Insertar.container.jsx';
 import ListarNiveles from './containers/DashBoard/Childrens/Nivel/Listar.container.jsx';
 
+import TipoCurso from './containers/DashBoard/Childrens/TipoCurso/index.jsx';
+import InsertarTipoCurso from './containers/DashBoard/Childrens/TipoCurso/Insertar.container.jsx';
+import ListarTiposCursos from './containers/DashBoard/Childrens/TipoCurso/Listar.container.jsx';
+
 import NoMatch from './containers/NoMatch'; // 404 o no encontrado
 
 /*                DashBoard
@@ -40,7 +44,7 @@ const basename = '/';
 ReactDOM.render(
   <Provider store={store} onUpdate={() => window.scrollTo(0, 0) }>
     <Router history={history}>
-      
+
       <Route path={basename} component={Header}>
         <IndexRoute component={Index}/>
 
@@ -57,11 +61,7 @@ ReactDOM.render(
           <Route path="insertar" component={InsertarRol}/>
         </Route>
 
-        <Route path="/registrar" component={Eventos}>
-          <Route path="publicacion" component={About}/>
-        </Route>
-
-        <Route path="/ver" component={Eventos}>
+        <Route path="registrar" component={Eventos}>
           <Route path="publicacion" component={About}/>
         </Route>
 
@@ -69,7 +69,12 @@ ReactDOM.render(
           <Route path="insertar" component={InsertarNivel} />
           <Route path="listar" component={ListarNiveles} />
         </Route>
-        
+
+        <Route path="tipocurso" component={TipoCurso}>
+          <Route path="insertar" component={InsertarTipoCurso} />
+          <Route path="listar" component={ListarTiposCursos} />
+        </Route>
+
       </Route>
 
       <Route path="login" component={Login}></Route>

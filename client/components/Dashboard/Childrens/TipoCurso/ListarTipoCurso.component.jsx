@@ -21,7 +21,7 @@ class ListarTipoCursoComponent extends Component {
 			bgColor: "rgb(238, 193, 213)" //selected row background color
 		};
 
-		const {tabla_datos} = this.props;
+		const { tabla_datos} = this.props;
 
 		// console.log('tabla datos: ', tabla_datos);
 
@@ -46,12 +46,14 @@ class ListarTipoCursoComponent extends Component {
 									search={true}>
 
 									<TableHeaderColumn
-										dataField="ROL_IDROL"
+										dataField="TCRS_IDTIPOCURSO"
 										isKey={true}
 										dataAlign="right"
 										dataSort={true}>ID</TableHeaderColumn>
 
-									<TableHeaderColumn dataField="ROL_NOMBREROL" dataSort={true}>Nombre</TableHeaderColumn>
+									<TableHeaderColumn 
+										dataField="TCRS_DESCRIPCION"
+										dataSort={true}>Descripción</TableHeaderColumn>
 
 								</BootstrapTable>
 							</div>

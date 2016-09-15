@@ -37,7 +37,7 @@ export function error_registrar(error) {
 
 export function tipocurso_listar_request(response) {
   return {
-    error,
+    response,
     type: LISTAR_TIPOS_CURSOS
   };
 }
@@ -71,20 +71,18 @@ export function listar() {
       });
 }
 
-export function registrar(nivel_data) {
-  console.log('Action data nivel: ', nivel_data);
+export function registrar(tipocurso_data) {
+  console.log('Action data tipocurso: ', tipocurso_data);
 
   return dispatch => {
-    axios.post(NIVEL_POST_NIVEL, {
-      nvel_idnivel: Math.floor((Math.random() * 800) + 1),
-      nvel_Nombre: nivel_data.nombre,
-      nvel_descripcion: nivel_data.descripcion,
-      nvel_Estado: nivel_data.estado
+    axios.post(TIPO_CURSO_POST_TIPO_CURSO, {
+      tcrs_idtipocurso: Math.floor((Math.random() * 800) + 1),
+      tcrs_descripcion: tipocurso_data.descripcion
     })
       .then(response => {
         if (response.status >= 200 && response.status < 300 && response.data.result) {
-          console.log('Response registrar nivel: ', response);
-          dispatch(nivel_post_request(response));
+          console.log('Response registrar tipocurso: ', response);
+          dispatch(tipocurso_post_request(response));
         } else {
           const error = new Error(response.statusText);
           error.response = response;

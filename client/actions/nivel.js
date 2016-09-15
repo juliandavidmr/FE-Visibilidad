@@ -79,9 +79,9 @@ export function registrar(nivel_data) {
   return dispatch => {
     axios.post(NIVEL_POST_NIVEL, {
       nvel_idnivel: Math.floor((Math.random() * 800) + 1),
-      nvel_Nombre: nivel_data.nombre,
+      nvel_nombre: nivel_data.nombre,
       nvel_descripcion: nivel_data.descripcion,
-      nvel_Estado: nivel_data.estado
+      nvel_estado: nivel_data.estado
     })
       .then(response => {
         if (response.status >= 200 && response.status < 300 && response.data.result) {

@@ -25,13 +25,13 @@ export function rol(state = initialState, action) {
       return state.merge({
         data_list_roles: action.response.data,
         error: null,
-        result: true
+        result: action.response.data.result
       });
     case INSERTAR_ROL:
       return state.merge({
-        data_list_roles: [],
+        data_list_roles: action.response.data,
         err: null,
-        result: true
+        result: action.response.data.result
       });
     default:
       return state;

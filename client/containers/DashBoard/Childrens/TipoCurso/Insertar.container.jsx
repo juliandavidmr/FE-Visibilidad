@@ -7,7 +7,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import InsertarComponent from '../../../../components/Dashboard/Childrens/TipoCurso/Insertar.component.jsx';
-import * as TipoCursoActions from '../../../../actions/tipo';
+import * as TipoCursoActions from '../../../../actions/tipocurso';
 
 import * as Notification from '../../../../components/MiniComponents/Notifications.js';
 
@@ -38,7 +38,6 @@ class InsertarTipoCurso extends Component {
       console.log('insert rol ===>>=>==> ', this.props.rol);
 
       // Notification.create('Hola!', 'Hola este es el cuerpo!');
-
       this._notificationSystem.addNotification({
         message: 'Registrado exitosamente!',
         level: 'success',
@@ -56,11 +55,13 @@ class InsertarTipoCurso extends Component {
   }
 
   _onChangeInput(event) {
-    this.setState({ descripcion: event.target.value });
+    this.setState({
+      descripcion: event.target.value
+    });
   }
 
   render() {
-    const {rol} = this.props;
+    const { rol } = this.props;
 
     return (
       <form>
@@ -77,7 +78,9 @@ class InsertarTipoCurso extends Component {
 function mapStateToProps(state) {
   // console.log("Los state de rol:", state);
 
-  return { rol: state.rol };
+  return {
+    tipocurso: state.tipocurso
+  };
 }
 
 function mapDispatchToProps(dispatch) {
@@ -87,6 +90,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(
-  mapStateToProps, 
+  mapStateToProps,
   mapDispatchToProps
 )(InsertarTipoCurso);

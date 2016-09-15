@@ -48,7 +48,7 @@ export function listar() {
   return dispatch =>
     axios.get(ROL_GET_ROLES)
       .then(response => {
-        if (response.status >= 200 && response.status < 300 && response.data.result) {
+        if (response.status >= 200 && response.status < 300) {
           console.log('=>=> Response listar rol: ', response);
           dispatch(rolesRequest(response));
         } else {
