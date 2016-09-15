@@ -9,6 +9,8 @@ import { connect } from 'react-redux';
 import ListarRolesComponent from '../../../../components/Dashboard/Childrens/Rol/ListarRoles.component.jsx';
 import * as RolActions from '../../../../actions/rol.js';
 
+import NotificationSystem from 'react-notification-system';
+
 class ListarRoles extends Component {
   constructor(props) {
     super(props);
@@ -17,6 +19,10 @@ class ListarRoles extends Component {
       tabla_datos: [],
       cargando: true
     };
+  }
+
+  componentDidMount() {
+    this._notificationSystem = this.refs.notificationSystem;
   }
 
   // Antes de renderizar el componente
@@ -32,6 +38,10 @@ class ListarRoles extends Component {
       });
     }).catch(err => {
       console.log('ERROR> ', err);
+
+      this.setState({
+        cargando: false
+      });
     });
   }
 
