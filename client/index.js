@@ -16,17 +16,25 @@ import Index from './containers/Index';
 import Header from './containers/Header';
 import Login from './containers/Login';
 
+// Rol
 import Rol from './containers/DashBoard/Childrens/Rol/index.jsx';
 import ListarRoles from './containers/DashBoard/Childrens/Rol/Listar.container.jsx';
 import InsertarRol from './containers/DashBoard/Childrens/Rol/Insertar.container.jsx';
 
+// Nivel
 import Nivel from './containers/DashBoard/Childrens/Nivel/index.jsx';
 import InsertarNivel from './containers/DashBoard/Childrens/Nivel/Insertar.container.jsx';
 import ListarNiveles from './containers/DashBoard/Childrens/Nivel/Listar.container.jsx';
 
+// Tipo de curso
 import TipoCurso from './containers/DashBoard/Childrens/TipoCurso/index.jsx';
 import InsertarTipoCurso from './containers/DashBoard/Childrens/TipoCurso/Insertar.container.jsx';
 import ListarTiposCursos from './containers/DashBoard/Childrens/TipoCurso/Listar.container.jsx';
+
+// Permiso
+import Permiso from './containers/DashBoard/Childrens/Permiso/index.jsx';
+import InsertarPermiso from './containers/DashBoard/Childrens/Permiso/Insertar.container.jsx';
+import ListarPermiso from './containers/DashBoard/Childrens/Permiso/Listar.container.jsx';
 
 import NoMatch from './containers/NoMatch'; // 404 o no encontrado
 
@@ -73,6 +81,11 @@ ReactDOM.render(
         <Route path="tipocurso" component={TipoCurso}>
           <Route path="insertar" component={InsertarTipoCurso} />
           <Route path="listar" component={ListarTiposCursos} />
+        </Route>
+
+        <Route path="permiso" component={Permiso}>
+          <Route path="insertar" component={InsertarPermiso} />
+          <Route path="listar" component={ListarPermiso} />
         </Route>
 
       </Route>

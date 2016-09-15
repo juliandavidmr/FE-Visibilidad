@@ -63,7 +63,7 @@ class Menu extends Component {
             ]
           } />
 
-        <ItemMenu title="Tipos de curso" tree={
+          <ItemMenu title="Tipos de curso" tree={
             [
               {
                 text: 'Listar tipos de curso',
@@ -76,6 +76,21 @@ class Menu extends Component {
               }
             ]
           } />
+
+          <ItemMenu title="Permisos" tree={
+            [
+              {
+                text: 'Listar permisos',
+                href: '/dashboard/permiso/listar',
+                icon: 'fa fa-circle-o'
+              }, {
+                text: 'Registrar',
+                href: '/dashboard/permiso/insertar',
+                icon: 'fa fa-circle-o'
+              }
+            ]
+          } />
+
 
           <ItemMenu title="Layout Options" icon="fa fa-files-o" tree={
             [

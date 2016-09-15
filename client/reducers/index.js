@@ -31,6 +31,7 @@ import tipocurso from './tipocurso';
 import tiponoticia from './tiponoticia';
 import tiponotificacion from './tiponotificacion';
 import usuario from './usuario';
+import permiso from './permiso';
 
 export default combineReducers({
   routing,
@@ -62,5 +63,6 @@ export default combineReducers({
   tipocurso,
   tiponoticia,
   tiponotificacion,
-  usuario
+  usuario,
+  permiso
 });
