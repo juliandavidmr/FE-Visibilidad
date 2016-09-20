@@ -57,7 +57,7 @@ class ListarRolesComponent extends Component {
                   <TableHeaderColumn
                     dataField="ROL_IDROL"
                     isKey={true}
-                    hidden={true}
+                    hidden={false}
                     dataSort={true}>ID</TableHeaderColumn>
 
                   <TableHeaderColumn

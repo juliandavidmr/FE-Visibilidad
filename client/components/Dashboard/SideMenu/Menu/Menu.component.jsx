@@ -84,8 +84,16 @@ class Menu extends Component {
                 href: '/dashboard/permiso/listar',
                 icon: 'fa fa-circle-o'
               }, {
-                text: 'Registrar',
+                text: 'Registrar permiso',
                 href: '/dashboard/permiso/insertar',
+                icon: 'fa fa-circle-o'
+              }, {
+                text: 'Listar subpermisos',
+                href: '/dashboard/subpermiso/listar',
+                icon: 'fa fa-circle-o'
+              }, {
+                text: 'Registrar subpermisos',
+                href: '/dashboard/subpermiso/insertar',
                 icon: 'fa fa-circle-o'
               }
             ]

@@ -1,6 +1,13 @@
 var PREFIX = 'http://172.16.31.150/semilleros/api';
 
 /**
+ * subpermisos 
+ */
+export const SUBPERMISO_GET_SUBPERMISO = PREFIX + '/subpermisos/get_subpermisos';
+export const SUBPERMISO_POST_SUBPERMISO = PREFIX + '/subpermisos/insert_subpermisos';
+export const SUBPERMISO_DELETE_SUBPERMISO = PREFIX + '/subpermisos/delete_subpermisos';
+
+/**
  * permisos 
  */
 export const PERMISO_GET_PERMISO = PREFIX + '/permisos/get_permisos';

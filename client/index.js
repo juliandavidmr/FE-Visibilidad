@@ -36,6 +36,11 @@ import Permiso from './containers/DashBoard/Childrens/Permiso/index.jsx';
 import InsertarPermiso from './containers/DashBoard/Childrens/Permiso/Insertar.container.jsx';
 import ListarPermiso from './containers/DashBoard/Childrens/Permiso/Listar.container.jsx';
 
+// SubPermiso
+import Subpermiso from './containers/DashBoard/Childrens/Subpermiso/index.jsx';
+import InsertarSubpermiso from './containers/DashBoard/Childrens/Subpermiso/Insertar.container.jsx';
+import ListarSubpermiso from './containers/DashBoard/Childrens/Subpermiso/Listar.container.jsx';
+
 import NoMatch from './containers/NoMatch'; // 404 o no encontrado
 
 /*                DashBoard
@@ -86,6 +91,12 @@ ReactDOM.render(
         <Route path="permiso" component={Permiso}>
           <Route path="insertar" component={InsertarPermiso} />
           <Route path="listar" component={ListarPermiso} />
+        </Route>
+
+        <Route path="subpermiso" component={Subpermiso}>
+          <Route path="insertar" component={InsertarSubpermiso} />
+          <Route path="listar" component={ListarSubpermiso} />
+          <Route path="ver/:spId" component={ListarSubpermiso}/>
         </Route>
 
       </Route>
