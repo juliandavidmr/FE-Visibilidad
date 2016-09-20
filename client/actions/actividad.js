@@ -21,7 +21,7 @@ import {
   ACTIVIDAD_POST_ACTIVIDAD
 } from '../constants/api';
 
-export function errorListar(error) {
+export function error_listar(error) {
   return {
     error,
     type: ERROR_LISTAR_ACTIVIDAD
@@ -58,11 +58,11 @@ export function listar() {
           const error = new Error(response.statusText);
           error.response = response;
 
-          dispatch(errorListar(error));
+          dispatch(error_listar(error));
         }
       }).catch(err => {
         const error = new Error(err);
-        dispatch(errorListar(error));
+        dispatch(error_listar(error));
       });
   };
 }
@@ -78,11 +78,11 @@ export function registrar(actividad_data) {
           const error = new Error(response.statusText);
           error.response = response;
 
-          dispatch(errorListar(error));
+          dispatch(error_listar(error));
         }
       }).catch(error => {
         const err = new Error(error);
 
-        dispatch(errorListar(err));
+        dispatch(error_listar(err));
       });
 }
