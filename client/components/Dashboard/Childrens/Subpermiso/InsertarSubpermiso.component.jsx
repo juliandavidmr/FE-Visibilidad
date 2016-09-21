@@ -1,4 +1,15 @@
 import React, {Component, PropTypes} from 'react';
+import Formous from 'formous';
+
+class ErrorText extends Component {
+  render() {
+    return (
+      <div style={{ color: '#f00' }}>
+        {this.props.errorText}
+      </div>
+    );
+  }
+}
 
 class InsertarSubpermisoComponent extends Component {
 	constructor(props) {
@@ -7,7 +18,24 @@ class InsertarSubpermisoComponent extends Component {
 		this.state = {};
 
 		this._onChange = this._onChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
+
+  handleSubmit(formStatus, fields) {
+    if (!formStatus.touched) {
+      alert('Debe llenar el formulario');
+      return;
+    }
+
+    if (!formStatus.valid) {
+      alert('Please address the errors in the form.');
+      return;
+    }
+
+    // All good! Do something with fields.email.value and fields.password.value
+    // console.log(formStatus, fields);
+		this.props.onClickRegistrar();
+  }
 
 
 	/**
@@ -25,13 +53,23 @@ class InsertarSubpermisoComponent extends Component {
 
 	render() {
 		const {
-			onSelectPermiso, // Funcion que detecta los cambios en la seleccion de un permiso
 			permisos_list, // Listado de permisos a mostrar en el dropdown
 			onClick // Componente del boton registrar
 		} = this.props;
 
+		const {
+      fields: {
+				nombre,
+				icono,
+				url,
+				id_permiso
+			},
+      formSubmit,
+    } = this.props;
+
+
 		return (
-			<div className="row">
+			<form className="row" onSubmit={formSubmit(this.handleSubmit) }>
 				<div className="col-xs-12">
 					<div className="box">
 						<div className="box-header">
@@ -44,8 +82,9 @@ class InsertarSubpermisoComponent extends Component {
 										<div className="input-group-addon">
 											<i className="fa fa-laptop"></i>
 										</div>
-										<input name="nombre" type="text" ref="nombre" placeholder="" onChange={this._onChange} />
+										<input name="nombre" type="text" ref="nombre" placeholder="" { ...nombre.events } onChange={this._onChange} />
 									</div>
+									<ErrorText { ...nombre.failProps } />
 								</div>
 
 								<div className="form-group">
@@ -54,8 +93,9 @@ class InsertarSubpermisoComponent extends Component {
 										<div className="input-group-addon">
 											<i className="fa fa-laptop"></i>
 										</div>
-										<input name="icono" type="text" ref="icono" placeholder="" onChange={this._onChange}/>
+										<input name="icono" type="text" ref="icono" placeholder="" { ...icono.events } onChange={this._onChange}/>
 									</div>
+									<ErrorText { ...icono.failProps } />
 								</div>
 
 								<div className="form-group">
@@ -64,13 +104,14 @@ class InsertarSubpermisoComponent extends Component {
 										<div className="input-group-addon">
 											<i className="fa fa-laptop"></i>
 										</div>
-										<input name="url" type="text" ref="url" placeholder="" onChange={this._onChange}/>
+										<input name="url" type="text" ref="url" placeholder="" { ...url.events } onChange={this._onChange}/>
 									</div>
+									<ErrorText { ...url.failProps } />
 								</div>
 
 								<div className="form-group">
-									<label for="sel1">Permiso: </label>
-									<select className="dropdown-menu" id="sel1" name="id_permiso" onChange={this._onChange}>
+									<label>Permiso: </label>
+									<select className="select" id="sel1" name="id_permiso" onChange={this._onChange}>
 										{
 											permisos_list.map((item, i) => {
 												return (
@@ -85,24 +126,72 @@ class InsertarSubpermisoComponent extends Component {
 
 								<div className="form-group">
 									<div className="input-group">
-										{
-											onClick
-										}
+										<button type="submit" className="btn btn-primary">
+											Regitrar
+										</button>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			</form>
 		);
 	}
 }
 
+
+const formousOptions = {
+  fields: {
+    nombre: {
+      tests: [
+        {
+          critical: true,
+          failProps: {
+            errorText: 'El nombre es requerido.'
+          },
+          test(value) {
+            return value !== '';
+          }
+        }
+      ]
+    },
+
+    icono: {
+      tests: [
+        {
+          critical: true,
+          failProps: {
+            errorText: 'El icono no puede ser un numero.'
+          },
+          test(value) {
+
+            return !(/^\d*$/.test(value));
+          }
+        }
+      ]
+    },
+
+		url: {
+      tests: [
+        {
+          critical: true,
+          failProps: {
+            errorText: 'Debe ingresar una url.'
+          },
+          test(value) {
+            return value !== '';
+          }
+        }
+      ]
+    },
+  }
+};
+
 InsertarSubpermisoComponent.propTypes = {
 	onChange: PropTypes.func.isRequired,
 	permisos_list: PropTypes.array.isRequired,
-	onClick: PropTypes.any.isRequired
+	onClickRegistrar: PropTypes.func.isRequired
 };
 
-export default InsertarSubpermisoComponent;
+export default Formous(formousOptions)(InsertarSubpermisoComponent);

@@ -1,6 +1,13 @@
 var PREFIX = 'http://172.16.31.150/semilleros/api';
 
 /**
+ * menu usuario 
+ */
+export const MENU_USUARIO_GET_MENUS_USUARIO = PREFIX + '/menu_usuario/get_menu_usuario';
+export const MENU_USUARIO_POST_MENU_USUARIO = PREFIX + '/menu_usuario/insert_menu_usuario';
+export const MENU_USUARIO_DELETE_MENU_USUARIO = PREFIX + '/menu_usuario/delete_menu_usuario';
+
+/**
  * subpermisos 
  */
 export const SUBPERMISO_GET_SUBPERMISO = PREFIX + '/subpermisos/get_subpermisos';

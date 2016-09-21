@@ -1,7 +1,3 @@
-/**
-  Contenedor para Insertar un permiso
-*/
-
 import React, { Component, PropTypes, applyMiddleware } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -26,9 +22,7 @@ class InsertarSubpermiso extends Component {
     };
 
     this._handleClick = this._handleClick.bind(this);
-    this._onSelectPermiso = this._onSelectPermiso.bind(this);
     this._onChangeText = this._onChangeText.bind(this);
-    this._onSubmit = this._onSubmit.bind(this);
 
     this.fetchPermisos = this.fetchPermisos.bind(this);
   }
@@ -41,6 +35,7 @@ class InsertarSubpermiso extends Component {
     this._notificationSystem = this.refs.notificationSystem;
   }
 
+  // Consulta api para traer listado de permisos
   fetchPermisos() {
     const { actions_permisos, permiso } = this.props;
 
@@ -50,13 +45,7 @@ class InsertarSubpermiso extends Component {
       });
     }).catch(err => {
       console.log('ERROR Listar subpermisos> ', err);
-    });;
-  }
-
-  _onSubmit(e) {
-    e.preventDefault();
-
-
+    });
   }
 
   /**
@@ -87,7 +76,7 @@ class InsertarSubpermiso extends Component {
         autoDismiss: 5
       });
     }).catch(err => {
-      console.log('>>=>==> ', err);
+      console.log('Error registrar >>=>==> ', err);
 
       this._notificationSystem.addNotification({
         message: 'Error al registrar!',
@@ -97,31 +86,18 @@ class InsertarSubpermiso extends Component {
     });
   }
 
-  _onSelectPermiso(event) {
-    console.log('select: ', event.target.value);
-    this.setState({
-      id_permiso: event.target.value
-    });
-  }
-
   render() {
-    const {subpermiso} = this.props;
-
     return (
-      <form onSubmit={this._onSubmit}>
+      <div>
         <InsertarSubpermisoComponent
           onSelectPermiso={this._onSelectPermiso}
+          onClickRegistrar={this._handleClick}
           permisos_list={this.state.permisos_list}
           onChange={this._onChangeText}
-          onClick={
-            <button type="submit" className="btn btn-primary" onClick={this._handleClick}>
-              Regitrar
-            </button>
-          }
-          />
+        />
 
         <NotificationSystem ref="notificationSystem" />
-      </form>
+      </div>
     );
   }
 }

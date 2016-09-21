@@ -47,31 +47,33 @@ class LoginComponent extends Component {
       formSubmit,
     } = this.props;
 
-    return <div>
-      <form onSubmit={formSubmit(this.handleSubmit) }>
-        <div>
-          <input
-            placeholder="email"
-            type="text"
-            value={ email.value }
-            { ...email.events }
-            />
-          <ErrorText { ...email.failProps } />
-        </div>
-        <div>
-          <input
-            placeholder="password"
-            type="text"
-            value={password.value}
-            { ...password.events }
-            />
-          <ErrorText { ...password.failProps } />
-        </div>
-        <div>
-          <button type="submit">Iniciar sesión</button>
-        </div>
-      </form>
-    </div>
+    return (
+      <div>
+        <form onSubmit={formSubmit(this.handleSubmit) }>
+          <div>
+            <input
+              placeholder="email"
+              type="text"
+              value={ email.value }
+              { ...email.events }
+              />
+            <ErrorText { ...email.failProps } />
+          </div>
+          <div>
+            <input
+              placeholder="password"
+              type="text"
+              value={password.value}
+              { ...password.events }
+              />
+            <ErrorText { ...password.failProps } />
+          </div>
+          <div>
+            <button type="submit">Iniciar sesión</button>
+          </div>
+        </form>
+      </div>
+    );
   }
 }
 
@@ -116,4 +118,4 @@ const formousOptions = {
   }
 };
 
-export default Formous(formousOptions)(LoginComponent)
+export default Formous(formousOptions)(LoginComponent);
