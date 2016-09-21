@@ -30,7 +30,7 @@ export function error_listar(error) {
 export function error_post_insert(error) {
   return {
     error,
-    type: ERROR_INSERTAR_PERMISO
+    type: ERROR_INSERTAR_SUBPERMISO
   };
 }
 
@@ -43,7 +43,7 @@ export function subpermiso_listar_request(response) {
   };
 }
 
-export function subpermisos_post_request(response) {
+export function subpermiso_post_request(response) {
   return dispatch => {
     dispatch({
       response,
@@ -74,13 +74,15 @@ export function listar() {
 
 export function registrar(subpermisos_data) {
   return dispatch => {
-    axios.post(PERMISO_POST_PERMISO, {
-      prms_idpermiso:  Math.floor((Math.random() * 800) + 1),
-      prms_nombrepermiso: subpermisos_data.nombre,
-      prms_icono: subpermisos_data.icono
+    axios.post(SUBPERMISO_POST_SUBPERMISO, {
+      spms_idsubpermiso:  Math.floor((Math.random() * 800) + 1),
+      spms_nombresubpermiso: subpermisos_data.nombre,
+      spms_icono: subpermisos_data.icono,
+      spms_url: subpermisos_data.url,
+      prms_fk_idpermiso: subpermisos_data.id_permiso
     })
       .then(response => {
-        if (response.status >= 200 && response.status < 300) {
+        if (response.status >= 200 && response.status < 300 && !!response.data.result) {
           console.log('Response registrar subpermisos: ', response);
           dispatch(subpermiso_post_request(response));
         } else {

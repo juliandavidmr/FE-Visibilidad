@@ -4,10 +4,31 @@ class InsertarSubpermisoComponent extends Component {
 	constructor(props) {
 		super(props);
 
+		this.state = {};
+
+		this._onChange = this._onChange.bind(this);
 	}
 
+
+	/**
+	 * Detecta los cambios en el formulario y los almacena en el state del container
+	 * 
+	 * @param {any} e
+	 * 
+	 * @memberOf InsertarSubpermisoComponent
+	 */
+	_onChange(e) {
+    var state = {};
+    state[e.target.name] = e.target.value;
+    this.props.onChange(state); // Cambia el estado del container
+  }
+
 	render() {
-		const { onClickRegistrar, onChangeTextIcono, onChangeTextNombre, subpermisos_list } = this.props;
+		const {
+			onSelectPermiso, // Funcion que detecta los cambios en la seleccion de un permiso
+			permisos_list, // Listado de permisos a mostrar en el dropdown
+			onClick // Componente del boton registrar
+		} = this.props;
 
 		return (
 			<div className="row">
@@ -23,7 +44,7 @@ class InsertarSubpermisoComponent extends Component {
 										<div className="input-group-addon">
 											<i className="fa fa-laptop"></i>
 										</div>
-										<input type="text" name="" placeholder="" onChange={onChangeTextNombre}/>
+										<input name="nombre" type="text" ref="nombre" placeholder="" onChange={this._onChange} />
 									</div>
 								</div>
 
@@ -33,25 +54,41 @@ class InsertarSubpermisoComponent extends Component {
 										<div className="input-group-addon">
 											<i className="fa fa-laptop"></i>
 										</div>
-										<input type="text" name="" placeholder="" onChange={onChangeTextIcono}/>
+										<input name="icono" type="text" ref="icono" placeholder="" onChange={this._onChange}/>
 									</div>
 								</div>
-						
-								<div className="dropdown">
-									<button className="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-										Permisos
-										<span className="caret"></span>
-									</button>
-									<ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
-										{
 
+								<div className="form-group">
+									<label>Url</label>
+									<div className="input-group">
+										<div className="input-group-addon">
+											<i className="fa fa-laptop"></i>
+										</div>
+										<input name="url" type="text" ref="url" placeholder="" onChange={this._onChange}/>
+									</div>
+								</div>
+
+								<div className="form-group">
+									<label for="sel1">Permiso: </label>
+									<select className="dropdown-menu" id="sel1" name="id_permiso" onChange={this._onChange}>
+										{
+											permisos_list.map((item, i) => {
+												return (
+													<option key={i} value={ item.PRMS_IDPERMISO }>
+														{ item.PRMS_NOMBREPERMISO }
+													</option>
+												);
+											})
 										}
-										<li><a href="#">Action</a></li>
-										<li><a href="#">Another action</a></li>
-										<li><a href="#">Something else here</a></li>
-										<li role="separator" className="divider"></li>
-										<li><a href="#">Separated link</a></li>
-									</ul>
+									</select>
+								</div>
+
+								<div className="form-group">
+									<div className="input-group">
+										{
+											onClick
+										}
+									</div>
 								</div>
 							</div>
 						</div>
@@ -63,9 +100,9 @@ class InsertarSubpermisoComponent extends Component {
 }
 
 InsertarSubpermisoComponent.propTypes = {
-	onChangeTextNombre: PropTypes.func.isRequired,
-	onChangeTextIcono: PropTypes.func.isRequired,
-	subpermisos_list: PropTypes.array.isRequired
+	onChange: PropTypes.func.isRequired,
+	permisos_list: PropTypes.array.isRequired,
+	onClick: PropTypes.any.isRequired
 };
 
 export default InsertarSubpermisoComponent;

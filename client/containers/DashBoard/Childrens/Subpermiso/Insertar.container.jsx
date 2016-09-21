@@ -21,14 +21,19 @@ class InsertarSubpermiso extends Component {
     this.state = {
       nombre: '',
       icono: '',
-      subpermisos_list: []
+      permisos_list: [],
+      id_permiso: -1
     };
 
     this._handleClick = this._handleClick.bind(this);
-    this._onChangeTextNombre = this._onChangeTextNombre.bind(this);
-    this._onChangeTextIcono = this._onChangeTextIcono.bind(this);
-    this.fetchPermisos = this.fetchPermisos.bind(this);
+    this._onSelectPermiso = this._onSelectPermiso.bind(this);
+    this._onChangeText = this._onChangeText.bind(this);
+    this._onSubmit = this._onSubmit.bind(this);
 
+    this.fetchPermisos = this.fetchPermisos.bind(this);
+  }
+
+  componentWillMount() {
     this.fetchPermisos();
   }
 
@@ -37,26 +42,44 @@ class InsertarSubpermiso extends Component {
   }
 
   fetchPermisos() {
-    const { actions_permisos } = this.props;
+    const { actions_permisos, permiso } = this.props;
 
-    actions_permisos.listar().then((subpermisos_list) => {
-
+    actions_permisos.listar().then(() => {
       this.setState({
-        subpermisos_list: subpermisos_list || []
+        permisos_list: permiso.permiso.toJS().data_list_permisos || []
       });
     }).catch(err => {
       console.log('ERROR Listar subpermisos> ', err);
     });;
   }
 
+  _onSubmit(e) {
+    e.preventDefault();
+
+
+  }
+
+  /**
+   * Recoge todos los datos que se escriben en el InsertarSubpermisoComponent
+   * 
+   * @param {any} data
+   * 
+   * @memberOf InsertarSubpermiso
+   */
+  _onChangeText(data) {
+    this.setState(data);
+  }
+
   _handleClick() {
     const { actions_subpermisos } = this.props;
 
-    actions_subpermisos.registrar({ 
+    actions_subpermisos.registrar({
       nombre: this.state.nombre,
-      icono: this.state.icono
+      icono: this.state.icono,
+      url: this.state.url,
+      id_permiso: Number.parseInt(this.state.id_permiso)
     }).then(() => {
-      console.log('insert permiso ===>>=>==> ', this.props.permiso);
+      console.log('insert subpermiso ===>>=>==> ', this.props.subpermiso);
 
       this._notificationSystem.addNotification({
         message: 'Registrado exitosamente!',
@@ -74,15 +97,10 @@ class InsertarSubpermiso extends Component {
     });
   }
 
-  _onChangeTextNombre(event) {
-    this.setState({ 
-      nombre: event.target.value 
-    });
-  }
-
-  _onChangeTextIcono(event) {
-    this.setState({ 
-      icono: event.target.value 
+  _onSelectPermiso(event) {
+    console.log('select: ', event.target.value);
+    this.setState({
+      id_permiso: event.target.value
     });
   }
 
@@ -90,16 +108,17 @@ class InsertarSubpermiso extends Component {
     const {subpermiso} = this.props;
 
     return (
-      <form>
+      <form onSubmit={this._onSubmit}>
         <InsertarSubpermisoComponent
-          onChangeTextNombre={this._onChangeTextNombre}
-          onChangeTextIcono={this._onChangeTextIcono}
-          subpermisos_list={this.state.subpermisos_list}
-        />
-
-        <button type="button" className="btn btn-primary" onClick={this._handleClick}>
-          Regitrar
-        </button>
+          onSelectPermiso={this._onSelectPermiso}
+          permisos_list={this.state.permisos_list}
+          onChange={this._onChangeText}
+          onClick={
+            <button type="submit" className="btn btn-primary" onClick={this._handleClick}>
+              Regitrar
+            </button>
+          }
+          />
 
         <NotificationSystem ref="notificationSystem" />
       </form>
