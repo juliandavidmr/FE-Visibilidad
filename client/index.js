@@ -8,44 +8,14 @@ import React from 'react';
 /**
  * Paginas
  */
+import Index from './containers/Index';
 import Container from './containers/container.jsx';
 import About from './containers/About';
-import App from './containers/App';
 import Eventos from './containers/Eventos';
-import Index from './containers/Index';
 import Header from './containers/Header';
 import Login from './containers/Login';
 
-// Rol
-import Rol from './containers/DashBoard/Childrens/Rol/index.jsx';
-import ListarRoles from './containers/DashBoard/Childrens/Rol/Listar.container.jsx';
-import InsertarRol from './containers/DashBoard/Childrens/Rol/Insertar.container.jsx';
-
-// Nivel
-import Nivel from './containers/DashBoard/Childrens/Nivel/index.jsx';
-import InsertarNivel from './containers/DashBoard/Childrens/Nivel/Insertar.container.jsx';
-import ListarNiveles from './containers/DashBoard/Childrens/Nivel/Listar.container.jsx';
-
-// Tipo de curso
-import TipoCurso from './containers/DashBoard/Childrens/TipoCurso/index.jsx';
-import InsertarTipoCurso from './containers/DashBoard/Childrens/TipoCurso/Insertar.container.jsx';
-import ListarTiposCursos from './containers/DashBoard/Childrens/TipoCurso/Listar.container.jsx';
-
-// Permiso
-import Permiso from './containers/DashBoard/Childrens/Permiso/index.jsx';
-import InsertarPermiso from './containers/DashBoard/Childrens/Permiso/Insertar.container.jsx';
-import ListarPermiso from './containers/DashBoard/Childrens/Permiso/Listar.container.jsx';
-
-// SubPermiso
-import Subpermiso from './containers/DashBoard/Childrens/Subpermiso/index.jsx';
-import InsertarSubpermiso from './containers/DashBoard/Childrens/Subpermiso/Insertar.container.jsx';
-import ListarSubpermiso from './containers/DashBoard/Childrens/Subpermiso/Listar.container.jsx';
-
 import NoMatch from './containers/NoMatch'; // 404 o no encontrado
-
-/*                DashBoard
-*/
-import DashBoard from './containers/DashBoard';
 
 import configure from './store';
 
@@ -55,7 +25,7 @@ const history = syncHistoryWithStore(browserHistory, store);
 const basename = '/';
 
 ReactDOM.render(
-  <Provider store={store} onUpdate={() => window.scrollTo(0, 0) }>
+  <Provider store={store}>
     <Router history={history}>
 
       <Route path={basename} component={Header}>
@@ -66,43 +36,10 @@ ReactDOM.render(
           <Route path="recientes" component={About}/>
         </Route>
         <Route path="/noticias" component={Eventos}/>
-      </Route>
+      </Route>     
 
-      <Route path="dashboard" component={DashBoard}>
-        <Route path="rol" component={Rol}>
-          <Route path="listar" component={ListarRoles}/>
-          <Route path="insertar" component={InsertarRol}/>
-        </Route>
-
-        <Route path="registrar" component={Eventos}>
-          <Route path="publicacion" component={About}/>
-        </Route>
-
-        <Route path="nivel" component={Nivel}>
-          <Route path="insertar" component={InsertarNivel} />
-          <Route path="listar" component={ListarNiveles} />
-        </Route>
-
-        <Route path="tipocurso" component={TipoCurso}>
-          <Route path="insertar" component={InsertarTipoCurso} />
-          <Route path="listar" component={ListarTiposCursos} />
-        </Route>
-
-        <Route path="permiso" component={Permiso}>
-          <Route path="insertar" component={InsertarPermiso} />
-          <Route path="listar" component={ListarPermiso} />
-        </Route>
-
-        <Route path="subpermiso" component={Subpermiso}>
-          <Route path="insertar" component={InsertarSubpermiso} />
-          <Route path="listar" component={ListarSubpermiso} />
-          <Route path="ver/:spId" component={ListarSubpermiso}/>
-        </Route>
-
-      </Route>
-
-      <Route path="login" component={Login}></Route>
-      <Route path="*" component={NoMatch}/>
+      <Route path="login" component={ Login }></Route>
+      <Route path="*" component={ NoMatch }/>
     </Router>
   </Provider>,
   document.getElementById('root')
