@@ -1,5 +1,5 @@
 /**
-  Contenedor para Insertar un rol
+  Contenedor para Insertar un tipo de curso
 */
 
 import React, { Component, PropTypes, applyMiddleware } from 'react';
@@ -30,8 +30,6 @@ class InsertarTipoCurso extends Component {
   }
 
   _handleClick() {
-    console.log('Rgistrando');
-
     const { actions } = this.props;
 
     actions.registrar({ descripcion: this.state.descripcion }).then(() => {
@@ -48,7 +46,7 @@ class InsertarTipoCurso extends Component {
 
       this._notificationSystem.addNotification({
         message: 'Error al registrar!',
-        level: 'danger',
+        level: 'danger',        
         autoDismiss: 5
       });
     });
@@ -76,8 +74,6 @@ class InsertarTipoCurso extends Component {
 }
 
 function mapStateToProps(state) {
-  // console.log("Los state de rol:", state);
-
   return {
     tipocurso: state.tipocurso
   };

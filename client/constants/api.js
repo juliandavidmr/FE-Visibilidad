@@ -1,7 +1,14 @@
 var PREFIX = 'http://172.16.31.150/semilleros/api';
 
 /**
- * menu usuario 
+ * tipo actividad  
+ */
+export const TIPOACTIVIDAD_GET_TIPOACTIVIDAD = PREFIX + '/tipo_actividad/get_tipo_actividad';
+export const TIPOACTIVIDAD_POST_TIPOACTIVIDAD = PREFIX + '/tipo_actividad/insert_tipo_actividad';
+export const TIPOACTIVIDAD_DELETE_TIPOACTIVIDAD = PREFIX + '/tipo_actividad/delete_tipo_actividad';
+
+/**
+ * menu usuario
  */
 export const MENU_USUARIO_GET_MENUS_USUARIO = PREFIX + '/menu_usuario/get_menu_usuario';
 export const MENU_USUARIO_POST_MENU_USUARIO = PREFIX + '/menu_usuario/insert_menu_usuario';

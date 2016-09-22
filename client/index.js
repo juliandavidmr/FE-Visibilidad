@@ -8,8 +8,9 @@ import React from 'react';
 /**
  * Paginas
  */
-import App from './containers/App';
 import Login from './containers/Login';
+
+import Bienvenida from './containers/DashBoard/Childrens/Bienvenida';
 
 // Rol
 import Rol from './containers/DashBoard/Childrens/Rol/index.jsx';
@@ -36,6 +37,11 @@ import Subpermiso from './containers/DashBoard/Childrens/Subpermiso/index.jsx';
 import InsertarSubpermiso from './containers/DashBoard/Childrens/Subpermiso/Insertar.container.jsx';
 import ListarSubpermiso from './containers/DashBoard/Childrens/Subpermiso/Listar.container.jsx';
 
+// Tipo actividad
+import TipoActividad from './containers/DashBoard/Childrens/TipoActividad/index.jsx';
+import InsertarTipoActividad from './containers/DashBoard/Childrens/TipoActividad/Insertar.container.jsx';
+import ListarTipoActividad from './containers/DashBoard/Childrens/TipoActividad/Listar.container.jsx';
+
 import NoMatch from './containers/NoMatch'; // 404 o no encontrado
 
 /*                DashBoard
@@ -54,7 +60,7 @@ ReactDOM.render(
     <Router history={history}>
 
       <Route path={basename} component={DashBoard}>
-        <IndexRoute component={Login}/>
+        <IndexRoute component={Bienvenida}/>
 
         <Route path="rol" component={Rol}>
           <Route path="listar" component={ListarRoles}/>
@@ -69,6 +75,11 @@ ReactDOM.render(
         <Route path="tipocurso" component={TipoCurso}>
           <Route path="insertar" component={InsertarTipoCurso} />
           <Route path="listar" component={ListarTiposCursos} />
+        </Route>
+
+        <Route path="actividad" component={TipoActividad}>
+          <Route path="insertartipo" component={InsertarTipoActividad} />
+          <Route path="listartipos" component={ListarTipoActividad} />
         </Route>
 
         <Route path="permiso" component={Permiso}>

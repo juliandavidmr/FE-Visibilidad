@@ -2,7 +2,6 @@
 import { routerReducer as routing } from 'react-router-redux';
 import { combineReducers } from 'redux';
 
-import todos from './todos';
 import semilleros from './semilleros';
 import dashboard  from './dashboard';
 import login  from './login';
@@ -30,12 +29,12 @@ import tareas from './tareas';
 import tipocurso from './tipocurso';
 import tiponoticia from './tiponoticia';
 import tiponotificacion from './tiponotificacion';
+import tipoactividad from './tipoactividad';
 import usuario from './usuario';
 import permiso from './permiso';
 
 export default combineReducers({
   routing,
-  todos,
   semilleros,
   dashboard,
   login,
@@ -63,6 +62,7 @@ export default combineReducers({
   tipocurso,
   tiponoticia,
   tiponotificacion,
+  tipoactividad,
   usuario,
   permiso
 });

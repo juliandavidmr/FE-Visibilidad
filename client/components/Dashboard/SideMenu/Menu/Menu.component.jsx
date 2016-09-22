@@ -77,7 +77,21 @@ class Menu extends Component {
             ]
           } />
 
-          <ItemMenu title="Permisos" tree={
+          <ItemMenu title="Actividades" tree={
+            [
+              {
+                text: 'Listar tipos de actividades',
+                href: '/dashboard/actividad/insertartipo',
+                icon: 'fa fa-circle-o'
+              }, {
+                text: 'Registrar tipo de actividad',
+                href: '/dashboard/actividad/listartipo',
+                icon: 'fa fa-circle-o'
+              }
+            ]
+          } />
+
+          <ItemMenu title="Permisos" icon="fa fa-files-o" tree={
             [
               {
                 text: 'Listar permisos',

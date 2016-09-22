@@ -1,6 +1,7 @@
 import React, {Component, PropTypes, applyMiddleware } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+
 import DashBoardComponent from '../../components/Dashboard';
 import * as DashBoardActions from '../../actions/dashboard';
 
