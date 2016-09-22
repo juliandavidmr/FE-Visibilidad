@@ -8,12 +8,7 @@ import React from 'react';
 /**
  * Paginas
  */
-import Container from './containers/container.jsx';
-import About from './containers/About';
 import App from './containers/App';
-import Eventos from './containers/Eventos';
-import Index from './containers/Index';
-import Header from './containers/Header';
 import Login from './containers/Login';
 
 // Rol
@@ -52,30 +47,18 @@ import configure from './store';
 const store = configure();
 const history = syncHistoryWithStore(browserHistory, store);
 
-const basename = '/';
+const basename = '/dashboard';
 
 ReactDOM.render(
-  <Provider store={store} onUpdate={() => window.scrollTo(0, 0) }>
+  <Provider store={store}>
     <Router history={history}>
 
-      <Route path={basename} component={Header}>
-        <IndexRoute component={Index}/>
+      <Route path={basename} component={DashBoard}>
+        <IndexRoute component={Login}/>
 
-        <Route path="/acercade" component={About}/>
-        <Route path="/eventos" component={Eventos}>
-          <Route path="recientes" component={About}/>
-        </Route>
-        <Route path="/noticias" component={Eventos}/>
-      </Route>
-
-      <Route path="dashboard" component={DashBoard}>
         <Route path="rol" component={Rol}>
           <Route path="listar" component={ListarRoles}/>
           <Route path="insertar" component={InsertarRol}/>
-        </Route>
-
-        <Route path="registrar" component={Eventos}>
-          <Route path="publicacion" component={About}/>
         </Route>
 
         <Route path="nivel" component={Nivel}>
@@ -99,10 +82,11 @@ ReactDOM.render(
           <Route path="ver/:spId" component={ListarSubpermiso}/>
         </Route>
 
+        <Route path="login" component={Login}></Route>
+        <Route path="*" component={NoMatch}/>
+
       </Route>
 
-      <Route path="login" component={Login}></Route>
-      <Route path="*" component={NoMatch}/>
     </Router>
   </Provider>,
   document.getElementById('root')
