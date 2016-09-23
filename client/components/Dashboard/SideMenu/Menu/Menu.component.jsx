@@ -19,22 +19,6 @@ class Menu extends Component {
         <ul className="sidebar-menu">
           <li className="header">MAIN NAVIGATION</li>
 
-          <ItemMenu title="Dashboard" tree={
-            [
-              {
-                text: 'Menu 1',
-                href: 'una url 1',
-                icon: 'fa fa-circle-o',
-                active: 'active'
-              }, {
-                text: 'Menu 2',
-                href: 'una url 2',
-                icon: 'fa fa-circle-o',
-                active: 'active'
-              }
-            ]
-          } />
-
           <ItemMenu title="Rol" tree={
             [
               {
@@ -113,8 +97,21 @@ class Menu extends Component {
             ]
           } />
 
+          <ItemMenu title="Menu" icon="fa fa-files-o" tree={
+            [
+              {
+                text: 'Ver menu de usuario',
+                href: '/dashboard/menuusuario/listar',
+                icon: 'fa fa-circle-o'
+              }, {
+                text: 'Registrar menu de usuario',
+                href: '/dashboard/menuusuario/insertar',
+                icon: 'fa fa-circle-o'
+              }
+            ]
+          } />
 
-          <ItemMenu title="Layout Options" icon="fa fa-files-o" tree={
+          <ItemMenu title="Layout Options" icon="fa fa-chart" tree={
             [
               {
                 text: 'Top Navigation',

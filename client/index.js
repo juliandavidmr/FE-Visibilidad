@@ -42,6 +42,11 @@ import TipoActividad from './containers/DashBoard/Childrens/TipoActividad/index.
 import InsertarTipoActividad from './containers/DashBoard/Childrens/TipoActividad/Insertar.container.jsx';
 import ListarTipoActividad from './containers/DashBoard/Childrens/TipoActividad/Listar.container.jsx';
 
+// Menu usuario
+import MenuUsuario from './containers/DashBoard/Childrens/MenuUsuario/index.jsx';
+import InsertarMenuUsuario from './containers/DashBoard/Childrens/MenuUsuario/Insertar.container.jsx';
+import ListarMenuUsuario from './containers/DashBoard/Childrens/MenuUsuario/Listar.container.jsx';
+
 import NoMatch from './containers/NoMatch'; // 404 o no encontrado
 
 /*                DashBoard
@@ -85,6 +90,11 @@ ReactDOM.render(
         <Route path="permiso" component={Permiso}>
           <Route path="insertar" component={InsertarPermiso} />
           <Route path="listar" component={ListarPermiso} />
+        </Route>
+
+        <Route path="menuusuario" component={MenuUsuario}>
+          <Route path="insertar" component={InsertarMenuUsuario} />
+          <Route path="listar" component={ListarMenuUsuario} />
         </Route>
 
         <Route path="subpermiso" component={Subpermiso}>

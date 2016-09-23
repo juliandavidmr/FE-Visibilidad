@@ -27,13 +27,13 @@ const initialState = new Immutable.Map({
 
 export function tipotipoactividad(state = initialState, action) {
   switch (action.type) {
-    case LISTAR_TIPOS_CURSOS:
+    case LISTAR_TIPOS_ACTIVIDADES:
       return state.merge({
         data_list_tipoactividades: action.response.data,
         error: null,
         result: action.response.data.result
       });
-    case INSERTAR_TIPO_CURSO:
+    case INSERTAR_TIPO_ACTIVIDAD:
       return state.merge({
         data_list_tipoactividades: action.response.data,
         error: null,

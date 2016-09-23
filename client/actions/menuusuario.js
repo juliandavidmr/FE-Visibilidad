@@ -57,9 +57,9 @@ export function listar() {
     axios.get(MENU_USUARIO_GET_MENUS_USUARIO)
       .then(response => {
         if (response.status >= 200 && response.status < 300) {
-          console.log('Response listar subpermisos: ', response);
+          console.log('Response listar menuusuario: ', response);
 
-          dispatch(subpermiso_listar_request(response));
+          dispatch(menu_usuario_listar_request(response));
         } else {
           const error = new Error(response.statusText);
           error.response = response;
@@ -81,8 +81,8 @@ export function registrar(subpermisos_data) {
     })
       .then(response => {
         if (response.status >= 200 && response.status < 300 && !!response.data.result) {
-          console.log('Response registrar subpermisos: ', response);
-          dispatch(subpermiso_post_request(response));
+          console.log('Response registrar menuusuario: ', response);
+          dispatch(menu_usuario_post_request(response));
         } else {
           const error = new Error(response.statusText);
           error.response = response;
