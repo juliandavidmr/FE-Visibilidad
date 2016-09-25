@@ -63,6 +63,9 @@ const basename = '/dashboard';
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
+      <Route path="/" component={DashBoard}>
+        
+      </Route>      
 
       <Route path={basename} component={DashBoard}>
         <IndexRoute component={Bienvenida}/>
