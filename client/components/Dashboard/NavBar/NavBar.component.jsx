@@ -18,7 +18,6 @@ class NavBar extends Component {
   }
 
   render() {
-
     return (
       <header className="main-header">
         <a href="index2.html" className="logo">

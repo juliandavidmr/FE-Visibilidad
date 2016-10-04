@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 
-import { Link } from 'react-router';
+import {Link} from 'react-router';
 
 class ItemMenu extends Component {
   constructor(props) {
@@ -12,13 +12,13 @@ class ItemMenu extends Component {
       tree: []
     };
 
-    this._handleClick = this._handleClick.bind(this);
+    this._handleClick = this
+      ._handleClick
+      .bind(this);
   }
 
   componentDidMount() {
-    this.setState({
-      tree: this.props.tree
-    });
+    this.setState({tree: this.props.tree});
   }
 
   _handleClick() {
@@ -38,32 +38,39 @@ class ItemMenu extends Component {
   }
 
   render() {
-    const { title, icon, span } = this.props;
+    const {title, icon, span} = this.props;
 
     return (
       <li className={this.state.classNameActive}>
-        <a href="#" onClick={ this._handleClick }>
+        <a href="#" onClick={this._handleClick}>
           <i className={icon}></i>
           <span>{title}</span>
           <i className="fa fa-angle-left pull-right"></i>
 
           {
-            (span) ? <span className={span.className}>{span.text}</span> : ''
+            span
+            ? <span className={span.className}>{span.text}</span>
+            : ''
           }
 
         </a>
         <ul className="treeview-menu">
           {
-            this.state.tree ? this.state.tree.map((item, i) => {
-              return (
-                <li key={i}>
-                  <Link to={item.href} activeClassName="active">
-                    <i className={item.icon}></i>
-                    {item.text}
-                  </Link>
-                </li>
-              );
-            }) : ''
+            this.state.tree
+            ? this
+              .state
+              .tree
+              .map((item, i) => {
+                return (
+                  <li key={i}>
+                    <Link to={item.href} activeClassName="active">
+                      <i className={item.icon}></i>
+                      {item.text}
+                    </Link>
+                  </li>
+                );
+              })
+            : ''
           }
         </ul>
       </li>
@@ -74,7 +81,7 @@ class ItemMenu extends Component {
 ItemMenu.propTypes = {
   title: PropTypes.string.isRequired,
   icon: PropTypes.string,
-  span: PropTypes.any,
+  span: PropTypes.any
 };
 
 export default ItemMenu;

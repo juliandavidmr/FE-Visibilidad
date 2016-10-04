@@ -15,7 +15,11 @@ class SideMenu extends Component {
 
         <section className="sidebar">
 
-          <PanelUser src="/assets/img/user2-160x160.jpg" text="Usuario XYS" online={true} />
+          <PanelUser
+            src="/assets/img/user2-160x160.jpg"
+            text="Usuario XYS"
+            online={true}
+          />
 
           <form action="#" method="get" className="sidebar-form">
             <div className="input-group">
@@ -28,7 +32,8 @@ class SideMenu extends Component {
             </div>
           </form>
 
-          <Menu />
+          <Menu/>
+
         </section>
 
       </aside>

@@ -1,7 +1,3 @@
-/**
- *
- */
-
 import React, {Component, PropTypes} from 'react';
 
 import ItemMenu from '../ItemMenu/ItemMenu.component.jsx';
@@ -19,125 +15,138 @@ class Menu extends Component {
         <ul className="sidebar-menu">
           <li className="header">MAIN NAVIGATION</li>
 
-          <ItemMenu title="Rol" tree={
-            [
-              {
-                text: 'Ver listado',
-                href: '/dashboard/rol/listar',
-                icon: 'fa fa-circle-o'
-              }, {
-                text: 'Registrar',
-                href: '/dashboard/rol/insertar',
-                icon: 'fa fa-circle-o'
-              }
-            ]
-          } />
+          <ItemMenu
+            title="Rol"
+            tree={[
+            {
+              text: 'Ver listado',
+              href: '/dashboard/rol/listar',
+              icon: 'fa fa-circle-o'
+            }, {
+              text: 'Registrar',
+              href: '/dashboard/rol/insertar',
+              icon: 'fa fa-circle-o'
+            }
+          ]}/>
 
-          <ItemMenu title="Nivel" tree={
-            [
-              {
-                text: 'Ver niveles',
-                href: '/dashboard/nivel/listar',
-                icon: 'fa fa-circle-o'
-              }, {
-                text: 'Registrar',
-                href: '/dashboard/nivel/insertar',
-                icon: 'fa fa-circle-o'
-              }
-            ]
-          } />
+          <ItemMenu
+            title="Nivel"
+            tree={[
+            {
+              text: 'Ver niveles',
+              href: '/dashboard/nivel/listar',
+              icon: 'fa fa-circle-o'
+            }, {
+              text: 'Registrar',
+              href: '/dashboard/nivel/insertar',
+              icon: 'fa fa-circle-o'
+            }
+          ]}/>
 
-          <ItemMenu title="Tipos de curso" tree={
-            [
-              {
-                text: 'Listar tipos de curso',
-                href: '/dashboard/tipocurso/listar',
-                icon: 'fa fa-circle-o'
-              }, {
-                text: 'Registrar',
-                href: '/dashboard/tipocurso/insertar',
-                icon: 'fa fa-circle-o'
-              }
-            ]
-          } />
+          <ItemMenu
+            title="Tipos de curso"
+            tree={[
+            {
+              text: 'Listar tipos de curso',
+              href: '/dashboard/tipocurso/listar',
+              icon: 'fa fa-circle-o'
+            }, {
+              text: 'Registrar',
+              href: '/dashboard/tipocurso/insertar',
+              icon: 'fa fa-circle-o'
+            }
+          ]}/>
 
-          <ItemMenu title="Actividades" tree={
-            [
-              {
-                text: 'Listar tipos de actividades',
-                href: '/dashboard/actividad/insertartipo',
-                icon: 'fa fa-circle-o'
-              }, {
-                text: 'Registrar tipo de actividad',
-                href: '/dashboard/actividad/listartipo',
-                icon: 'fa fa-circle-o'
-              }
-            ]
-          } />
+          <ItemMenu
+            title="Actividades"
+            tree={[
+            {
+              text: 'Listar tipos de actividades',
+              href: '/dashboard/actividad/insertartipo',
+              icon: 'fa fa-circle-o'
+            }, {
+              text: 'Registrar tipo de actividad',
+              href: '/dashboard/actividad/listartipo',
+              icon: 'fa fa-circle-o'
+            }
+          ]}/>
 
-          <ItemMenu title="Permisos" icon="fa fa-files-o" tree={
-            [
-              {
-                text: 'Listar permisos',
-                href: '/dashboard/permiso/listar',
-                icon: 'fa fa-circle-o'
-              }, {
-                text: 'Registrar permiso',
-                href: '/dashboard/permiso/insertar',
-                icon: 'fa fa-circle-o'
-              }, {
-                text: 'Listar subpermisos',
-                href: '/dashboard/subpermiso/listar',
-                icon: 'fa fa-circle-o'
-              }, {
-                text: 'Registrar subpermisos',
-                href: '/dashboard/subpermiso/insertar',
-                icon: 'fa fa-circle-o'
-              }
-            ]
-          } />
+          <ItemMenu
+            title="Permisos"
+            icon="fa fa-files-o"
+            tree={[
+            {
+              text: 'Listar permisos',
+              href: '/dashboard/permiso/listar',
+              icon: 'fa fa-circle-o'
+            }, {
+              text: 'Registrar permiso',
+              href: '/dashboard/permiso/insertar',
+              icon: 'fa fa-circle-o'
+            }, {
+              text: 'Listar subpermisos',
+              href: '/dashboard/subpermiso/listar',
+              icon: 'fa fa-circle-o'
+            }, {
+              text: 'Registrar subpermisos',
+              href: '/dashboard/subpermiso/insertar',
+              icon: 'fa fa-circle-o'
+            }
+          ]}/>
 
-          <ItemMenu title="Menu" icon="fa fa-files-o" tree={
-            [
-              {
-                text: 'Ver menu de usuario',
-                href: '/dashboard/menuusuario/listar',
-                icon: 'fa fa-circle-o'
-              }, {
-                text: 'Registrar menu de usuario',
-                href: '/dashboard/menuusuario/insertar',
-                icon: 'fa fa-circle-o'
-              }
-            ]
-          } />
+          <ItemMenu
+            title="Menu"
+            icon="fa fa-files-o"
+            tree={[
+            {
+              text: 'Ver menu de usuario',
+              href: '/dashboard/menuusuario/listar',
+              icon: 'fa fa-circle-o'
+            }, {
+              text: 'Registrar menu de usuario',
+              href: '/dashboard/menuusuario/insertar',
+              icon: 'fa fa-circle-o'
+            }
+          ]}/>
 
-          <ItemMenu title="Layout Options" icon="fa fa-chart" tree={
-            [
-              {
-                text: 'Top Navigation',
-                href: 'una url 1',
-                icon: 'fa fa-circle-o',
-                active: 'active'
-              }, {
-                text: 'Menu 2',
-                href: 'una url 2',
-                icon: 'fa fa-circle-o',
-                active: 'Boxed'
-              }, {
-                text: 'Menu 3',
-                href: 'una url 2',
-                icon: 'fa fa-circle-o',
-                active: 'Boxed'
-              }, {
-                text: 'Menu 4',
-                href: 'una url 2',
-                icon: 'fa fa-circle-o',
-                active: 'Boxed'
-              }
-            ]
-          } span={{ text: '4', className: 'label label-primary pull-right' }} />
+          <ItemMenu
+            title="Layout Options"
+            icon="fa fa-chart"
+            tree={[
+            {
+              text: 'Top Navigation',
+              href: 'una url 1',
+              icon: 'fa fa-circle-o',
+              active: 'active'
+            }, {
+              text: 'Menu 2',
+              href: 'una url 2',
+              icon: 'fa fa-circle-o',
+              active: 'Boxed'
+            }, {
+              text: 'Menu 3',
+              href: 'una url 2',
+              icon: 'fa fa-circle-o',
+              active: 'Boxed'
+            }, {
+              text: 'Menu 4',
+              href: 'una url 2',
+              icon: 'fa fa-circle-o',
+              active: 'Boxed'
+            }
+          ]}
+            span={{
+            text: '4',
+            className: 'label label-primary pull-right'
+          }}/>
 
-          <ItemMenu title="Widgets" icon="fa fa-th" span={{ text: 'new', className: 'label pull-right bg-green' }} />
+          <ItemMenu
+            title="Widgets"
+            icon="fa fa-th"
+            span={{
+            text: 'new',
+            className: 'label pull-right bg-green'
+          }}/>
 
           <li className="treeview">
             <a href="#">
@@ -396,8 +405,6 @@ class Menu extends Component {
   }
 }
 
-Menu.propTypes = {
-
-};
+Menu.propTypes = {};
 
 export default Menu;
