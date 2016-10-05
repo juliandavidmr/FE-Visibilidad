@@ -23,7 +23,7 @@ class InsertarNivel extends Component {
 
   /**
    * Boton de registrar
-   * 
+   *
    * @memberOf InsertarNivel
    */
   _handleClick() {
@@ -34,7 +34,7 @@ class InsertarNivel extends Component {
     actions.registrar({
        nombre: this.state.nombre,
        descripcion: this.state.descripcion,
-       estado: this.state.estado    
+       estado: this.state.estado
     }).then(() => {
       console.log('Nivel registrado');
     });
@@ -42,9 +42,9 @@ class InsertarNivel extends Component {
 
   /**
    * Detecta los cambios de estado del campo de texto Nombre
-   * 
+   *
    * @param {any} event
-   * 
+   *
    * @memberOf InsertarNivel
    */
   _onChangeInputNombre(event) {
@@ -55,9 +55,9 @@ class InsertarNivel extends Component {
 
   /**
    * Detecta los cambios de estado del campo Descripcion
-   * 
+   *
    * @param {any} event
-   * 
+   *
    * @memberOf InsertarNivel
    */
   _onChangeInputDescripcion(event) {
@@ -79,7 +79,7 @@ class InsertarNivel extends Component {
           onChangeTextNombre={ this._onChangeInputNombre }
           onChangeTextDescripcion={ this._onChangeInputDescripcion}
           botonguardar={button}
-          />
+        />
       </div>
     );
   }

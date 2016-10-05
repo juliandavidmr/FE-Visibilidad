@@ -1,4 +1,3 @@
-
 /*
 	Estados del reducer
 */

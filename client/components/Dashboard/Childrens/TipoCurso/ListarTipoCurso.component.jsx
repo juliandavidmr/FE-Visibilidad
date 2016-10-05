@@ -21,7 +21,7 @@ class ListarTipoCursoComponent extends Component {
 			bgColor: "rgb(238, 193, 213)" //selected row background color
 		};
 
-		const { tabla_datos} = this.props;
+		const { tabla_datos } = this.props;
 
 		// console.log('tabla datos: ', tabla_datos);
 
@@ -33,7 +33,8 @@ class ListarTipoCursoComponent extends Component {
 							<h3 className="box-title">Listado de TipoCurso</h3>
 
 							<div className="box-body">
-								<BootstrapTable data={tabla_datos}
+								<BootstrapTable
+									data={tabla_datos}
 									striped={true}
 									hover={true}
 									condensed={true}
@@ -51,7 +52,7 @@ class ListarTipoCursoComponent extends Component {
 										dataAlign="right"
 										dataSort={true}>ID</TableHeaderColumn>
 
-									<TableHeaderColumn 
+									<TableHeaderColumn
 										dataField="TCRS_DESCRIPCION"
 										dataSort={true}>Descripción</TableHeaderColumn>
 
