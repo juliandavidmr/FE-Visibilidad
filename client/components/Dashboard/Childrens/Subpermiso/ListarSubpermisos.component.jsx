@@ -52,7 +52,7 @@ class ListarSubpermisosComponent extends Component {
 										dataSort={true}>ID</TableHeaderColumn>
 
 									<TableHeaderColumn
-										dataField="SPMS_SUBNOMBREPERMISO"
+										dataField="SPMS_NOMBRESUBPERMISO"
 										dataSort={true}>Nombre</TableHeaderColumn>
 
 									<TableHeaderColumn

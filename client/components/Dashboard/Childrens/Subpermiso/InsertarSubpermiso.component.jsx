@@ -42,7 +42,6 @@ class InsertarSubpermisoComponent extends Component {
 	 * Detecta los cambios en el formulario y los almacena en el state del container
 	 *
 	 * @param {any} e
-	 *
 	 * @memberOf InsertarSubpermisoComponent
 	 */
 	_onChange(e) {
@@ -139,7 +138,6 @@ class InsertarSubpermisoComponent extends Component {
 	}
 }
 
-
 const formousOptions = {
   fields: {
     nombre: {
@@ -192,4 +190,6 @@ InsertarSubpermisoComponent.propTypes = {
 	onClickRegistrar: PropTypes.func.isRequired
 };
 
-export default Formous(formousOptions)(InsertarSubpermisoComponent);
+export default Formous(formousOptions)(
+	InsertarSubpermisoComponent
+);

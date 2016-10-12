@@ -1,26 +1,15 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 
-class ListarRolesComponent extends Component {
+class ListarProgramaComponent extends Component {
+
   constructor(props) {
     super(props);
 
     this.state = {
-      row_selected: []
+
     };
-
-    this.handleClickRow = this.handleClickRow.bind(this);
-  }
-
-  handleClickRow(row, isSelected, event) {
-    if (isSelected) {
-      console.log('Click en row ', row, isSelected);
-
-      this.setState({
-        row_selected: row
-      });
-    }
   }
 
   render() {
@@ -29,7 +18,9 @@ class ListarRolesComponent extends Component {
       mode: "checkbox", //checkbox for multi select, radio for single select.
       clickToSelect: true, //click row will trigger a selection on that row.
       bgColor: "rgb(238, 193, 213)", //selected row background color
-      onSelect: this.handleClickRow
+      onSelect: () => {
+        console.log('Click');
+      }
     };
 
     const { tabla_datos } = this.props;
@@ -39,7 +30,7 @@ class ListarRolesComponent extends Component {
         <div className="col-xs-12">
           <div className="box">
             <div className="box-header">
-              <h3 className="box-title">Listado de roles</h3>
+              <h3 className="box-title">Listado de programas</h3>
 
               <div className="box-body">
                 <BootstrapTable data={tabla_datos}
@@ -73,9 +64,3 @@ class ListarRolesComponent extends Component {
     );
   }
 }
-
-ListarRolesComponent.propTypes = {
-  tabla_datos: PropTypes.any.isRequired
-};
-
-export default ListarRolesComponent;
