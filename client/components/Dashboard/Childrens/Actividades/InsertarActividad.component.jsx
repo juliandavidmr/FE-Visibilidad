@@ -176,7 +176,7 @@ class InsertarActividadComponent extends Component {
 					</div>
 				</div>
 			</form>
-		)
+		);
 	}
 }
 
@@ -274,7 +274,7 @@ const formousOptions = {
 			]
 		}
 	}
-}
+};
 
 InsertarActividadComponent.propTypes = {
 	evento_list: PropTypes.array.isRequired,

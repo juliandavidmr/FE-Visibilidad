@@ -1,5 +1,13 @@
 var PREFIX = 'http://191.102.85.226/semilleros/api';
 
+
+/**
+ * tipo actividad  
+ */
+export const EVENTO_GET_EVENTOS = PREFIX + '/evento/get_evento';
+export const EVENTO_POST_EVENTO = PREFIX + '/evento/insert_evento';
+export const EVENTO_DELETE_EVENTO = PREFIX + '/evento/delete_evento';
+
 /**
  * tipo actividad  
  */

@@ -25,11 +25,11 @@ const initialState = new Immutable.Map({
   result: false
 });
 
-export function tipotipoactividad(state = initialState, action) {
+export function tipoactividad(state = initialState, action) {
   switch (action.type) {
     case LISTAR_TIPOS_ACTIVIDADES:
       return state.merge({
-        data_list_tipoactividades: action.response.data,
+        data_list_tipoactividades: action.response.data || [],
         error: null,
         result: action.response.data.result
       });
@@ -45,7 +45,7 @@ export function tipotipoactividad(state = initialState, action) {
 }
 
 const Reducer = combineReducers({
-  tipotipoactividad
+  tipoactividad
 });
 
 export default Reducer;

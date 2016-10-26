@@ -55,10 +55,10 @@ export function tipoactividad_post_request(response) {
 
 export function listar() {
   return dispatch =>
-    axios.get(SUBPERMISO_GET_SUBPERMISO)
+    axios.get(TIPOACTIVIDAD_GET_TIPOACTIVIDAD)
       .then(response => {
         if (response.status >= 200 && response.status < 300) {
-          console.log('Response listar subpermisos: ', response);
+          console.log('Response listar tipos de actividad: ', response);
 
           dispatch(tipoactividad_listar_request(response));
         } else {
@@ -84,7 +84,7 @@ export function registrar(subpermisos_data) {
     })
       .then(response => {
         if (response.status >= 200 && response.status < 300 && !!response.data.result) {
-          console.log('Response registrar subpermisos: ', response);
+          console.log('Response registrar tipo de actividad: ', response);
           dispatch(tipoactividad_post_request(response));
         } else {
           const error = new Error(response.statusText);
