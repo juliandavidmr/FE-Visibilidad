@@ -20,11 +20,11 @@ class ListarRolesComponent extends Component {
 
           <div className="box box-danger">
             <div className="box-header">
-              <h3 className="box-title">Input masks</h3>
+              <h3 className="box-title">Registrar semillero</h3>
             </div>
             <div className="box-body">
               <div className="form-group">
-                <label>Nombre rol</label>
+                <label>Nombre del semillero</label>
                 <div className="input-group">
                   <div className="input-group-addon">
                     <i className="fa fa-laptop"></i>

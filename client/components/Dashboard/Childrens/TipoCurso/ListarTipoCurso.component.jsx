@@ -30,7 +30,7 @@ class ListarTipoCursoComponent extends Component {
 				<div className="col-xs-12">
 					<div className="box">
 						<div className="box-header">
-							<h3 className="box-title">Listado de TipoCurso</h3>
+							<h3 className="box-title">Listado de tipos de cursos</h3>
 
 							<div className="box-body">
 								<BootstrapTable data={tabla_datos}
@@ -51,7 +51,7 @@ class ListarTipoCursoComponent extends Component {
 										dataAlign="right"
 										dataSort={true}>ID</TableHeaderColumn>
 
-									<TableHeaderColumn 
+									<TableHeaderColumn
 										dataField="TCRS_DESCRIPCION"
 										dataSort={true}>Descripción</TableHeaderColumn>
 

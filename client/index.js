@@ -57,6 +57,7 @@ import configure from './store';
 
 const store = configure();
 const history = syncHistoryWithStore(browserHistory, store);
+// history.listen(location => analyticsService.track(location.pathname));
 
 const basename = '/dashboard';
 

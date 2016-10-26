@@ -19,7 +19,7 @@ class InsertarTipoCursoComponent extends Component {
 				<div className="col-xs-12">
 					<div className="box">
 						<div className="box-header">
-							<h3 className="box-title">Listado de roles</h3>
+							<h3 className="box-title">Listado de tipos de cursos</h3>
 
 							<div className="box-body">
 								<div className="form-group">

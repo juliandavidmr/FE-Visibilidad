@@ -3,7 +3,7 @@ import Formous from 'formous';
 
 /**
  * Muestra los errores
- * 
+ *
  * @class ErrorText
  * @extends {Component}
  */
@@ -19,7 +19,7 @@ class ErrorText extends Component {
 
 /**
  * Componente de insertar actividad
- * 
+ *
  * @class InsertarTipoActividadComponent
  * @extends {Component}
  */
@@ -35,11 +35,11 @@ class InsertarTipoActividadComponent extends Component {
 
 	/**
 	 * Usado para cuando el form envia parametros
-	 * 
+	 *
 	 * @param {any} formStatus
 	 * @param {any} fields
 	 * @returns
-	 * 
+	 *
 	 * @memberOf InsertarTipoActividadComponent
 	 */
   handleSubmit(formStatus, fields) {
@@ -61,9 +61,9 @@ class InsertarTipoActividadComponent extends Component {
 
 	/**
 	 * Detecta los cambios en el formulario y los almacena en el state del container
-	 * 
+	 *
 	 * @param {any} e
-	 * 
+	 *
 	 * @memberOf InsertarTipoActividadComponent
 	 */
 	_onChange(e) {
@@ -84,7 +84,6 @@ class InsertarTipoActividadComponent extends Component {
 			},
       formSubmit,
     } = this.props;
-
 
 		return (
 			<form className="row" onSubmit={formSubmit(this.handleSubmit) }>
@@ -131,7 +130,6 @@ class InsertarTipoActividadComponent extends Component {
 		);
 	}
 }
-
 
 const formousOptions = {
   fields: {

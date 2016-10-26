@@ -65,6 +65,7 @@ module.exports = {
     })
   ],
   devServer: {
+    historyApiFallback: true,
     contentBase: './client',
     hot: true
   }
