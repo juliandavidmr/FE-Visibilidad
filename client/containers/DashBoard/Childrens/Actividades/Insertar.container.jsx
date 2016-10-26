@@ -2,7 +2,7 @@ import React, { Component, PropTypes, applyMiddleware } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import InsertarActividadComponent from '../../../../components/Dashboard/Childrens/Actividades/InsertarActividad.component.jsx';
+import InsertarActividadComponent from '../../../../components/Dashboard/Childrens/Actividades/Insertar.Actividad.component.jsx';
 
 import * as ActividadActions from '../../../../actions/actividad.js';
 import * as TipoActividad from '../../../../actions/tipoactividad.js';
@@ -20,8 +20,8 @@ class InsertarActividad extends Component {
       id_tipo_actividad: '',
       id_evento: '',
       ruta_adjunto: '',
-      list_eventos: [],
-      list_tipo_actividades: []
+      list_eventos: [], // Listado de eventos
+      list_tipo_actividades: [] // Listado de tipos de actividades
     };
 
     this.fetchTiposActividades = this.fetchTiposActividades.bind(this);
@@ -36,6 +36,11 @@ class InsertarActividad extends Component {
     const { actions_actividad } = this.props;
   }
 
+  /**
+   * Consultar accion para traer el listado de tipos de actividades
+   * 
+   * @memberOf InsertarActividad
+   */
   fetchTiposActividades() {
     const { actions_tipo_actividad } = this.props;
 
@@ -49,6 +54,11 @@ class InsertarActividad extends Component {
     });
   }
 
+  /**
+   * Consultar accion para traer el listado de eventos
+   * 
+   * @memberOf InsertarActividad
+   */
   fetchEventos() {
     const { actions_eventos } = this.props;
     

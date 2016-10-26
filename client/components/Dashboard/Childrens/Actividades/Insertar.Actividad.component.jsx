@@ -44,6 +44,7 @@ class InsertarActividadComponent extends Component {
 
 	/**
    * Detecta los cambios en el formulario y los almacena en el state del container
+	 * 
    * @param {any} e
    * @memberOf InsertarSubpermisoComponent
    */

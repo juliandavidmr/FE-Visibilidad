@@ -11,6 +11,8 @@ import {
   ERROR_ROL
 } from '../constants/rol';
 
+import * as constant from '../constants/_generic';
+
 import Immutable from 'immutable';
 
 const initialState = new Immutable.Map({
@@ -19,19 +21,21 @@ const initialState = new Immutable.Map({
   result: false
 });
 
-export function rol(state = initialState, action) {
+function rol(state = initialState, action) {
   switch (action.type) {
     case LISTAR_ROLES:
       return state.merge({
         data_list_roles: action.response.data,
-        error: null,
-        result: action.response.data.result
+        result: action.response.data.result || false
       });
     case INSERTAR_ROL:
       return state.merge({
         data_list_roles: action.response.data,
-        err: null,
-        result: action.response.data.result
+        result: action.response.data.result || false
+      });
+    case constant.DENEGAR:
+      return state.merge({
+        error: constant.MESSAGE
       });
     default:
       return state;

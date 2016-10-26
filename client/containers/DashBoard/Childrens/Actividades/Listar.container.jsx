@@ -1,17 +1,16 @@
 /**
-  Contenedor para listar roles
+  Contenedor para listar actividades
 */
+
 
 import React, {Component, PropTypes, applyMiddleware } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import ListarRolesComponent from '../../../../components/Dashboard/Childrens/Rol/ListarRoles.component.jsx';
-import * as RolActions from '../../../../actions/rol.js';
+import ListarActividadesComponent from '../../../../components/Dashboard/Childrens/Actividades/Listar.Actividad.component.jsx';
+import * as ActividadActions from '../../../../actions/actividad.js';
 
-import NotificationSystem from 'react-notification-system';
-
-class ListarRoles extends Component {
+class ListarActividades extends Component {
   constructor(props) {
     super(props);
 
@@ -21,28 +20,21 @@ class ListarRoles extends Component {
     };
   }
 
-  componentDidMount() {
-    this._notificationSystem = this.refs.notificationSystem;
-  }
-
   // Antes de renderizar el componente
   componentWillMount() {
     const { actions } = this.props;
 
     actions.listar().then(() => {
-      var data = this.props.rol.rol.toJS();
-      console.log('list roles ===>>=>==> ', data);
+      let data = this.props.actividad.actividad.toJS();
+
+      console.log('list actividades ===>>=>==> ', data);
 
       this.setState({
-        tabla_datos: data.data_list_roles,
+        tabla_datos: data.data_list_actividades,
         cargando: false
       });
     }).catch(err => {
       console.log('ERROR> ', err);
-
-      this.setState({
-        cargando: false
-      });
     });
   }
 
@@ -53,7 +45,7 @@ class ListarRoles extends Component {
           this.state.cargando ? <div className="col-md-3">
             <div className="box box-danger">
               <div className="box-header">
-                <h3 className="box-title">Cargando roles</h3>
+                <h3 className="box-title">Cargando actividades</h3>
               </div>
               <div className="box-body">
                 Espere por favor...
@@ -63,30 +55,30 @@ class ListarRoles extends Component {
                 <i className="fa fa-refresh fa-spin"></i>
               </div>
             </div>
-          </div> : ''
+          </div> : null
         }
 
-        <ListarRolesComponent tabla_datos={this.state.tabla_datos} />
+        <ListarActividadesComponent tabla_datos={this.state.tabla_datos} />
       </div>
     );
   }
 }
 
 function mapStateToProps(state) {
-  // console.log("Los state de rol:", state);
+  // console.log("Los state de activdad:", state);
 
   return {
-    rol: state.rol
+    actividad: state.actividad
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(RolActions, dispatch)
+    actions: bindActionCreators(ActividadActions, dispatch)
   };
 }
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ListarRoles);
+)(ListarActividades);
