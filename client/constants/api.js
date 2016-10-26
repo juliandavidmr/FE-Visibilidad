@@ -1,4 +1,11 @@
-var PREFIX = 'http://172.16.31.150/semilleros/api';
+var PREFIX = 'http://191.102.85.226/semilleros/api';
+
+/**
+ * tipo actividad  
+ */
+export const PROGRAMA_GET_PROGRAMAS = PREFIX + '/programa/get_programa';
+export const PROGRAMA_POST_PROGRAMA = PREFIX + '/programa/insert_programa';
+export const PROGRAMA_DELETE_PROGRAMA = PREFIX + '/programa/delete_programa';
 
 /**
  * tipo actividad  

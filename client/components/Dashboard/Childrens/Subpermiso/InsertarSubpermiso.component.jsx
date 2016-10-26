@@ -40,9 +40,8 @@ class InsertarSubpermisoComponent extends Component {
 
 	/**
 	 * Detecta los cambios en el formulario y los almacena en el state del container
-	 * 
+	 *
 	 * @param {any} e
-	 * 
 	 * @memberOf InsertarSubpermisoComponent
 	 */
 	_onChange(e) {
@@ -66,7 +65,6 @@ class InsertarSubpermisoComponent extends Component {
 			},
       formSubmit,
     } = this.props;
-
 
 		return (
 			<form className="row" onSubmit={formSubmit(this.handleSubmit) }>
@@ -140,7 +138,6 @@ class InsertarSubpermisoComponent extends Component {
 	}
 }
 
-
 const formousOptions = {
   fields: {
     nombre: {
@@ -165,7 +162,6 @@ const formousOptions = {
             errorText: 'El icono no puede ser un numero.'
           },
           test(value) {
-
             return !(/^\d*$/.test(value));
           }
         }
@@ -194,4 +190,6 @@ InsertarSubpermisoComponent.propTypes = {
 	onClickRegistrar: PropTypes.func.isRequired
 };
 
-export default Formous(formousOptions)(InsertarSubpermisoComponent);
+export default Formous(formousOptions)(
+	InsertarSubpermisoComponent
+);

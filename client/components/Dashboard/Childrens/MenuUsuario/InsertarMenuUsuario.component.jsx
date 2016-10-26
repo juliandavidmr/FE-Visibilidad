@@ -32,7 +32,7 @@ class InsertarMenuUsuarioComponent extends Component {
       return;
     }
 
-    // All good! Do something with fields.email.value and fields.password.value    
+    // All good! Do something with fields.email.value and fields.password.value
     // console.log(formStatus, fields);
 
     this.props.onClickRegistrar();
@@ -41,9 +41,7 @@ class InsertarMenuUsuarioComponent extends Component {
 
 	/**
 	 * Detecta los cambios en el formulario y los almacena en el state del container
-	 * 
 	 * @param {any} e
-	 * 
 	 * @memberOf InsertarMenuUsuarioComponent
 	 */
   _onChange(e) {
@@ -55,7 +53,7 @@ class InsertarMenuUsuarioComponent extends Component {
   render() {
     const {
       roles_list, // Listado de roles a mostrar en el dropdown
-      subpermisos_list, // Listado de Subpermisos a mostrar en el dropdown 
+      subpermisos_list, // Listado de Subpermisos a mostrar en el dropdown
       onClick // Componente del boton registrar
     } = this.props;
 
@@ -163,4 +161,6 @@ InsertarMenuUsuarioComponent.propTypes = {
   onClickRegistrar: PropTypes.func.isRequired
 };
 
-export default Formous(formousOptions)(InsertarMenuUsuarioComponent);
+export default Formous(formousOptions)(
+  InsertarMenuUsuarioComponent
+);

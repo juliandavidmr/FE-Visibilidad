@@ -1,33 +1,32 @@
 /**
-  Contenedor para listar permisos
+  Contenedor para listar programas
 */
 
-import React, {Component, PropTypes, applyMiddleware } from 'react';
+import React, { Component, PropTypes, applyMiddleware } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import ListarPermisosComponent from '../../../../components/Dashboard/Childrens/Permiso/ListarPermisos.component.jsx';
-import * as PermisoActions from '../../../../actions/permisos.js';
+import ListarProgramasComponent from '../../../../components/Dashboard/Childrens/Programa/ListarPrograma.component.jsx';
+import * as ProgramaActions from '../../../../actions/programa.js';
 
-class ListarPermisos extends Component {
+class ListarPrograma extends Component {
   constructor(props) {
     super(props);
-
+    
     this.state = {
       tabla_datos: [],
       cargando: true
     };
   }
 
-  // Antes de renderizar el componente
   componentWillMount() {
     const { actions } = this.props;
 
     actions.listar().then(() => {
-      console.log('list permisos ===>>=>==> ', this.props.permiso.permiso.toJS());
+      console.log('list programas ===>>=>==> ', this.props.programa.programa.toJS());
 
       this.setState({
-        tabla_datos: this.props.permiso.permiso.toJS().data_list_permisos,
+        tabla_datos: this.props.programa.programa.toJS().data_list_programas,
         cargando: false
       });
     }).catch(err => {
@@ -42,7 +41,7 @@ class ListarPermisos extends Component {
           this.state.cargando ? <div className="col-md-3">
             <div className="box box-danger">
               <div className="box-header">
-                <h3 className="box-title">Cargando permisos</h3>
+                <h3 className="box-title">Cargando programas</h3>
               </div>
               <div className="box-body">
                 Espere por favor...
@@ -55,26 +54,25 @@ class ListarPermisos extends Component {
           </div> : ''
         }
 
-        <ListarPermisosComponent tabla_datos={this.state.tabla_datos} />
+        <ListarProgramasComponent tabla_datos={this.state.tabla_datos} />
       </div>
     );
   }
 }
 
 function mapStateToProps(state) {
-
   return {
-    permiso: state.permiso
+    programa: state.programa
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(PermisoActions, dispatch)
+    actions: bindActionCreators(ProgramaActions, dispatch)
   };
 }
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ListarPermisos);
+)(ListarPrograma);

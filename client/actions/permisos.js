@@ -55,30 +55,30 @@ export function permiso_post_request(response) {
 export function listar() {
   return dispatch =>
     axios.get(PERMISO_GET_PERMISO)
-      .then(response => {
-        if (response.status >= 200 && response.status < 300) {
-          console.log('Response listar permisos: ', response);
+    .then(response => {
+      if (response.status >= 200 && response.status < 300) {
+        console.log('Response listar permisos: ', response);
 
-          dispatch(permiso_listar_request(response));
-        } else {
-          const error = new Error(response.statusText);
-          error.response = response;
+        dispatch(permiso_listar_request(response));
+      } else {
+        const error = new Error(response.statusText);
+        error.response = response;
 
-          dispatch(error_listar(error));
-        }
-      }).catch(err => {
-        const error = new Error(err);
         dispatch(error_listar(error));
-      });
+      }
+    }).catch(err => {
+      const error = new Error(err);
+      dispatch(error_listar(error));
+    });
 }
 
 export function registrar(permiso_data) {
   return dispatch => {
     axios.post(PERMISO_POST_PERMISO, {
-      prms_idpermiso:  Math.floor((Math.random() * 800) + 1),
-      prms_nombrepermiso: permiso_data.nombre,
-      prms_icono: permiso_data.icono
-    })
+        prms_idpermiso: Math.floor((Math.random() * 800) + 1),
+        prms_nombrepermiso: permiso_data.nombre,
+        prms_icono: permiso_data.icono
+      })
       .then(response => {
         if (response.status >= 200 && response.status < 300) {
           console.log('Response registrar permisos: ', response);

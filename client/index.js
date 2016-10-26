@@ -47,6 +47,13 @@ import MenuUsuario from './containers/DashBoard/Childrens/MenuUsuario/index.jsx'
 import InsertarMenuUsuario from './containers/DashBoard/Childrens/MenuUsuario/Insertar.container.jsx';
 import ListarMenuUsuario from './containers/DashBoard/Childrens/MenuUsuario/Listar.container.jsx';
 
+// Programas
+import Programa from './containers/DashBoard/Childrens/Programa/index.jsx';
+import ListarPrograma from './containers/DashBoard/Childrens/Programa/Listar.container.jsx';
+
+// Actividad
+import InsertarActividad from './containers/DashBoard/Childrens/Actividades/Insertar.container.jsx';
+
 import NoMatch from './containers/NoMatch'; // 404 o no encontrado
 
 /*                DashBoard
@@ -65,8 +72,8 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={DashBoard}>
-        
-      </Route>      
+
+      </Route>
 
       <Route path={basename} component={DashBoard}>
         <IndexRoute component={Bienvenida}/>
@@ -87,6 +94,7 @@ ReactDOM.render(
         </Route>
 
         <Route path="actividad" component={TipoActividad}>
+          <Route path="insertar" component={InsertarActividad} />
           <Route path="insertartipo" component={InsertarTipoActividad} />
           <Route path="listartipos" component={ListarTipoActividad} />
         </Route>
@@ -105,6 +113,11 @@ ReactDOM.render(
           <Route path="insertar" component={InsertarSubpermiso} />
           <Route path="listar" component={ListarSubpermiso} />
           <Route path="ver/:spId" component={ListarSubpermiso}/>
+        </Route>
+
+        <Route path="permiso" component={Programa}>
+          <Route path="insertar" component={ListarPrograma} />
+          <Route path="listar" component={ListarPrograma} />
         </Route>
 
         <Route path="login" component={Login}></Route>
