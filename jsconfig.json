@@ -12,6 +12,7 @@
 		"jspm_packages",
 		"tmp",
 		"temp",
-		"static"
+		"static",
+		"assets"
 	]
 }
