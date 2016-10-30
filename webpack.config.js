@@ -1,6 +1,6 @@
-var rucksack = require('rucksack-css')
-var webpack = require('webpack')
-var path = require('path')
+var rucksack = require('rucksack-css');
+var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
   context: path.join(__dirname, './client'),
@@ -59,7 +59,7 @@ module.exports = {
     })
   ],
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js', Infinity),
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development') }
     })
