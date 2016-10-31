@@ -40,24 +40,21 @@ webpackJsonp([1],[
 
 	var _Header2 = _interopRequireDefault(_Header);
 
-	var _Login = __webpack_require__(385);
-
-	var _Login2 = _interopRequireDefault(_Login);
-
-	var _NoMatch = __webpack_require__(508);
+	var _NoMatch = __webpack_require__(385);
 
 	var _NoMatch2 = _interopRequireDefault(_NoMatch);
 
-	var _store = __webpack_require__(510);
+	var _store = __webpack_require__(387);
 
 	var _store2 = _interopRequireDefault(_store);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	var store = (0, _store2.default)(); // 404 o no encontrado
+
 	/**
 	 * Paginas
 	 */
-	var store = (0, _store2.default)(); // 404 o no encontrado
 
 	var history = (0, _reactRouterRedux.syncHistoryWithStore)(_reactRouter.browserHistory, store);
 
@@ -81,7 +78,6 @@ webpackJsonp([1],[
 	      ),
 	      _react2.default.createElement(_reactRouter.Route, { path: '/noticias', component: _Eventos2.default })
 	    ),
-	    _react2.default.createElement(_reactRouter.Route, { path: 'login', component: _Login2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '*', component: _NoMatch2.default })
 	  )
 	), document.getElementById('root'));
@@ -6136,11 +6132,7 @@ webpackJsonp([1],[
 	  (0, _createClass3.default)(Container, [{
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        this.props.children
-	      );
+	      return this.props.children;
 	    }
 	  }]);
 	  return Container;
@@ -7592,10 +7584,6 @@ webpackJsonp([1],[
 	  value: true
 	});
 
-	var _stringify = __webpack_require__(386);
-
-	var _stringify2 = _interopRequireDefault(_stringify);
-
 	var _getPrototypeOf = __webpack_require__(253);
 
 	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -7624,116 +7612,41 @@ webpackJsonp([1],[
 
 	var _reactRedux = __webpack_require__(98);
 
-	var _LoginComponent = __webpack_require__(388);
+	var _NoMatchComponent = __webpack_require__(386);
 
-	var _LoginComponent2 = _interopRequireDefault(_LoginComponent);
-
-	var _login = __webpack_require__(506);
-
-	var LoginActions = _interopRequireWildcard(_login);
-
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+	var _NoMatchComponent2 = _interopRequireDefault(_NoMatchComponent);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Login = function (_Component) {
-	  (0, _inherits3.default)(Login, _Component);
+	var NoMatch = function (_Component) {
+	  (0, _inherits3.default)(NoMatch, _Component);
 
-	  function Login(props) {
-	    (0, _classCallCheck3.default)(this, Login);
-	    return (0, _possibleConstructorReturn3.default)(this, (Login.__proto__ || (0, _getPrototypeOf2.default)(Login)).call(this, props));
+	  function NoMatch() {
+	    (0, _classCallCheck3.default)(this, NoMatch);
+	    return (0, _possibleConstructorReturn3.default)(this, (NoMatch.__proto__ || (0, _getPrototypeOf2.default)(NoMatch)).apply(this, arguments));
 	  }
 
-	  (0, _createClass3.default)(Login, [{
-	    key: 'componentWillMount',
-	    value: function componentWillMount() {}
-	  }, {
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {}
-	  }, {
-	    key: '_handleClick',
-	    value: function _handleClick() {
-	      var _this2 = this;
-
-	      var actions = this.props.actions;
-
-
-	      actions.login({ email: 'elemail@hotmail.com', password: '321123' }).then(function () {
-	        console.log('===>>=>==> ', _this2.props.login);
-	      }).catch(function (err) {
-	        console.log('>>=>==> ', err);
-	      });
-	    }
-	  }, {
+	  (0, _createClass3.default)(NoMatch, [{
 	    key: 'render',
 	    value: function render() {
-	      var _props = this.props;
-	      var login = _props.login;
-	      var actions = _props.actions;
-
-	      // this.props.login();
-
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          'Login'
-	        ),
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          (0, _stringify2.default)(login)
-	        ),
-	        _react2.default.createElement(
-	          'button',
-	          { onClick: this._handleClick.bind(this) },
-	          'Click'
-	        ),
-	        _react2.default.createElement(_LoginComponent2.default, null)
+	        _react2.default.createElement(_NoMatchComponent2.default, null)
 	      );
 	    }
 	  }]);
-	  return Login;
+	  return NoMatch;
 	}(_react.Component);
 
-	function mapStateToProps(state) {
-	  console.log("Los state de login:", state);
+	NoMatch.propTypes = {};
 
-	  return {
-	    login: state.login
-	  };
-	}
-
-	function mapDispatchToProps(dispatch) {
-	  return {
-	    actions: (0, _redux.bindActionCreators)(LoginActions, dispatch)
-	  };
-	}
-
-	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Login);
+	exports.default = NoMatch;
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
 /* 386 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(387), __esModule: true };
-
-/***/ },
-/* 387 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var core  = __webpack_require__(266)
-	  , $JSON = core.JSON || (core.JSON = {stringify: JSON.stringify});
-	module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
-	  return $JSON.stringify.apply($JSON, arguments);
-	};
-
-/***/ },
-/* 388 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -7743,10 +7656,6 @@ webpackJsonp([1],[
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-
-	var _extends2 = __webpack_require__(389);
-
-	var _extends3 = _interopRequireDefault(_extends2);
 
 	var _getPrototypeOf = __webpack_require__(253);
 
@@ -7772,614 +7681,387 @@ webpackJsonp([1],[
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _formous = __webpack_require__(394);
-
-	var _formous2 = _interopRequireDefault(_formous);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var ErrorText = function (_Component) {
-	  (0, _inherits3.default)(ErrorText, _Component);
+	var NoMatchComponent = function (_Component) {
+	  (0, _inherits3.default)(NoMatchComponent, _Component);
 
-	  function ErrorText() {
-	    (0, _classCallCheck3.default)(this, ErrorText);
-	    return (0, _possibleConstructorReturn3.default)(this, (ErrorText.__proto__ || (0, _getPrototypeOf2.default)(ErrorText)).apply(this, arguments));
+	  function NoMatchComponent() {
+	    (0, _classCallCheck3.default)(this, NoMatchComponent);
+	    return (0, _possibleConstructorReturn3.default)(this, (NoMatchComponent.__proto__ || (0, _getPrototypeOf2.default)(NoMatchComponent)).apply(this, arguments));
 	  }
 
-	  (0, _createClass3.default)(ErrorText, [{
+	  (0, _createClass3.default)(NoMatchComponent, [{
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        { style: { color: '#f00' } },
-	        this.props.errorText
-	      );
-	    }
-	  }]);
-	  return ErrorText;
-	}(_react.Component);
-
-	var LoginComponent = function (_Component2) {
-	  (0, _inherits3.default)(LoginComponent, _Component2);
-
-	  function LoginComponent(props) {
-	    (0, _classCallCheck3.default)(this, LoginComponent);
-	    return (0, _possibleConstructorReturn3.default)(this, (LoginComponent.__proto__ || (0, _getPrototypeOf2.default)(LoginComponent)).call(this, props));
-	  }
-
-	  (0, _createClass3.default)(LoginComponent, [{
-	    key: 'componentWillReceiveProps',
-	    value: function componentWillReceiveProps(nextProps) {
-	      // Set default form values (might be appropriate in a different method
-	      this.props.setDefaultValues({
-	        password: 33,
-	        email: 'Sir Fluffalot'
-	      });
-	    }
-	  }, {
-	    key: 'handleSubmit',
-	    value: function handleSubmit(formStatus, fields) {
-	      if (!formStatus.touched) {
-	        alert('Please fill out the form.');
-	        return;
-	      }
-
-	      if (!formStatus.valid) {
-	        alert('Please address the errors in the form.');
-	        return;
-	      }
-
-	      // All good! Do something with fields.email.value and fields.password.value
-	      console.log(formStatus, fields);
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var _props = this.props;
-	      var _props$fields = _props.fields;
-	      var password = _props$fields.password;
-	      var email = _props$fields.email;
-	      var formSubmit = _props.formSubmit;
-
-
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(
-	          'form',
-	          { onSubmit: formSubmit(this.handleSubmit) },
-	          _react2.default.createElement(
-	            'div',
-	            null,
-	            _react2.default.createElement('input', (0, _extends3.default)({
-	              placeholder: 'email',
-	              type: 'text',
-	              value: email.value
-	            }, email.events)),
-	            _react2.default.createElement(ErrorText, email.failProps)
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            null,
-	            _react2.default.createElement('input', (0, _extends3.default)({
-	              placeholder: 'password',
-	              type: 'text',
-	              value: password.value
-	            }, password.events)),
-	            _react2.default.createElement(ErrorText, password.failProps)
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            null,
-	            _react2.default.createElement(
-	              'button',
-	              { type: 'submit' },
-	              'Iniciar sesión'
-	            )
-	          )
-	        )
+	        'No encontrado'
 	      );
 	    }
 	  }]);
-	  return LoginComponent;
+	  return NoMatchComponent;
 	}(_react.Component);
 
-	var formousOptions = {
-	  fields: {
-	    email: {
-	      tests: [{
-	        critical: true,
-	        failProps: {
-	          errorText: 'email is required.'
-	        },
-	        test: function test(value) {
-	          return value !== '';
-	        }
-	      }]
-	    },
+	NoMatchComponent.propTypes = {};
 
-	    password: {
-	      tests: [{
-	        critical: true,
-	        failProps: {
-	          errorText: 'password should be a number.'
-	        },
-	        test: function test(value) {
-	          return (/^\d*$/.test(value)
-	          );
-	        }
-	      }, {
-	        critical: false,
-	        failProps: {
-	          errorText: 'Are you sure you\'re that old? :o'
-	        },
-	        test: function test(value) {
-	          return +value < 120;
-	        }
-	      }]
-	    }
+	exports.default = NoMatchComponent;
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "NoMatch.component.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+
+/***/ },
+/* 387 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = configure;
+
+	var _redux = __webpack_require__(105);
+
+	var _reduxThunk = __webpack_require__(388);
+
+	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+
+	var _middleware = __webpack_require__(389);
+
+	var _reducers = __webpack_require__(391);
+
+	var _reducers2 = _interopRequireDefault(_reducers);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function configure(initialState) {
+	  var create = window.devToolsExtension ? window.devToolsExtension()(_redux.createStore) : _redux.createStore;
+
+	  var createStoreWithMiddleware = (0, _redux.applyMiddleware)(_reduxThunk2.default, // lets us dispatch() functions
+	  _middleware.logger // neat middleware that logs actions
+	  )(create);
+
+	  var store = createStoreWithMiddleware(_reducers2.default, initialState);
+
+	  if (false) {
+	    module.hot.accept('../reducers', function () {
+	      var nextReducer = require('../reducers');
+	      store.replaceReducer(nextReducer);
+	    });
 	  }
-	};
 
-	exports.default = (0, _formous2.default)(formousOptions)(LoginComponent);
+	  return store;
+	}
 
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Login.component.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+
+/***/ },
+/* 388 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	exports.__esModule = true;
+	function createThunkMiddleware(extraArgument) {
+	  return function (_ref) {
+	    var dispatch = _ref.dispatch;
+	    var getState = _ref.getState;
+	    return function (next) {
+	      return function (action) {
+	        if (typeof action === 'function') {
+	          return action(dispatch, getState, extraArgument);
+	        }
+
+	        return next(action);
+	      };
+	    };
+	  };
+	}
+
+	var thunk = createThunkMiddleware();
+	thunk.withExtraArgument = createThunkMiddleware;
+
+	exports['default'] = thunk;
 
 /***/ },
 /* 389 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
 
-	exports.__esModule = true;
+	'use strict';
 
-	var _assign = __webpack_require__(390);
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.logger = undefined;
 
-	var _assign2 = _interopRequireDefault(_assign);
+	var _logger = __webpack_require__(390);
+
+	var _logger2 = _interopRequireDefault(_logger);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	exports.default = _assign2.default || function (target) {
-	  for (var i = 1; i < arguments.length; i++) {
-	    var source = arguments[i];
+	exports.logger = _logger2.default;
 
-	    for (var key in source) {
-	      if (Object.prototype.hasOwnProperty.call(source, key)) {
-	        target[key] = source[key];
-	      }
-	    }
-	  }
-
-	  return target;
-	};
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
 /* 390 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(391), __esModule: true };
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	exports.default = function (store) {
+	  return function (next) {
+	    return function (action) {
+	      console.log(action);
+	      return next(action);
+	    };
+	  };
+	};
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "logger.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
 /* 391 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(392);
-	module.exports = __webpack_require__(266).Object.assign;
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _reactRouterRedux = __webpack_require__(93);
+
+	var _redux = __webpack_require__(105);
+
+	var _semilleros = __webpack_require__(392);
+
+	var _semilleros2 = _interopRequireDefault(_semilleros);
+
+	var _dashboard = __webpack_require__(394);
+
+	var _dashboard2 = _interopRequireDefault(_dashboard);
+
+	var _login = __webpack_require__(409);
+
+	var _login2 = _interopRequireDefault(_login);
+
+	var _rol = __webpack_require__(411);
+
+	var _rol2 = _interopRequireDefault(_rol);
+
+	var _noticia = __webpack_require__(413);
+
+	var _noticia2 = _interopRequireDefault(_noticia);
+
+	var _actividad = __webpack_require__(414);
+
+	var _actividad2 = _interopRequireDefault(_actividad);
+
+	var _asignaciontareas = __webpack_require__(416);
+
+	var _asignaciontareas2 = _interopRequireDefault(_asignaciontareas);
+
+	var _correosenviados = __webpack_require__(418);
+
+	var _correosenviados2 = _interopRequireDefault(_correosenviados);
+
+	var _cuentacorreo = __webpack_require__(420);
+
+	var _cuentacorreo2 = _interopRequireDefault(_cuentacorreo);
+
+	var _detalletarea = __webpack_require__(422);
+
+	var _detalletarea2 = _interopRequireDefault(_detalletarea);
+
+	var _estudiantecurso = __webpack_require__(424);
+
+	var _estudiantecurso2 = _interopRequireDefault(_estudiantecurso);
+
+	var _grupo = __webpack_require__(426);
+
+	var _grupo2 = _interopRequireDefault(_grupo);
+
+	var _horarioscursos = __webpack_require__(428);
+
+	var _horarioscursos2 = _interopRequireDefault(_horarioscursos);
+
+	var _integrantesgrupo = __webpack_require__(430);
+
+	var _integrantesgrupo2 = _interopRequireDefault(_integrantesgrupo);
+
+	var _lidersemillero = __webpack_require__(431);
+
+	var _lidersemillero2 = _interopRequireDefault(_lidersemillero);
+
+	var _menuusuario = __webpack_require__(432);
+
+	var _menuusuario2 = _interopRequireDefault(_menuusuario);
+
+	var _nivel = __webpack_require__(434);
+
+	var _nivel2 = _interopRequireDefault(_nivel);
+
+	var _notificacion = __webpack_require__(436);
+
+	var _notificacion2 = _interopRequireDefault(_notificacion);
+
+	var _programa = __webpack_require__(437);
+
+	var _programa2 = _interopRequireDefault(_programa);
+
+	var _programassemilleros = __webpack_require__(438);
+
+	var _programassemilleros2 = _interopRequireDefault(_programassemilleros);
+
+	var _proyectos = __webpack_require__(439);
+
+	var _proyectos2 = _interopRequireDefault(_proyectos);
+
+	var _rolsemillero = __webpack_require__(440);
+
+	var _rolsemillero2 = _interopRequireDefault(_rolsemillero);
+
+	var _subpermisos = __webpack_require__(441);
+
+	var _subpermisos2 = _interopRequireDefault(_subpermisos);
+
+	var _tareas = __webpack_require__(443);
+
+	var _tareas2 = _interopRequireDefault(_tareas);
+
+	var _tipocurso = __webpack_require__(444);
+
+	var _tipocurso2 = _interopRequireDefault(_tipocurso);
+
+	var _tiponoticia = __webpack_require__(446);
+
+	var _tiponoticia2 = _interopRequireDefault(_tiponoticia);
+
+	var _tiponotificacion = __webpack_require__(447);
+
+	var _tiponotificacion2 = _interopRequireDefault(_tiponotificacion);
+
+	var _usuario = __webpack_require__(448);
+
+	var _usuario2 = _interopRequireDefault(_usuario);
+
+	var _permiso = __webpack_require__(449);
+
+	var _permiso2 = _interopRequireDefault(_permiso);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = (0, _redux.combineReducers)({
+	  routing: _reactRouterRedux.routerReducer,
+	  semilleros: _semilleros2.default,
+	  dashboard: _dashboard2.default,
+	  login: _login2.default,
+	  rol: _rol2.default,
+	  noticia: _noticia2.default,
+	  actividad: _actividad2.default,
+	  asignaciontareas: _asignaciontareas2.default,
+	  correosenviados: _correosenviados2.default,
+	  cuentacorreo: _cuentacorreo2.default,
+	  detalletarea: _detalletarea2.default,
+	  estudiantecurso: _estudiantecurso2.default,
+	  grupo: _grupo2.default,
+	  horarioscursos: _horarioscursos2.default,
+	  integrantesgrupo: _integrantesgrupo2.default,
+	  lidersemillero: _lidersemillero2.default,
+	  menuusuario: _menuusuario2.default,
+	  nivel: _nivel2.default,
+	  notificacion: _notificacion2.default,
+	  programa: _programa2.default,
+	  programassemilleros: _programassemilleros2.default,
+	  proyectos: _proyectos2.default,
+	  rolsemillero: _rolsemillero2.default,
+	  subpermisos: _subpermisos2.default,
+	  tareas: _tareas2.default,
+	  tipocurso: _tipocurso2.default,
+	  tiponoticia: _tiponoticia2.default,
+	  tiponotificacion: _tiponotificacion2.default,
+	  usuario: _usuario2.default,
+	  permiso: _permiso2.default
+	});
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
 /* 392 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// 19.1.3.1 Object.assign(target, source)
-	var $export = __webpack_require__(265);
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
 
-	$export($export.S + $export.F, 'Object', {assign: __webpack_require__(393)});
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.semillero = semillero;
+
+	var _redux = __webpack_require__(105);
+
+	var _semilleros = __webpack_require__(371);
+
+	var _immutable = __webpack_require__(393);
+
+	var _immutable2 = _interopRequireDefault(_immutable);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var initialState = new _immutable2.default.Map({
+	  data_list_semilleros: [],
+	  error: null,
+	  result: false
+	});
+
+	function semillero() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? initialState : arguments[0];
+	  var action = arguments[1];
+
+	  switch (action.type) {
+	    case _semilleros.LISTAR_SEMILLEROS:
+	      return state.merge({
+	        data_list_semilleros: action.response.data,
+	        error: null,
+	        result: true
+	      });
+	    case _semilleros.INSERTAR_SEMILLERO:
+	      return state.merge({
+	        data_list_semilleros: action.response.data, // Valores del registro insertado
+	        err: null,
+	        result: true
+	      });
+	    default:
+	      return state;
+	  }
+	}
+
+	var Reducer = (0, _redux.combineReducers)({
+	  semillero: semillero
+	});
+
+	exports.default = Reducer;
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "semilleros.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
 /* 393 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	// 19.1.2.1 Object.assign(target, source, ...)
-	var getKeys  = __webpack_require__(298)
-	  , gOPS     = __webpack_require__(322)
-	  , pIE      = __webpack_require__(323)
-	  , toObject = __webpack_require__(256)
-	  , IObject  = __webpack_require__(301)
-	  , $assign  = Object.assign;
-
-	// should work with symbols and should have deterministic property order (V8 bug)
-	module.exports = !$assign || __webpack_require__(275)(function(){
-	  var A = {}
-	    , B = {}
-	    , S = Symbol()
-	    , K = 'abcdefghijklmnopqrst';
-	  A[S] = 7;
-	  K.split('').forEach(function(k){ B[k] = k; });
-	  return $assign({}, A)[S] != 7 || Object.keys($assign({}, B)).join('') != K;
-	}) ? function assign(target, source){ // eslint-disable-line no-unused-vars
-	  var T     = toObject(target)
-	    , aLen  = arguments.length
-	    , index = 1
-	    , getSymbols = gOPS.f
-	    , isEnum     = pIE.f;
-	  while(aLen > index){
-	    var S      = IObject(arguments[index++])
-	      , keys   = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S)
-	      , length = keys.length
-	      , j      = 0
-	      , key;
-	    while(length > j)if(isEnum.call(S, key = keys[j++]))T[key] = S[key];
-	  } return T;
-	} : $assign;
-
-/***/ },
-/* 394 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _formous = __webpack_require__(395);
-
-	var _formous2 = _interopRequireDefault(_formous);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _formous2.default;
-
-/***/ },
-/* 395 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(3);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _immutable = __webpack_require__(396);
-
-	var _dx = __webpack_require__(397);
-
-	var _dx2 = _interopRequireDefault(_dx);
-
-	var _helpers = __webpack_require__(505);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Formous = function Formous(options) {
-	  return function (Wrapped) {
-	    return function (_Component) {
-	      _inherits(_class2, _Component);
-
-	      function _class2(props) {
-	        _classCallCheck(this, _class2);
-
-	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(_class2).call(this, props));
-
-	        _this.clearForm = function () {
-	          var updatedFields = _this.initializeFields(true);
-	          _this.updateFields((0, _immutable.fromJS)(updatedFields));
-	        };
-
-	        _this.handleSubmit = function (formHandler) {
-	          return function (event) {
-	            event.preventDefault();
-
-	            var fields = undefined;
-	            if (_this.state.currentField) {
-	              var value = _this.state.fields.getIn([_this.state.currentField.name, 'value']);
-
-	              fields = _this.testFieldAndUpdateState(_this.state.currentField, value);
-	            }
-
-	            var formState = _extends({}, _this.state.form, {
-	              valid: _this.isFormValid(fields || _this.state.fields)
-	            });
-
-	            formHandler(formState, (fields || _this.state.fields).map(function (field) {
-	              return { value: field.get('value') };
-	            }).toJS());
-	          };
-	        };
-
-	        _this.initializeFields = function (reset) {
-	          var updatedFields = {};
-
-	          for (var fieldName in options.fields) {
-	            var fieldSpec = _extends({}, options.fields[fieldName], {
-	              name: fieldName
-	            });
-
-	            var events = {
-	              onBlur: _this.onBlur.bind(_this, fieldSpec),
-	              onChange: _this.onChange.bind(_this, fieldSpec),
-	              onFocus: _this.onFocus.bind(_this, fieldSpec)
-	            };
-
-	            var testResults = _this.testField(fieldSpec, '', true);
-
-	            updatedFields[fieldName] = {
-	              events: events,
-	              valid: (0, _helpers.allTestsPassed)(testResults),
-	              value: reset ? '' : _this.state.fields.getIn([fieldName, 'value']) || ''
-	            };
-	          }
-
-	          return updatedFields;
-	        };
-
-	        _this.isFormValid = function (fields, options) {
-	          var excludeField = options && options.excludeField;
-	          var stateFields = fields.toJS();
-	          var examineFields = Object.keys(stateFields).filter(function (fieldName) {
-	            return fieldName !== excludeField;
-	          });
-
-	          if (examineFields.length === 0) return true;
-
-	          var formValid = Object.keys(stateFields).filter(function (fieldName) {
-	            return fieldName !== excludeField;
-	          }).map(function (fieldName) {
-	            return stateFields[fieldName];
-	          }).every(function (field) {
-	            return field.valid;
-	          });
-
-	          return typeof formValid === 'boolean' ? formValid : formValid.valid;
-	        };
-
-	        _this.markFieldAsValid = function (fieldName, valid, options) {
-	          var fields = _this.state.fields.mergeDeep(_defineProperty({}, fieldName, {
-	            failProps: options.quietly ? undefined : options.failProps,
-	            valid: valid
-	          }));
-
-	          _this.updateFields(fields);
-	        };
-
-	        _this.onBlur = function (fieldSpec, _ref) {
-	          var target = _ref.target;
-
-	          _this.setState({ currentField: undefined });
-	          _this.testFieldAndUpdateState(fieldSpec, target.value);
-	        };
-
-	        _this.onChange = function (fieldSpec, _ref2) {
-	          var target = _ref2.target;
-
-	          _this.setState({
-	            fields: _this.state.fields.setIn([fieldSpec.name, 'value'], target.value)
-	          });
-	        };
-
-	        _this.onFocus = function (fieldSpec) {
-	          _this.setState({
-	            currentField: fieldSpec,
-	            form: _extends({}, _this.state.form, {
-	              touched: true
-	            })
-	          });
-	        };
-
-	        _this.setDefaultValues = function (defaultData) {
-	          if (!_this.defaultsSet) {
-	            var defaults = {};
-
-	            for (var fieldName in defaultData) {
-	              var field = _extends({}, options.fields[fieldName], {
-	                name: fieldName
-	              });
-	              var tests = options.fields[fieldName] && options.fields[fieldName].tests;
-	              var testResults = void 0;
-
-	              if (tests) {
-	                testResults = _this.testField(field, defaultData[fieldName], true);
-	              } else {
-	                testResults = [];
-	              }
-
-	              defaults[fieldName] = {
-	                valid: (0, _helpers.allTestsPassed)(testResults),
-	                value: defaultData[fieldName]
-	              };
-	            }
-
-	            var fields = _this.state.fields.mergeDeep(defaults);
-
-	            _this.updateFields(fields);
-	            _this.defaultsSet = true;
-	          }
-	        };
-
-	        _this.setFieldsValidity = function (tests) {
-	          var updatedFields = {};
-
-	          if (tests.length === 0) {
-	            (0, _dx.warn)(false, 'We should never see this? If you see this, please submit' + 'an issue at https://github.com/ffxsam/formous/issues');
-	          } else {
-	            var _iteratorNormalCompletion = true;
-	            var _didIteratorError = false;
-	            var _iteratorError = undefined;
-
-	            try {
-	              for (var _iterator = tests[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-	                var test = _step.value;
-
-	                updatedFields[test.fieldName] = {
-	                  failProps: test.passed || test.quiet ? undefined : test.failProps,
-	                  valid: test.passed
-	                };
-	              }
-	            } catch (err) {
-	              _didIteratorError = true;
-	              _iteratorError = err;
-	            } finally {
-	              try {
-	                if (!_iteratorNormalCompletion && _iterator.return) {
-	                  _iterator.return();
-	                }
-	              } finally {
-	                if (_didIteratorError) {
-	                  throw _iteratorError;
-	                }
-	              }
-	            }
-
-	            var fields = _this.state.fields.mergeDeep(updatedFields);
-	            _this.updateFields(fields);
-
-	            return fields;
-	          }
-	        };
-
-	        _this.testField = function (fieldSpec, value, initial) {
-	          var tests = fieldSpec.tests;
-	          var completedTests = [];
-	          var failedTestCount = 0;
-
-	          var _iteratorNormalCompletion2 = true;
-	          var _didIteratorError2 = false;
-	          var _iteratorError2 = undefined;
-
-	          try {
-	            for (var _iterator2 = tests[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-	              var test = _step2.value;
-
-	              var testResult = test.test(value, _this.state.fields.toJS());
-
-	              completedTests = [_extends({}, test, {
-	                passed: testResult,
-	                fieldName: fieldSpec.name
-	              })];
-
-	              if (!testResult) break;
-	            }
-	          } catch (err) {
-	            _didIteratorError2 = true;
-	            _iteratorError2 = err;
-	          } finally {
-	            try {
-	              if (!_iteratorNormalCompletion2 && _iterator2.return) {
-	                _iterator2.return();
-	              }
-	            } finally {
-	              if (_didIteratorError2) {
-	                throw _iteratorError2;
-	              }
-	            }
-	          }
-
-	          failedTestCount = completedTests.filter(function (test) {
-	            return !test.passed;
-	          }).length;
-
-	          if (fieldSpec.alsoTest && !initial && failedTestCount === 0) {
-	            fieldSpec.alsoTest.forEach(function (fieldName) {
-	              var fieldInfo = _extends({}, options.fields[fieldName], {
-	                name: fieldName
-	              });
-	              var fieldValue = _this.state.fields.getIn([fieldName, 'value']);
-	              var sideEffectTests = _this.testField(fieldInfo, fieldValue);
-
-	              sideEffectTests = sideEffectTests.map(function (test) {
-	                return _extends({}, test, { quiet: true });
-	              });
-
-	              completedTests = [].concat(_toConsumableArray(completedTests), _toConsumableArray(sideEffectTests));
-	            });
-	          }
-
-	          return completedTests;
-	        };
-
-	        _this.testFieldAndUpdateState = function (fieldSpec, value) {
-	          var completedTests = _this.testField(fieldSpec, value);
-	          return _this.setFieldsValidity(completedTests);
-	        };
-
-	        _this.updateFields = function (fields) {
-	          _this.setState({
-	            fields: fields,
-	            form: _this.updateFormValidity(fields)
-	          });
-	        };
-
-	        _this.updateFormValidity = function (fields) {
-	          return _extends({}, _this.state.form, {
-	            valid: _this.isFormValid(fields)
-	          });
-	        };
-
-	        _this.defaultsSet = false;
-	        _this.state = {
-	          fields: (0, _immutable.Map)({}),
-	          form: {
-	            touched: false,
-	            valid: false
-	          }
-	        };
-	        return _this;
-	      }
-
-	      _createClass(_class2, [{
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {
-	          var updatedFields = void 0;
-
-	          if (!options.fields) {
-	            (0, _dx.warn)(false, 'Put fields in their own object. See details: ' + 'https://gist.github.com/ffxsam/1233cef6c60df350cc4d35536428409b');
-	            options.fields = _extends({}, options);
-	          }
-
-	          (0, _dx2.default)(options);
-	          updatedFields = this.initializeFields();
-	          this.updateFields((0, _immutable.fromJS)(updatedFields));
-	        }
-	      }, {
-	        key: 'render',
-	        value: function render() {
-	          return _react2.default.createElement(Wrapped, _extends({}, this.props, {
-	            clearForm: this.clearForm,
-	            fields: this.state.fields.toJS(),
-	            formSubmit: this.handleSubmit,
-	            formState: this.state.form,
-	            setDefaultValues: this.setDefaultValues
-	          }));
-	        }
-	      }]);
-
-	      return _class2;
-	    }(_react.Component);
-	  };
-	};
-
-	exports.default = Formous;
-
-/***/ },
-/* 396 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -13363,3778 +13045,7 @@ webpackJsonp([1],[
 	}));
 
 /***/ },
-/* 397 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
-	exports.warn = warn;
-	exports.inv = inv;
-	exports.default = runChecks;
-
-	var _warning = __webpack_require__(35);
-
-	var _warning2 = _interopRequireDefault(_warning);
-
-	var _invariant = __webpack_require__(38);
-
-	var _invariant2 = _interopRequireDefault(_invariant);
-
-	var _findIndex = __webpack_require__(398);
-
-	var _findIndex2 = _interopRequireDefault(_findIndex);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function warn(test, message) {
-	  (0, _warning2.default)(test, '[Formous] ' + message);
-	}
-
-	function inv(test, message) {
-	  (0, _invariant2.default)(test, '[Formous] ' + message);
-	}
-
-	function checkTestProp(tests, propName, propType) {
-	  var comparator = function comparator(thing, expectedType) {
-	    if (!propType) {
-	      return typeof thing !== 'undefined';
-	    }
-
-	    return (typeof thing === 'undefined' ? 'undefined' : _typeof(thing)) === expectedType;
-	  };
-
-	  return tests.filter(function (t) {
-	    return comparator(t[propName], propType);
-	  }).length === tests.length;
-	}
-
-	function runChecks(options) {
-	  for (var fieldName in options.fields) {
-	    var field = options.fields[fieldName];
-
-	    inv(!!field.tests, 'You need a \'tests\' array for the "' + fieldName + '" ' + 'field.');
-
-	    var tests = field.tests;
-	    var numTests = tests.length;
-	    var nonCriticalInd = void 0;
-
-	    warn(!field.name, 'Object property \'name\' (declared on the "' + fieldName + '"' + ' field) is no longer required.');
-
-	    warn(numTests > 0, 'The "' + fieldName + '" field doesn\'t seem to have any tests. ' + 'The property is defined but it\'s an empty array. Is this a ' + 'mistake?');
-
-	    inv(checkTestProp(tests, 'critical', 'boolean'), 'Make sure all of the "' + fieldName + '" field\'s tests have the ' + '\'critical\' property, and that they\'re boolean values.');
-
-	    warn(checkTestProp(tests, 'failProps', 'object'), 'Make sure all of the "' + fieldName + '" field\'s tests have the ' + '\'failProps\' property, and that they\'re objects.');
-
-	    nonCriticalInd = (0, _findIndex2.default)(tests, function (test) {
-	      return !test.critical;
-	    });
-
-	    if (nonCriticalInd >= 0 && tests[nonCriticalInd + 1]) {
-	      for (var i = nonCriticalInd + 1; i < numTests; i++) {
-	        inv(!tests[i].critical, 'Double-check the "' + fieldName + '" ' + 'field\'s tests. Remember that critical tests must *always* ' + 'come before non-critical ones.');
-	      }
-	    }
-	  }
-	}
-
-/***/ },
-/* 398 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var baseFindIndex = __webpack_require__(399),
-	    baseIteratee = __webpack_require__(400),
-	    toInteger = __webpack_require__(502);
-
-	/* Built-in method references for those with the same name as other `lodash` methods. */
-	var nativeMax = Math.max;
-
-	/**
-	 * This method is like `_.find` except that it returns the index of the first
-	 * element `predicate` returns truthy for instead of the element itself.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 1.1.0
-	 * @category Array
-	 * @param {Array} array The array to inspect.
-	 * @param {Function} [predicate=_.identity]
-	 *  The function invoked per iteration.
-	 * @param {number} [fromIndex=0] The index to search from.
-	 * @returns {number} Returns the index of the found element, else `-1`.
-	 * @example
-	 *
-	 * var users = [
-	 *   { 'user': 'barney',  'active': false },
-	 *   { 'user': 'fred',    'active': false },
-	 *   { 'user': 'pebbles', 'active': true }
-	 * ];
-	 *
-	 * _.findIndex(users, function(o) { return o.user == 'barney'; });
-	 * // => 0
-	 *
-	 * // The `_.matches` iteratee shorthand.
-	 * _.findIndex(users, { 'user': 'fred', 'active': false });
-	 * // => 1
-	 *
-	 * // The `_.matchesProperty` iteratee shorthand.
-	 * _.findIndex(users, ['active', false]);
-	 * // => 0
-	 *
-	 * // The `_.property` iteratee shorthand.
-	 * _.findIndex(users, 'active');
-	 * // => 2
-	 */
-	function findIndex(array, predicate, fromIndex) {
-	  var length = array ? array.length : 0;
-	  if (!length) {
-	    return -1;
-	  }
-	  var index = fromIndex == null ? 0 : toInteger(fromIndex);
-	  if (index < 0) {
-	    index = nativeMax(length + index, 0);
-	  }
-	  return baseFindIndex(array, baseIteratee(predicate, 3), index);
-	}
-
-	module.exports = findIndex;
-
-
-/***/ },
-/* 399 */
-/***/ function(module, exports) {
-
-	/**
-	 * The base implementation of `_.findIndex` and `_.findLastIndex` without
-	 * support for iteratee shorthands.
-	 *
-	 * @private
-	 * @param {Array} array The array to inspect.
-	 * @param {Function} predicate The function invoked per iteration.
-	 * @param {number} fromIndex The index to search from.
-	 * @param {boolean} [fromRight] Specify iterating from right to left.
-	 * @returns {number} Returns the index of the matched value, else `-1`.
-	 */
-	function baseFindIndex(array, predicate, fromIndex, fromRight) {
-	  var length = array.length,
-	      index = fromIndex + (fromRight ? 1 : -1);
-
-	  while ((fromRight ? index-- : ++index < length)) {
-	    if (predicate(array[index], index, array)) {
-	      return index;
-	    }
-	  }
-	  return -1;
-	}
-
-	module.exports = baseFindIndex;
-
-
-/***/ },
-/* 400 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var baseMatches = __webpack_require__(401),
-	    baseMatchesProperty = __webpack_require__(483),
-	    identity = __webpack_require__(498),
-	    isArray = __webpack_require__(464),
-	    property = __webpack_require__(499);
-
-	/**
-	 * The base implementation of `_.iteratee`.
-	 *
-	 * @private
-	 * @param {*} [value=_.identity] The value to convert to an iteratee.
-	 * @returns {Function} Returns the iteratee.
-	 */
-	function baseIteratee(value) {
-	  // Don't store the `typeof` result in a variable to avoid a JIT bug in Safari 9.
-	  // See https://bugs.webkit.org/show_bug.cgi?id=156034 for more details.
-	  if (typeof value == 'function') {
-	    return value;
-	  }
-	  if (value == null) {
-	    return identity;
-	  }
-	  if (typeof value == 'object') {
-	    return isArray(value)
-	      ? baseMatchesProperty(value[0], value[1])
-	      : baseMatches(value);
-	  }
-	  return property(value);
-	}
-
-	module.exports = baseIteratee;
-
-
-/***/ },
-/* 401 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var baseIsMatch = __webpack_require__(402),
-	    getMatchData = __webpack_require__(480),
-	    matchesStrictComparable = __webpack_require__(482);
-
-	/**
-	 * The base implementation of `_.matches` which doesn't clone `source`.
-	 *
-	 * @private
-	 * @param {Object} source The object of property values to match.
-	 * @returns {Function} Returns the new spec function.
-	 */
-	function baseMatches(source) {
-	  var matchData = getMatchData(source);
-	  if (matchData.length == 1 && matchData[0][2]) {
-	    return matchesStrictComparable(matchData[0][0], matchData[0][1]);
-	  }
-	  return function(object) {
-	    return object === source || baseIsMatch(object, source, matchData);
-	  };
-	}
-
-	module.exports = baseMatches;
-
-
-/***/ },
-/* 402 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var Stack = __webpack_require__(403),
-	    baseIsEqual = __webpack_require__(443);
-
-	/** Used to compose bitmasks for comparison styles. */
-	var UNORDERED_COMPARE_FLAG = 1,
-	    PARTIAL_COMPARE_FLAG = 2;
-
-	/**
-	 * The base implementation of `_.isMatch` without support for iteratee shorthands.
-	 *
-	 * @private
-	 * @param {Object} object The object to inspect.
-	 * @param {Object} source The object of property values to match.
-	 * @param {Array} matchData The property names, values, and compare flags to match.
-	 * @param {Function} [customizer] The function to customize comparisons.
-	 * @returns {boolean} Returns `true` if `object` is a match, else `false`.
-	 */
-	function baseIsMatch(object, source, matchData, customizer) {
-	  var index = matchData.length,
-	      length = index,
-	      noCustomizer = !customizer;
-
-	  if (object == null) {
-	    return !length;
-	  }
-	  object = Object(object);
-	  while (index--) {
-	    var data = matchData[index];
-	    if ((noCustomizer && data[2])
-	          ? data[1] !== object[data[0]]
-	          : !(data[0] in object)
-	        ) {
-	      return false;
-	    }
-	  }
-	  while (++index < length) {
-	    data = matchData[index];
-	    var key = data[0],
-	        objValue = object[key],
-	        srcValue = data[1];
-
-	    if (noCustomizer && data[2]) {
-	      if (objValue === undefined && !(key in object)) {
-	        return false;
-	      }
-	    } else {
-	      var stack = new Stack;
-	      if (customizer) {
-	        var result = customizer(objValue, srcValue, key, object, source, stack);
-	      }
-	      if (!(result === undefined
-	            ? baseIsEqual(srcValue, objValue, customizer, UNORDERED_COMPARE_FLAG | PARTIAL_COMPARE_FLAG, stack)
-	            : result
-	          )) {
-	        return false;
-	      }
-	    }
-	  }
-	  return true;
-	}
-
-	module.exports = baseIsMatch;
-
-
-/***/ },
-/* 403 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var ListCache = __webpack_require__(404),
-	    stackClear = __webpack_require__(412),
-	    stackDelete = __webpack_require__(413),
-	    stackGet = __webpack_require__(414),
-	    stackHas = __webpack_require__(415),
-	    stackSet = __webpack_require__(416);
-
-	/**
-	 * Creates a stack cache object to store key-value pairs.
-	 *
-	 * @private
-	 * @constructor
-	 * @param {Array} [entries] The key-value pairs to cache.
-	 */
-	function Stack(entries) {
-	  var data = this.__data__ = new ListCache(entries);
-	  this.size = data.size;
-	}
-
-	// Add methods to `Stack`.
-	Stack.prototype.clear = stackClear;
-	Stack.prototype['delete'] = stackDelete;
-	Stack.prototype.get = stackGet;
-	Stack.prototype.has = stackHas;
-	Stack.prototype.set = stackSet;
-
-	module.exports = Stack;
-
-
-/***/ },
-/* 404 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var listCacheClear = __webpack_require__(405),
-	    listCacheDelete = __webpack_require__(406),
-	    listCacheGet = __webpack_require__(409),
-	    listCacheHas = __webpack_require__(410),
-	    listCacheSet = __webpack_require__(411);
-
-	/**
-	 * Creates an list cache object.
-	 *
-	 * @private
-	 * @constructor
-	 * @param {Array} [entries] The key-value pairs to cache.
-	 */
-	function ListCache(entries) {
-	  var index = -1,
-	      length = entries ? entries.length : 0;
-
-	  this.clear();
-	  while (++index < length) {
-	    var entry = entries[index];
-	    this.set(entry[0], entry[1]);
-	  }
-	}
-
-	// Add methods to `ListCache`.
-	ListCache.prototype.clear = listCacheClear;
-	ListCache.prototype['delete'] = listCacheDelete;
-	ListCache.prototype.get = listCacheGet;
-	ListCache.prototype.has = listCacheHas;
-	ListCache.prototype.set = listCacheSet;
-
-	module.exports = ListCache;
-
-
-/***/ },
-/* 405 */
-/***/ function(module, exports) {
-
-	/**
-	 * Removes all key-value entries from the list cache.
-	 *
-	 * @private
-	 * @name clear
-	 * @memberOf ListCache
-	 */
-	function listCacheClear() {
-	  this.__data__ = [];
-	  this.size = 0;
-	}
-
-	module.exports = listCacheClear;
-
-
-/***/ },
-/* 406 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var assocIndexOf = __webpack_require__(407);
-
-	/** Used for built-in method references. */
-	var arrayProto = Array.prototype;
-
-	/** Built-in value references. */
-	var splice = arrayProto.splice;
-
-	/**
-	 * Removes `key` and its value from the list cache.
-	 *
-	 * @private
-	 * @name delete
-	 * @memberOf ListCache
-	 * @param {string} key The key of the value to remove.
-	 * @returns {boolean} Returns `true` if the entry was removed, else `false`.
-	 */
-	function listCacheDelete(key) {
-	  var data = this.__data__,
-	      index = assocIndexOf(data, key);
-
-	  if (index < 0) {
-	    return false;
-	  }
-	  var lastIndex = data.length - 1;
-	  if (index == lastIndex) {
-	    data.pop();
-	  } else {
-	    splice.call(data, index, 1);
-	  }
-	  --this.size;
-	  return true;
-	}
-
-	module.exports = listCacheDelete;
-
-
-/***/ },
-/* 407 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var eq = __webpack_require__(408);
-
-	/**
-	 * Gets the index at which the `key` is found in `array` of key-value pairs.
-	 *
-	 * @private
-	 * @param {Array} array The array to inspect.
-	 * @param {*} key The key to search for.
-	 * @returns {number} Returns the index of the matched value, else `-1`.
-	 */
-	function assocIndexOf(array, key) {
-	  var length = array.length;
-	  while (length--) {
-	    if (eq(array[length][0], key)) {
-	      return length;
-	    }
-	  }
-	  return -1;
-	}
-
-	module.exports = assocIndexOf;
-
-
-/***/ },
-/* 408 */
-/***/ function(module, exports) {
-
-	/**
-	 * Performs a
-	 * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
-	 * comparison between two values to determine if they are equivalent.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 4.0.0
-	 * @category Lang
-	 * @param {*} value The value to compare.
-	 * @param {*} other The other value to compare.
-	 * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
-	 * @example
-	 *
-	 * var object = { 'a': 1 };
-	 * var other = { 'a': 1 };
-	 *
-	 * _.eq(object, object);
-	 * // => true
-	 *
-	 * _.eq(object, other);
-	 * // => false
-	 *
-	 * _.eq('a', 'a');
-	 * // => true
-	 *
-	 * _.eq('a', Object('a'));
-	 * // => false
-	 *
-	 * _.eq(NaN, NaN);
-	 * // => true
-	 */
-	function eq(value, other) {
-	  return value === other || (value !== value && other !== other);
-	}
-
-	module.exports = eq;
-
-
-/***/ },
-/* 409 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var assocIndexOf = __webpack_require__(407);
-
-	/**
-	 * Gets the list cache value for `key`.
-	 *
-	 * @private
-	 * @name get
-	 * @memberOf ListCache
-	 * @param {string} key The key of the value to get.
-	 * @returns {*} Returns the entry value.
-	 */
-	function listCacheGet(key) {
-	  var data = this.__data__,
-	      index = assocIndexOf(data, key);
-
-	  return index < 0 ? undefined : data[index][1];
-	}
-
-	module.exports = listCacheGet;
-
-
-/***/ },
-/* 410 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var assocIndexOf = __webpack_require__(407);
-
-	/**
-	 * Checks if a list cache value for `key` exists.
-	 *
-	 * @private
-	 * @name has
-	 * @memberOf ListCache
-	 * @param {string} key The key of the entry to check.
-	 * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
-	 */
-	function listCacheHas(key) {
-	  return assocIndexOf(this.__data__, key) > -1;
-	}
-
-	module.exports = listCacheHas;
-
-
-/***/ },
-/* 411 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var assocIndexOf = __webpack_require__(407);
-
-	/**
-	 * Sets the list cache `key` to `value`.
-	 *
-	 * @private
-	 * @name set
-	 * @memberOf ListCache
-	 * @param {string} key The key of the value to set.
-	 * @param {*} value The value to set.
-	 * @returns {Object} Returns the list cache instance.
-	 */
-	function listCacheSet(key, value) {
-	  var data = this.__data__,
-	      index = assocIndexOf(data, key);
-
-	  if (index < 0) {
-	    ++this.size;
-	    data.push([key, value]);
-	  } else {
-	    data[index][1] = value;
-	  }
-	  return this;
-	}
-
-	module.exports = listCacheSet;
-
-
-/***/ },
-/* 412 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var ListCache = __webpack_require__(404);
-
-	/**
-	 * Removes all key-value entries from the stack.
-	 *
-	 * @private
-	 * @name clear
-	 * @memberOf Stack
-	 */
-	function stackClear() {
-	  this.__data__ = new ListCache;
-	  this.size = 0;
-	}
-
-	module.exports = stackClear;
-
-
-/***/ },
-/* 413 */
-/***/ function(module, exports) {
-
-	/**
-	 * Removes `key` and its value from the stack.
-	 *
-	 * @private
-	 * @name delete
-	 * @memberOf Stack
-	 * @param {string} key The key of the value to remove.
-	 * @returns {boolean} Returns `true` if the entry was removed, else `false`.
-	 */
-	function stackDelete(key) {
-	  var data = this.__data__,
-	      result = data['delete'](key);
-
-	  this.size = data.size;
-	  return result;
-	}
-
-	module.exports = stackDelete;
-
-
-/***/ },
-/* 414 */
-/***/ function(module, exports) {
-
-	/**
-	 * Gets the stack value for `key`.
-	 *
-	 * @private
-	 * @name get
-	 * @memberOf Stack
-	 * @param {string} key The key of the value to get.
-	 * @returns {*} Returns the entry value.
-	 */
-	function stackGet(key) {
-	  return this.__data__.get(key);
-	}
-
-	module.exports = stackGet;
-
-
-/***/ },
-/* 415 */
-/***/ function(module, exports) {
-
-	/**
-	 * Checks if a stack value for `key` exists.
-	 *
-	 * @private
-	 * @name has
-	 * @memberOf Stack
-	 * @param {string} key The key of the entry to check.
-	 * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
-	 */
-	function stackHas(key) {
-	  return this.__data__.has(key);
-	}
-
-	module.exports = stackHas;
-
-
-/***/ },
-/* 416 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var ListCache = __webpack_require__(404),
-	    Map = __webpack_require__(417),
-	    MapCache = __webpack_require__(428);
-
-	/** Used as the size to enable large array optimizations. */
-	var LARGE_ARRAY_SIZE = 200;
-
-	/**
-	 * Sets the stack `key` to `value`.
-	 *
-	 * @private
-	 * @name set
-	 * @memberOf Stack
-	 * @param {string} key The key of the value to set.
-	 * @param {*} value The value to set.
-	 * @returns {Object} Returns the stack cache instance.
-	 */
-	function stackSet(key, value) {
-	  var data = this.__data__;
-	  if (data instanceof ListCache) {
-	    var pairs = data.__data__;
-	    if (!Map || (pairs.length < LARGE_ARRAY_SIZE - 1)) {
-	      pairs.push([key, value]);
-	      this.size = ++data.size;
-	      return this;
-	    }
-	    data = this.__data__ = new MapCache(pairs);
-	  }
-	  data.set(key, value);
-	  this.size = data.size;
-	  return this;
-	}
-
-	module.exports = stackSet;
-
-
-/***/ },
-/* 417 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var getNative = __webpack_require__(418),
-	    root = __webpack_require__(424);
-
-	/* Built-in method references that are verified to be native. */
-	var Map = getNative(root, 'Map');
-
-	module.exports = Map;
-
-
-/***/ },
-/* 418 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var baseIsNative = __webpack_require__(419),
-	    getValue = __webpack_require__(427);
-
-	/**
-	 * Gets the native function at `key` of `object`.
-	 *
-	 * @private
-	 * @param {Object} object The object to query.
-	 * @param {string} key The key of the method to get.
-	 * @returns {*} Returns the function if it's native, else `undefined`.
-	 */
-	function getNative(object, key) {
-	  var value = getValue(object, key);
-	  return baseIsNative(value) ? value : undefined;
-	}
-
-	module.exports = getNative;
-
-
-/***/ },
-/* 419 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var isFunction = __webpack_require__(420),
-	    isMasked = __webpack_require__(422),
-	    isObject = __webpack_require__(421),
-	    toSource = __webpack_require__(426);
-
-	/**
-	 * Used to match `RegExp`
-	 * [syntax characters](http://ecma-international.org/ecma-262/7.0/#sec-patterns).
-	 */
-	var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
-
-	/** Used to detect host constructors (Safari). */
-	var reIsHostCtor = /^\[object .+?Constructor\]$/;
-
-	/** Used for built-in method references. */
-	var funcProto = Function.prototype,
-	    objectProto = Object.prototype;
-
-	/** Used to resolve the decompiled source of functions. */
-	var funcToString = funcProto.toString;
-
-	/** Used to check objects for own properties. */
-	var hasOwnProperty = objectProto.hasOwnProperty;
-
-	/** Used to detect if a method is native. */
-	var reIsNative = RegExp('^' +
-	  funcToString.call(hasOwnProperty).replace(reRegExpChar, '\\$&')
-	  .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$'
-	);
-
-	/**
-	 * The base implementation of `_.isNative` without bad shim checks.
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is a native function,
-	 *  else `false`.
-	 */
-	function baseIsNative(value) {
-	  if (!isObject(value) || isMasked(value)) {
-	    return false;
-	  }
-	  var pattern = isFunction(value) ? reIsNative : reIsHostCtor;
-	  return pattern.test(toSource(value));
-	}
-
-	module.exports = baseIsNative;
-
-
-/***/ },
-/* 420 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var isObject = __webpack_require__(421);
-
-	/** `Object#toString` result references. */
-	var funcTag = '[object Function]',
-	    genTag = '[object GeneratorFunction]';
-
-	/** Used for built-in method references. */
-	var objectProto = Object.prototype;
-
-	/**
-	 * Used to resolve the
-	 * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
-	 * of values.
-	 */
-	var objectToString = objectProto.toString;
-
-	/**
-	 * Checks if `value` is classified as a `Function` object.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 0.1.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is a function, else `false`.
-	 * @example
-	 *
-	 * _.isFunction(_);
-	 * // => true
-	 *
-	 * _.isFunction(/abc/);
-	 * // => false
-	 */
-	function isFunction(value) {
-	  // The use of `Object#toString` avoids issues with the `typeof` operator
-	  // in Safari 8-9 which returns 'object' for typed array and other constructors.
-	  var tag = isObject(value) ? objectToString.call(value) : '';
-	  return tag == funcTag || tag == genTag;
-	}
-
-	module.exports = isFunction;
-
-
-/***/ },
-/* 421 */
-/***/ function(module, exports) {
-
-	/**
-	 * Checks if `value` is the
-	 * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
-	 * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 0.1.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is an object, else `false`.
-	 * @example
-	 *
-	 * _.isObject({});
-	 * // => true
-	 *
-	 * _.isObject([1, 2, 3]);
-	 * // => true
-	 *
-	 * _.isObject(_.noop);
-	 * // => true
-	 *
-	 * _.isObject(null);
-	 * // => false
-	 */
-	function isObject(value) {
-	  var type = typeof value;
-	  return value != null && (type == 'object' || type == 'function');
-	}
-
-	module.exports = isObject;
-
-
-/***/ },
-/* 422 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var coreJsData = __webpack_require__(423);
-
-	/** Used to detect methods masquerading as native. */
-	var maskSrcKey = (function() {
-	  var uid = /[^.]+$/.exec(coreJsData && coreJsData.keys && coreJsData.keys.IE_PROTO || '');
-	  return uid ? ('Symbol(src)_1.' + uid) : '';
-	}());
-
-	/**
-	 * Checks if `func` has its source masked.
-	 *
-	 * @private
-	 * @param {Function} func The function to check.
-	 * @returns {boolean} Returns `true` if `func` is masked, else `false`.
-	 */
-	function isMasked(func) {
-	  return !!maskSrcKey && (maskSrcKey in func);
-	}
-
-	module.exports = isMasked;
-
-
-/***/ },
-/* 423 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var root = __webpack_require__(424);
-
-	/** Used to detect overreaching core-js shims. */
-	var coreJsData = root['__core-js_shared__'];
-
-	module.exports = coreJsData;
-
-
-/***/ },
-/* 424 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var freeGlobal = __webpack_require__(425);
-
-	/** Detect free variable `self`. */
-	var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
-
-	/** Used as a reference to the global object. */
-	var root = freeGlobal || freeSelf || Function('return this')();
-
-	module.exports = root;
-
-
-/***/ },
-/* 425 */
-/***/ function(module, exports) {
-
-	/* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
-	var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
-
-	module.exports = freeGlobal;
-
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
-
-/***/ },
-/* 426 */
-/***/ function(module, exports) {
-
-	/** Used for built-in method references. */
-	var funcProto = Function.prototype;
-
-	/** Used to resolve the decompiled source of functions. */
-	var funcToString = funcProto.toString;
-
-	/**
-	 * Converts `func` to its source code.
-	 *
-	 * @private
-	 * @param {Function} func The function to process.
-	 * @returns {string} Returns the source code.
-	 */
-	function toSource(func) {
-	  if (func != null) {
-	    try {
-	      return funcToString.call(func);
-	    } catch (e) {}
-	    try {
-	      return (func + '');
-	    } catch (e) {}
-	  }
-	  return '';
-	}
-
-	module.exports = toSource;
-
-
-/***/ },
-/* 427 */
-/***/ function(module, exports) {
-
-	/**
-	 * Gets the value at `key` of `object`.
-	 *
-	 * @private
-	 * @param {Object} [object] The object to query.
-	 * @param {string} key The key of the property to get.
-	 * @returns {*} Returns the property value.
-	 */
-	function getValue(object, key) {
-	  return object == null ? undefined : object[key];
-	}
-
-	module.exports = getValue;
-
-
-/***/ },
-/* 428 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var mapCacheClear = __webpack_require__(429),
-	    mapCacheDelete = __webpack_require__(437),
-	    mapCacheGet = __webpack_require__(440),
-	    mapCacheHas = __webpack_require__(441),
-	    mapCacheSet = __webpack_require__(442);
-
-	/**
-	 * Creates a map cache object to store key-value pairs.
-	 *
-	 * @private
-	 * @constructor
-	 * @param {Array} [entries] The key-value pairs to cache.
-	 */
-	function MapCache(entries) {
-	  var index = -1,
-	      length = entries ? entries.length : 0;
-
-	  this.clear();
-	  while (++index < length) {
-	    var entry = entries[index];
-	    this.set(entry[0], entry[1]);
-	  }
-	}
-
-	// Add methods to `MapCache`.
-	MapCache.prototype.clear = mapCacheClear;
-	MapCache.prototype['delete'] = mapCacheDelete;
-	MapCache.prototype.get = mapCacheGet;
-	MapCache.prototype.has = mapCacheHas;
-	MapCache.prototype.set = mapCacheSet;
-
-	module.exports = MapCache;
-
-
-/***/ },
-/* 429 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var Hash = __webpack_require__(430),
-	    ListCache = __webpack_require__(404),
-	    Map = __webpack_require__(417);
-
-	/**
-	 * Removes all key-value entries from the map.
-	 *
-	 * @private
-	 * @name clear
-	 * @memberOf MapCache
-	 */
-	function mapCacheClear() {
-	  this.size = 0;
-	  this.__data__ = {
-	    'hash': new Hash,
-	    'map': new (Map || ListCache),
-	    'string': new Hash
-	  };
-	}
-
-	module.exports = mapCacheClear;
-
-
-/***/ },
-/* 430 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var hashClear = __webpack_require__(431),
-	    hashDelete = __webpack_require__(433),
-	    hashGet = __webpack_require__(434),
-	    hashHas = __webpack_require__(435),
-	    hashSet = __webpack_require__(436);
-
-	/**
-	 * Creates a hash object.
-	 *
-	 * @private
-	 * @constructor
-	 * @param {Array} [entries] The key-value pairs to cache.
-	 */
-	function Hash(entries) {
-	  var index = -1,
-	      length = entries ? entries.length : 0;
-
-	  this.clear();
-	  while (++index < length) {
-	    var entry = entries[index];
-	    this.set(entry[0], entry[1]);
-	  }
-	}
-
-	// Add methods to `Hash`.
-	Hash.prototype.clear = hashClear;
-	Hash.prototype['delete'] = hashDelete;
-	Hash.prototype.get = hashGet;
-	Hash.prototype.has = hashHas;
-	Hash.prototype.set = hashSet;
-
-	module.exports = Hash;
-
-
-/***/ },
-/* 431 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var nativeCreate = __webpack_require__(432);
-
-	/**
-	 * Removes all key-value entries from the hash.
-	 *
-	 * @private
-	 * @name clear
-	 * @memberOf Hash
-	 */
-	function hashClear() {
-	  this.__data__ = nativeCreate ? nativeCreate(null) : {};
-	  this.size = 0;
-	}
-
-	module.exports = hashClear;
-
-
-/***/ },
-/* 432 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var getNative = __webpack_require__(418);
-
-	/* Built-in method references that are verified to be native. */
-	var nativeCreate = getNative(Object, 'create');
-
-	module.exports = nativeCreate;
-
-
-/***/ },
-/* 433 */
-/***/ function(module, exports) {
-
-	/**
-	 * Removes `key` and its value from the hash.
-	 *
-	 * @private
-	 * @name delete
-	 * @memberOf Hash
-	 * @param {Object} hash The hash to modify.
-	 * @param {string} key The key of the value to remove.
-	 * @returns {boolean} Returns `true` if the entry was removed, else `false`.
-	 */
-	function hashDelete(key) {
-	  var result = this.has(key) && delete this.__data__[key];
-	  this.size -= result ? 1 : 0;
-	  return result;
-	}
-
-	module.exports = hashDelete;
-
-
-/***/ },
-/* 434 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var nativeCreate = __webpack_require__(432);
-
-	/** Used to stand-in for `undefined` hash values. */
-	var HASH_UNDEFINED = '__lodash_hash_undefined__';
-
-	/** Used for built-in method references. */
-	var objectProto = Object.prototype;
-
-	/** Used to check objects for own properties. */
-	var hasOwnProperty = objectProto.hasOwnProperty;
-
-	/**
-	 * Gets the hash value for `key`.
-	 *
-	 * @private
-	 * @name get
-	 * @memberOf Hash
-	 * @param {string} key The key of the value to get.
-	 * @returns {*} Returns the entry value.
-	 */
-	function hashGet(key) {
-	  var data = this.__data__;
-	  if (nativeCreate) {
-	    var result = data[key];
-	    return result === HASH_UNDEFINED ? undefined : result;
-	  }
-	  return hasOwnProperty.call(data, key) ? data[key] : undefined;
-	}
-
-	module.exports = hashGet;
-
-
-/***/ },
-/* 435 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var nativeCreate = __webpack_require__(432);
-
-	/** Used for built-in method references. */
-	var objectProto = Object.prototype;
-
-	/** Used to check objects for own properties. */
-	var hasOwnProperty = objectProto.hasOwnProperty;
-
-	/**
-	 * Checks if a hash value for `key` exists.
-	 *
-	 * @private
-	 * @name has
-	 * @memberOf Hash
-	 * @param {string} key The key of the entry to check.
-	 * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
-	 */
-	function hashHas(key) {
-	  var data = this.__data__;
-	  return nativeCreate ? data[key] !== undefined : hasOwnProperty.call(data, key);
-	}
-
-	module.exports = hashHas;
-
-
-/***/ },
-/* 436 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var nativeCreate = __webpack_require__(432);
-
-	/** Used to stand-in for `undefined` hash values. */
-	var HASH_UNDEFINED = '__lodash_hash_undefined__';
-
-	/**
-	 * Sets the hash `key` to `value`.
-	 *
-	 * @private
-	 * @name set
-	 * @memberOf Hash
-	 * @param {string} key The key of the value to set.
-	 * @param {*} value The value to set.
-	 * @returns {Object} Returns the hash instance.
-	 */
-	function hashSet(key, value) {
-	  var data = this.__data__;
-	  this.size += this.has(key) ? 0 : 1;
-	  data[key] = (nativeCreate && value === undefined) ? HASH_UNDEFINED : value;
-	  return this;
-	}
-
-	module.exports = hashSet;
-
-
-/***/ },
-/* 437 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var getMapData = __webpack_require__(438);
-
-	/**
-	 * Removes `key` and its value from the map.
-	 *
-	 * @private
-	 * @name delete
-	 * @memberOf MapCache
-	 * @param {string} key The key of the value to remove.
-	 * @returns {boolean} Returns `true` if the entry was removed, else `false`.
-	 */
-	function mapCacheDelete(key) {
-	  var result = getMapData(this, key)['delete'](key);
-	  this.size -= result ? 1 : 0;
-	  return result;
-	}
-
-	module.exports = mapCacheDelete;
-
-
-/***/ },
-/* 438 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var isKeyable = __webpack_require__(439);
-
-	/**
-	 * Gets the data for `map`.
-	 *
-	 * @private
-	 * @param {Object} map The map to query.
-	 * @param {string} key The reference key.
-	 * @returns {*} Returns the map data.
-	 */
-	function getMapData(map, key) {
-	  var data = map.__data__;
-	  return isKeyable(key)
-	    ? data[typeof key == 'string' ? 'string' : 'hash']
-	    : data.map;
-	}
-
-	module.exports = getMapData;
-
-
-/***/ },
-/* 439 */
-/***/ function(module, exports) {
-
-	/**
-	 * Checks if `value` is suitable for use as unique object key.
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is suitable, else `false`.
-	 */
-	function isKeyable(value) {
-	  var type = typeof value;
-	  return (type == 'string' || type == 'number' || type == 'symbol' || type == 'boolean')
-	    ? (value !== '__proto__')
-	    : (value === null);
-	}
-
-	module.exports = isKeyable;
-
-
-/***/ },
-/* 440 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var getMapData = __webpack_require__(438);
-
-	/**
-	 * Gets the map value for `key`.
-	 *
-	 * @private
-	 * @name get
-	 * @memberOf MapCache
-	 * @param {string} key The key of the value to get.
-	 * @returns {*} Returns the entry value.
-	 */
-	function mapCacheGet(key) {
-	  return getMapData(this, key).get(key);
-	}
-
-	module.exports = mapCacheGet;
-
-
-/***/ },
-/* 441 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var getMapData = __webpack_require__(438);
-
-	/**
-	 * Checks if a map value for `key` exists.
-	 *
-	 * @private
-	 * @name has
-	 * @memberOf MapCache
-	 * @param {string} key The key of the entry to check.
-	 * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
-	 */
-	function mapCacheHas(key) {
-	  return getMapData(this, key).has(key);
-	}
-
-	module.exports = mapCacheHas;
-
-
-/***/ },
-/* 442 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var getMapData = __webpack_require__(438);
-
-	/**
-	 * Sets the map `key` to `value`.
-	 *
-	 * @private
-	 * @name set
-	 * @memberOf MapCache
-	 * @param {string} key The key of the value to set.
-	 * @param {*} value The value to set.
-	 * @returns {Object} Returns the map cache instance.
-	 */
-	function mapCacheSet(key, value) {
-	  var data = getMapData(this, key),
-	      size = data.size;
-
-	  data.set(key, value);
-	  this.size += data.size == size ? 0 : 1;
-	  return this;
-	}
-
-	module.exports = mapCacheSet;
-
-
-/***/ },
-/* 443 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var baseIsEqualDeep = __webpack_require__(444),
-	    isObject = __webpack_require__(421),
-	    isObjectLike = __webpack_require__(110);
-
-	/**
-	 * The base implementation of `_.isEqual` which supports partial comparisons
-	 * and tracks traversed objects.
-	 *
-	 * @private
-	 * @param {*} value The value to compare.
-	 * @param {*} other The other value to compare.
-	 * @param {Function} [customizer] The function to customize comparisons.
-	 * @param {boolean} [bitmask] The bitmask of comparison flags.
-	 *  The bitmask may be composed of the following flags:
-	 *     1 - Unordered comparison
-	 *     2 - Partial comparison
-	 * @param {Object} [stack] Tracks traversed `value` and `other` objects.
-	 * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
-	 */
-	function baseIsEqual(value, other, customizer, bitmask, stack) {
-	  if (value === other) {
-	    return true;
-	  }
-	  if (value == null || other == null || (!isObject(value) && !isObjectLike(other))) {
-	    return value !== value && other !== other;
-	  }
-	  return baseIsEqualDeep(value, other, baseIsEqual, customizer, bitmask, stack);
-	}
-
-	module.exports = baseIsEqual;
-
-
-/***/ },
-/* 444 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var Stack = __webpack_require__(403),
-	    equalArrays = __webpack_require__(445),
-	    equalByTag = __webpack_require__(451),
-	    equalObjects = __webpack_require__(456),
-	    getTag = __webpack_require__(469),
-	    isArray = __webpack_require__(464),
-	    isTypedArray = __webpack_require__(475);
-
-	/** Used to compose bitmasks for comparison styles. */
-	var PARTIAL_COMPARE_FLAG = 2;
-
-	/** `Object#toString` result references. */
-	var argsTag = '[object Arguments]',
-	    arrayTag = '[object Array]',
-	    objectTag = '[object Object]';
-
-	/** Used for built-in method references. */
-	var objectProto = Object.prototype;
-
-	/** Used to check objects for own properties. */
-	var hasOwnProperty = objectProto.hasOwnProperty;
-
-	/**
-	 * A specialized version of `baseIsEqual` for arrays and objects which performs
-	 * deep comparisons and tracks traversed objects enabling objects with circular
-	 * references to be compared.
-	 *
-	 * @private
-	 * @param {Object} object The object to compare.
-	 * @param {Object} other The other object to compare.
-	 * @param {Function} equalFunc The function to determine equivalents of values.
-	 * @param {Function} [customizer] The function to customize comparisons.
-	 * @param {number} [bitmask] The bitmask of comparison flags. See `baseIsEqual`
-	 *  for more details.
-	 * @param {Object} [stack] Tracks traversed `object` and `other` objects.
-	 * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
-	 */
-	function baseIsEqualDeep(object, other, equalFunc, customizer, bitmask, stack) {
-	  var objIsArr = isArray(object),
-	      othIsArr = isArray(other),
-	      objTag = arrayTag,
-	      othTag = arrayTag;
-
-	  if (!objIsArr) {
-	    objTag = getTag(object);
-	    objTag = objTag == argsTag ? objectTag : objTag;
-	  }
-	  if (!othIsArr) {
-	    othTag = getTag(other);
-	    othTag = othTag == argsTag ? objectTag : othTag;
-	  }
-	  var objIsObj = objTag == objectTag,
-	      othIsObj = othTag == objectTag,
-	      isSameTag = objTag == othTag;
-
-	  if (isSameTag && !objIsObj) {
-	    stack || (stack = new Stack);
-	    return (objIsArr || isTypedArray(object))
-	      ? equalArrays(object, other, equalFunc, customizer, bitmask, stack)
-	      : equalByTag(object, other, objTag, equalFunc, customizer, bitmask, stack);
-	  }
-	  if (!(bitmask & PARTIAL_COMPARE_FLAG)) {
-	    var objIsWrapped = objIsObj && hasOwnProperty.call(object, '__wrapped__'),
-	        othIsWrapped = othIsObj && hasOwnProperty.call(other, '__wrapped__');
-
-	    if (objIsWrapped || othIsWrapped) {
-	      var objUnwrapped = objIsWrapped ? object.value() : object,
-	          othUnwrapped = othIsWrapped ? other.value() : other;
-
-	      stack || (stack = new Stack);
-	      return equalFunc(objUnwrapped, othUnwrapped, customizer, bitmask, stack);
-	    }
-	  }
-	  if (!isSameTag) {
-	    return false;
-	  }
-	  stack || (stack = new Stack);
-	  return equalObjects(object, other, equalFunc, customizer, bitmask, stack);
-	}
-
-	module.exports = baseIsEqualDeep;
-
-
-/***/ },
-/* 445 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var SetCache = __webpack_require__(446),
-	    arraySome = __webpack_require__(449),
-	    cacheHas = __webpack_require__(450);
-
-	/** Used to compose bitmasks for comparison styles. */
-	var UNORDERED_COMPARE_FLAG = 1,
-	    PARTIAL_COMPARE_FLAG = 2;
-
-	/**
-	 * A specialized version of `baseIsEqualDeep` for arrays with support for
-	 * partial deep comparisons.
-	 *
-	 * @private
-	 * @param {Array} array The array to compare.
-	 * @param {Array} other The other array to compare.
-	 * @param {Function} equalFunc The function to determine equivalents of values.
-	 * @param {Function} customizer The function to customize comparisons.
-	 * @param {number} bitmask The bitmask of comparison flags. See `baseIsEqual`
-	 *  for more details.
-	 * @param {Object} stack Tracks traversed `array` and `other` objects.
-	 * @returns {boolean} Returns `true` if the arrays are equivalent, else `false`.
-	 */
-	function equalArrays(array, other, equalFunc, customizer, bitmask, stack) {
-	  var isPartial = bitmask & PARTIAL_COMPARE_FLAG,
-	      arrLength = array.length,
-	      othLength = other.length;
-
-	  if (arrLength != othLength && !(isPartial && othLength > arrLength)) {
-	    return false;
-	  }
-	  // Assume cyclic values are equal.
-	  var stacked = stack.get(array);
-	  if (stacked && stack.get(other)) {
-	    return stacked == other;
-	  }
-	  var index = -1,
-	      result = true,
-	      seen = (bitmask & UNORDERED_COMPARE_FLAG) ? new SetCache : undefined;
-
-	  stack.set(array, other);
-	  stack.set(other, array);
-
-	  // Ignore non-index properties.
-	  while (++index < arrLength) {
-	    var arrValue = array[index],
-	        othValue = other[index];
-
-	    if (customizer) {
-	      var compared = isPartial
-	        ? customizer(othValue, arrValue, index, other, array, stack)
-	        : customizer(arrValue, othValue, index, array, other, stack);
-	    }
-	    if (compared !== undefined) {
-	      if (compared) {
-	        continue;
-	      }
-	      result = false;
-	      break;
-	    }
-	    // Recursively compare arrays (susceptible to call stack limits).
-	    if (seen) {
-	      if (!arraySome(other, function(othValue, othIndex) {
-	            if (!cacheHas(seen, othIndex) &&
-	                (arrValue === othValue || equalFunc(arrValue, othValue, customizer, bitmask, stack))) {
-	              return seen.push(othIndex);
-	            }
-	          })) {
-	        result = false;
-	        break;
-	      }
-	    } else if (!(
-	          arrValue === othValue ||
-	            equalFunc(arrValue, othValue, customizer, bitmask, stack)
-	        )) {
-	      result = false;
-	      break;
-	    }
-	  }
-	  stack['delete'](array);
-	  stack['delete'](other);
-	  return result;
-	}
-
-	module.exports = equalArrays;
-
-
-/***/ },
-/* 446 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var MapCache = __webpack_require__(428),
-	    setCacheAdd = __webpack_require__(447),
-	    setCacheHas = __webpack_require__(448);
-
-	/**
-	 *
-	 * Creates an array cache object to store unique values.
-	 *
-	 * @private
-	 * @constructor
-	 * @param {Array} [values] The values to cache.
-	 */
-	function SetCache(values) {
-	  var index = -1,
-	      length = values ? values.length : 0;
-
-	  this.__data__ = new MapCache;
-	  while (++index < length) {
-	    this.add(values[index]);
-	  }
-	}
-
-	// Add methods to `SetCache`.
-	SetCache.prototype.add = SetCache.prototype.push = setCacheAdd;
-	SetCache.prototype.has = setCacheHas;
-
-	module.exports = SetCache;
-
-
-/***/ },
-/* 447 */
-/***/ function(module, exports) {
-
-	/** Used to stand-in for `undefined` hash values. */
-	var HASH_UNDEFINED = '__lodash_hash_undefined__';
-
-	/**
-	 * Adds `value` to the array cache.
-	 *
-	 * @private
-	 * @name add
-	 * @memberOf SetCache
-	 * @alias push
-	 * @param {*} value The value to cache.
-	 * @returns {Object} Returns the cache instance.
-	 */
-	function setCacheAdd(value) {
-	  this.__data__.set(value, HASH_UNDEFINED);
-	  return this;
-	}
-
-	module.exports = setCacheAdd;
-
-
-/***/ },
-/* 448 */
-/***/ function(module, exports) {
-
-	/**
-	 * Checks if `value` is in the array cache.
-	 *
-	 * @private
-	 * @name has
-	 * @memberOf SetCache
-	 * @param {*} value The value to search for.
-	 * @returns {number} Returns `true` if `value` is found, else `false`.
-	 */
-	function setCacheHas(value) {
-	  return this.__data__.has(value);
-	}
-
-	module.exports = setCacheHas;
-
-
-/***/ },
-/* 449 */
-/***/ function(module, exports) {
-
-	/**
-	 * A specialized version of `_.some` for arrays without support for iteratee
-	 * shorthands.
-	 *
-	 * @private
-	 * @param {Array} [array] The array to iterate over.
-	 * @param {Function} predicate The function invoked per iteration.
-	 * @returns {boolean} Returns `true` if any element passes the predicate check,
-	 *  else `false`.
-	 */
-	function arraySome(array, predicate) {
-	  var index = -1,
-	      length = array ? array.length : 0;
-
-	  while (++index < length) {
-	    if (predicate(array[index], index, array)) {
-	      return true;
-	    }
-	  }
-	  return false;
-	}
-
-	module.exports = arraySome;
-
-
-/***/ },
-/* 450 */
-/***/ function(module, exports) {
-
-	/**
-	 * Checks if a `cache` value for `key` exists.
-	 *
-	 * @private
-	 * @param {Object} cache The cache to query.
-	 * @param {string} key The key of the entry to check.
-	 * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
-	 */
-	function cacheHas(cache, key) {
-	  return cache.has(key);
-	}
-
-	module.exports = cacheHas;
-
-
-/***/ },
-/* 451 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var Symbol = __webpack_require__(452),
-	    Uint8Array = __webpack_require__(453),
-	    eq = __webpack_require__(408),
-	    equalArrays = __webpack_require__(445),
-	    mapToArray = __webpack_require__(454),
-	    setToArray = __webpack_require__(455);
-
-	/** Used to compose bitmasks for comparison styles. */
-	var UNORDERED_COMPARE_FLAG = 1,
-	    PARTIAL_COMPARE_FLAG = 2;
-
-	/** `Object#toString` result references. */
-	var boolTag = '[object Boolean]',
-	    dateTag = '[object Date]',
-	    errorTag = '[object Error]',
-	    mapTag = '[object Map]',
-	    numberTag = '[object Number]',
-	    regexpTag = '[object RegExp]',
-	    setTag = '[object Set]',
-	    stringTag = '[object String]',
-	    symbolTag = '[object Symbol]';
-
-	var arrayBufferTag = '[object ArrayBuffer]',
-	    dataViewTag = '[object DataView]';
-
-	/** Used to convert symbols to primitives and strings. */
-	var symbolProto = Symbol ? Symbol.prototype : undefined,
-	    symbolValueOf = symbolProto ? symbolProto.valueOf : undefined;
-
-	/**
-	 * A specialized version of `baseIsEqualDeep` for comparing objects of
-	 * the same `toStringTag`.
-	 *
-	 * **Note:** This function only supports comparing values with tags of
-	 * `Boolean`, `Date`, `Error`, `Number`, `RegExp`, or `String`.
-	 *
-	 * @private
-	 * @param {Object} object The object to compare.
-	 * @param {Object} other The other object to compare.
-	 * @param {string} tag The `toStringTag` of the objects to compare.
-	 * @param {Function} equalFunc The function to determine equivalents of values.
-	 * @param {Function} customizer The function to customize comparisons.
-	 * @param {number} bitmask The bitmask of comparison flags. See `baseIsEqual`
-	 *  for more details.
-	 * @param {Object} stack Tracks traversed `object` and `other` objects.
-	 * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
-	 */
-	function equalByTag(object, other, tag, equalFunc, customizer, bitmask, stack) {
-	  switch (tag) {
-	    case dataViewTag:
-	      if ((object.byteLength != other.byteLength) ||
-	          (object.byteOffset != other.byteOffset)) {
-	        return false;
-	      }
-	      object = object.buffer;
-	      other = other.buffer;
-
-	    case arrayBufferTag:
-	      if ((object.byteLength != other.byteLength) ||
-	          !equalFunc(new Uint8Array(object), new Uint8Array(other))) {
-	        return false;
-	      }
-	      return true;
-
-	    case boolTag:
-	    case dateTag:
-	    case numberTag:
-	      // Coerce booleans to `1` or `0` and dates to milliseconds.
-	      // Invalid dates are coerced to `NaN`.
-	      return eq(+object, +other);
-
-	    case errorTag:
-	      return object.name == other.name && object.message == other.message;
-
-	    case regexpTag:
-	    case stringTag:
-	      // Coerce regexes to strings and treat strings, primitives and objects,
-	      // as equal. See http://www.ecma-international.org/ecma-262/7.0/#sec-regexp.prototype.tostring
-	      // for more details.
-	      return object == (other + '');
-
-	    case mapTag:
-	      var convert = mapToArray;
-
-	    case setTag:
-	      var isPartial = bitmask & PARTIAL_COMPARE_FLAG;
-	      convert || (convert = setToArray);
-
-	      if (object.size != other.size && !isPartial) {
-	        return false;
-	      }
-	      // Assume cyclic values are equal.
-	      var stacked = stack.get(object);
-	      if (stacked) {
-	        return stacked == other;
-	      }
-	      bitmask |= UNORDERED_COMPARE_FLAG;
-
-	      // Recursively compare objects (susceptible to call stack limits).
-	      stack.set(object, other);
-	      var result = equalArrays(convert(object), convert(other), equalFunc, customizer, bitmask, stack);
-	      stack['delete'](object);
-	      return result;
-
-	    case symbolTag:
-	      if (symbolValueOf) {
-	        return symbolValueOf.call(object) == symbolValueOf.call(other);
-	      }
-	  }
-	  return false;
-	}
-
-	module.exports = equalByTag;
-
-
-/***/ },
-/* 452 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var root = __webpack_require__(424);
-
-	/** Built-in value references. */
-	var Symbol = root.Symbol;
-
-	module.exports = Symbol;
-
-
-/***/ },
-/* 453 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var root = __webpack_require__(424);
-
-	/** Built-in value references. */
-	var Uint8Array = root.Uint8Array;
-
-	module.exports = Uint8Array;
-
-
-/***/ },
-/* 454 */
-/***/ function(module, exports) {
-
-	/**
-	 * Converts `map` to its key-value pairs.
-	 *
-	 * @private
-	 * @param {Object} map The map to convert.
-	 * @returns {Array} Returns the key-value pairs.
-	 */
-	function mapToArray(map) {
-	  var index = -1,
-	      result = Array(map.size);
-
-	  map.forEach(function(value, key) {
-	    result[++index] = [key, value];
-	  });
-	  return result;
-	}
-
-	module.exports = mapToArray;
-
-
-/***/ },
-/* 455 */
-/***/ function(module, exports) {
-
-	/**
-	 * Converts `set` to an array of its values.
-	 *
-	 * @private
-	 * @param {Object} set The set to convert.
-	 * @returns {Array} Returns the values.
-	 */
-	function setToArray(set) {
-	  var index = -1,
-	      result = Array(set.size);
-
-	  set.forEach(function(value) {
-	    result[++index] = value;
-	  });
-	  return result;
-	}
-
-	module.exports = setToArray;
-
-
-/***/ },
-/* 456 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var keys = __webpack_require__(457);
-
-	/** Used to compose bitmasks for comparison styles. */
-	var PARTIAL_COMPARE_FLAG = 2;
-
-	/** Used for built-in method references. */
-	var objectProto = Object.prototype;
-
-	/** Used to check objects for own properties. */
-	var hasOwnProperty = objectProto.hasOwnProperty;
-
-	/**
-	 * A specialized version of `baseIsEqualDeep` for objects with support for
-	 * partial deep comparisons.
-	 *
-	 * @private
-	 * @param {Object} object The object to compare.
-	 * @param {Object} other The other object to compare.
-	 * @param {Function} equalFunc The function to determine equivalents of values.
-	 * @param {Function} customizer The function to customize comparisons.
-	 * @param {number} bitmask The bitmask of comparison flags. See `baseIsEqual`
-	 *  for more details.
-	 * @param {Object} stack Tracks traversed `object` and `other` objects.
-	 * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
-	 */
-	function equalObjects(object, other, equalFunc, customizer, bitmask, stack) {
-	  var isPartial = bitmask & PARTIAL_COMPARE_FLAG,
-	      objProps = keys(object),
-	      objLength = objProps.length,
-	      othProps = keys(other),
-	      othLength = othProps.length;
-
-	  if (objLength != othLength && !isPartial) {
-	    return false;
-	  }
-	  var index = objLength;
-	  while (index--) {
-	    var key = objProps[index];
-	    if (!(isPartial ? key in other : hasOwnProperty.call(other, key))) {
-	      return false;
-	    }
-	  }
-	  // Assume cyclic values are equal.
-	  var stacked = stack.get(object);
-	  if (stacked && stack.get(other)) {
-	    return stacked == other;
-	  }
-	  var result = true;
-	  stack.set(object, other);
-	  stack.set(other, object);
-
-	  var skipCtor = isPartial;
-	  while (++index < objLength) {
-	    key = objProps[index];
-	    var objValue = object[key],
-	        othValue = other[key];
-
-	    if (customizer) {
-	      var compared = isPartial
-	        ? customizer(othValue, objValue, key, other, object, stack)
-	        : customizer(objValue, othValue, key, object, other, stack);
-	    }
-	    // Recursively compare objects (susceptible to call stack limits).
-	    if (!(compared === undefined
-	          ? (objValue === othValue || equalFunc(objValue, othValue, customizer, bitmask, stack))
-	          : compared
-	        )) {
-	      result = false;
-	      break;
-	    }
-	    skipCtor || (skipCtor = key == 'constructor');
-	  }
-	  if (result && !skipCtor) {
-	    var objCtor = object.constructor,
-	        othCtor = other.constructor;
-
-	    // Non `Object` object instances with different constructors are not equal.
-	    if (objCtor != othCtor &&
-	        ('constructor' in object && 'constructor' in other) &&
-	        !(typeof objCtor == 'function' && objCtor instanceof objCtor &&
-	          typeof othCtor == 'function' && othCtor instanceof othCtor)) {
-	      result = false;
-	    }
-	  }
-	  stack['delete'](object);
-	  stack['delete'](other);
-	  return result;
-	}
-
-	module.exports = equalObjects;
-
-
-/***/ },
-/* 457 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var arrayLikeKeys = __webpack_require__(458),
-	    baseKeys = __webpack_require__(466),
-	    isArrayLike = __webpack_require__(462);
-
-	/**
-	 * Creates an array of the own enumerable property names of `object`.
-	 *
-	 * **Note:** Non-object values are coerced to objects. See the
-	 * [ES spec](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
-	 * for more details.
-	 *
-	 * @static
-	 * @since 0.1.0
-	 * @memberOf _
-	 * @category Object
-	 * @param {Object} object The object to query.
-	 * @returns {Array} Returns the array of property names.
-	 * @example
-	 *
-	 * function Foo() {
-	 *   this.a = 1;
-	 *   this.b = 2;
-	 * }
-	 *
-	 * Foo.prototype.c = 3;
-	 *
-	 * _.keys(new Foo);
-	 * // => ['a', 'b'] (iteration order is not guaranteed)
-	 *
-	 * _.keys('hi');
-	 * // => ['0', '1']
-	 */
-	function keys(object) {
-	  return isArrayLike(object) ? arrayLikeKeys(object) : baseKeys(object);
-	}
-
-	module.exports = keys;
-
-
-/***/ },
-/* 458 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var baseTimes = __webpack_require__(459),
-	    isArguments = __webpack_require__(460),
-	    isArray = __webpack_require__(464),
-	    isIndex = __webpack_require__(465);
-
-	/** Used for built-in method references. */
-	var objectProto = Object.prototype;
-
-	/** Used to check objects for own properties. */
-	var hasOwnProperty = objectProto.hasOwnProperty;
-
-	/**
-	 * Creates an array of the enumerable property names of the array-like `value`.
-	 *
-	 * @private
-	 * @param {*} value The value to query.
-	 * @param {boolean} inherited Specify returning inherited property names.
-	 * @returns {Array} Returns the array of property names.
-	 */
-	function arrayLikeKeys(value, inherited) {
-	  // Safari 8.1 makes `arguments.callee` enumerable in strict mode.
-	  // Safari 9 makes `arguments.length` enumerable in strict mode.
-	  var result = (isArray(value) || isArguments(value))
-	    ? baseTimes(value.length, String)
-	    : [];
-
-	  var length = result.length,
-	      skipIndexes = !!length;
-
-	  for (var key in value) {
-	    if ((inherited || hasOwnProperty.call(value, key)) &&
-	        !(skipIndexes && (key == 'length' || isIndex(key, length)))) {
-	      result.push(key);
-	    }
-	  }
-	  return result;
-	}
-
-	module.exports = arrayLikeKeys;
-
-
-/***/ },
-/* 459 */
-/***/ function(module, exports) {
-
-	/**
-	 * The base implementation of `_.times` without support for iteratee shorthands
-	 * or max array length checks.
-	 *
-	 * @private
-	 * @param {number} n The number of times to invoke `iteratee`.
-	 * @param {Function} iteratee The function invoked per iteration.
-	 * @returns {Array} Returns the array of results.
-	 */
-	function baseTimes(n, iteratee) {
-	  var index = -1,
-	      result = Array(n);
-
-	  while (++index < n) {
-	    result[index] = iteratee(index);
-	  }
-	  return result;
-	}
-
-	module.exports = baseTimes;
-
-
-/***/ },
-/* 460 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var isArrayLikeObject = __webpack_require__(461);
-
-	/** `Object#toString` result references. */
-	var argsTag = '[object Arguments]';
-
-	/** Used for built-in method references. */
-	var objectProto = Object.prototype;
-
-	/** Used to check objects for own properties. */
-	var hasOwnProperty = objectProto.hasOwnProperty;
-
-	/**
-	 * Used to resolve the
-	 * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
-	 * of values.
-	 */
-	var objectToString = objectProto.toString;
-
-	/** Built-in value references. */
-	var propertyIsEnumerable = objectProto.propertyIsEnumerable;
-
-	/**
-	 * Checks if `value` is likely an `arguments` object.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 0.1.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is an `arguments` object,
-	 *  else `false`.
-	 * @example
-	 *
-	 * _.isArguments(function() { return arguments; }());
-	 * // => true
-	 *
-	 * _.isArguments([1, 2, 3]);
-	 * // => false
-	 */
-	function isArguments(value) {
-	  // Safari 8.1 makes `arguments.callee` enumerable in strict mode.
-	  return isArrayLikeObject(value) && hasOwnProperty.call(value, 'callee') &&
-	    (!propertyIsEnumerable.call(value, 'callee') || objectToString.call(value) == argsTag);
-	}
-
-	module.exports = isArguments;
-
-
-/***/ },
-/* 461 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var isArrayLike = __webpack_require__(462),
-	    isObjectLike = __webpack_require__(110);
-
-	/**
-	 * This method is like `_.isArrayLike` except that it also checks if `value`
-	 * is an object.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 4.0.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is an array-like object,
-	 *  else `false`.
-	 * @example
-	 *
-	 * _.isArrayLikeObject([1, 2, 3]);
-	 * // => true
-	 *
-	 * _.isArrayLikeObject(document.body.children);
-	 * // => true
-	 *
-	 * _.isArrayLikeObject('abc');
-	 * // => false
-	 *
-	 * _.isArrayLikeObject(_.noop);
-	 * // => false
-	 */
-	function isArrayLikeObject(value) {
-	  return isObjectLike(value) && isArrayLike(value);
-	}
-
-	module.exports = isArrayLikeObject;
-
-
-/***/ },
-/* 462 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var isFunction = __webpack_require__(420),
-	    isLength = __webpack_require__(463);
-
-	/**
-	 * Checks if `value` is array-like. A value is considered array-like if it's
-	 * not a function and has a `value.length` that's an integer greater than or
-	 * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 4.0.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
-	 * @example
-	 *
-	 * _.isArrayLike([1, 2, 3]);
-	 * // => true
-	 *
-	 * _.isArrayLike(document.body.children);
-	 * // => true
-	 *
-	 * _.isArrayLike('abc');
-	 * // => true
-	 *
-	 * _.isArrayLike(_.noop);
-	 * // => false
-	 */
-	function isArrayLike(value) {
-	  return value != null && isLength(value.length) && !isFunction(value);
-	}
-
-	module.exports = isArrayLike;
-
-
-/***/ },
-/* 463 */
-/***/ function(module, exports) {
-
-	/** Used as references for various `Number` constants. */
-	var MAX_SAFE_INTEGER = 9007199254740991;
-
-	/**
-	 * Checks if `value` is a valid array-like length.
-	 *
-	 * **Note:** This method is loosely based on
-	 * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 4.0.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
-	 * @example
-	 *
-	 * _.isLength(3);
-	 * // => true
-	 *
-	 * _.isLength(Number.MIN_VALUE);
-	 * // => false
-	 *
-	 * _.isLength(Infinity);
-	 * // => false
-	 *
-	 * _.isLength('3');
-	 * // => false
-	 */
-	function isLength(value) {
-	  return typeof value == 'number' &&
-	    value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
-	}
-
-	module.exports = isLength;
-
-
-/***/ },
-/* 464 */
-/***/ function(module, exports) {
-
-	/**
-	 * Checks if `value` is classified as an `Array` object.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 0.1.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is an array, else `false`.
-	 * @example
-	 *
-	 * _.isArray([1, 2, 3]);
-	 * // => true
-	 *
-	 * _.isArray(document.body.children);
-	 * // => false
-	 *
-	 * _.isArray('abc');
-	 * // => false
-	 *
-	 * _.isArray(_.noop);
-	 * // => false
-	 */
-	var isArray = Array.isArray;
-
-	module.exports = isArray;
-
-
-/***/ },
-/* 465 */
-/***/ function(module, exports) {
-
-	/** Used as references for various `Number` constants. */
-	var MAX_SAFE_INTEGER = 9007199254740991;
-
-	/** Used to detect unsigned integer values. */
-	var reIsUint = /^(?:0|[1-9]\d*)$/;
-
-	/**
-	 * Checks if `value` is a valid array-like index.
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
-	 * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
-	 */
-	function isIndex(value, length) {
-	  length = length == null ? MAX_SAFE_INTEGER : length;
-	  return !!length &&
-	    (typeof value == 'number' || reIsUint.test(value)) &&
-	    (value > -1 && value % 1 == 0 && value < length);
-	}
-
-	module.exports = isIndex;
-
-
-/***/ },
-/* 466 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var isPrototype = __webpack_require__(467),
-	    nativeKeys = __webpack_require__(468);
-
-	/** Used for built-in method references. */
-	var objectProto = Object.prototype;
-
-	/** Used to check objects for own properties. */
-	var hasOwnProperty = objectProto.hasOwnProperty;
-
-	/**
-	 * The base implementation of `_.keys` which doesn't treat sparse arrays as dense.
-	 *
-	 * @private
-	 * @param {Object} object The object to query.
-	 * @returns {Array} Returns the array of property names.
-	 */
-	function baseKeys(object) {
-	  if (!isPrototype(object)) {
-	    return nativeKeys(object);
-	  }
-	  var result = [];
-	  for (var key in Object(object)) {
-	    if (hasOwnProperty.call(object, key) && key != 'constructor') {
-	      result.push(key);
-	    }
-	  }
-	  return result;
-	}
-
-	module.exports = baseKeys;
-
-
-/***/ },
-/* 467 */
-/***/ function(module, exports) {
-
-	/** Used for built-in method references. */
-	var objectProto = Object.prototype;
-
-	/**
-	 * Checks if `value` is likely a prototype object.
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is a prototype, else `false`.
-	 */
-	function isPrototype(value) {
-	  var Ctor = value && value.constructor,
-	      proto = (typeof Ctor == 'function' && Ctor.prototype) || objectProto;
-
-	  return value === proto;
-	}
-
-	module.exports = isPrototype;
-
-
-/***/ },
-/* 468 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var overArg = __webpack_require__(109);
-
-	/* Built-in method references for those with the same name as other `lodash` methods. */
-	var nativeKeys = overArg(Object.keys, Object);
-
-	module.exports = nativeKeys;
-
-
-/***/ },
-/* 469 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var DataView = __webpack_require__(470),
-	    Map = __webpack_require__(417),
-	    Promise = __webpack_require__(471),
-	    Set = __webpack_require__(472),
-	    WeakMap = __webpack_require__(473),
-	    baseGetTag = __webpack_require__(474),
-	    toSource = __webpack_require__(426);
-
-	/** `Object#toString` result references. */
-	var mapTag = '[object Map]',
-	    objectTag = '[object Object]',
-	    promiseTag = '[object Promise]',
-	    setTag = '[object Set]',
-	    weakMapTag = '[object WeakMap]';
-
-	var dataViewTag = '[object DataView]';
-
-	/** Used for built-in method references. */
-	var objectProto = Object.prototype;
-
-	/**
-	 * Used to resolve the
-	 * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
-	 * of values.
-	 */
-	var objectToString = objectProto.toString;
-
-	/** Used to detect maps, sets, and weakmaps. */
-	var dataViewCtorString = toSource(DataView),
-	    mapCtorString = toSource(Map),
-	    promiseCtorString = toSource(Promise),
-	    setCtorString = toSource(Set),
-	    weakMapCtorString = toSource(WeakMap);
-
-	/**
-	 * Gets the `toStringTag` of `value`.
-	 *
-	 * @private
-	 * @param {*} value The value to query.
-	 * @returns {string} Returns the `toStringTag`.
-	 */
-	var getTag = baseGetTag;
-
-	// Fallback for data views, maps, sets, and weak maps in IE 11 and promises in Node.js < 6.
-	if ((DataView && getTag(new DataView(new ArrayBuffer(1))) != dataViewTag) ||
-	    (Map && getTag(new Map) != mapTag) ||
-	    (Promise && getTag(Promise.resolve()) != promiseTag) ||
-	    (Set && getTag(new Set) != setTag) ||
-	    (WeakMap && getTag(new WeakMap) != weakMapTag)) {
-	  getTag = function(value) {
-	    var result = objectToString.call(value),
-	        Ctor = result == objectTag ? value.constructor : undefined,
-	        ctorString = Ctor ? toSource(Ctor) : undefined;
-
-	    if (ctorString) {
-	      switch (ctorString) {
-	        case dataViewCtorString: return dataViewTag;
-	        case mapCtorString: return mapTag;
-	        case promiseCtorString: return promiseTag;
-	        case setCtorString: return setTag;
-	        case weakMapCtorString: return weakMapTag;
-	      }
-	    }
-	    return result;
-	  };
-	}
-
-	module.exports = getTag;
-
-
-/***/ },
-/* 470 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var getNative = __webpack_require__(418),
-	    root = __webpack_require__(424);
-
-	/* Built-in method references that are verified to be native. */
-	var DataView = getNative(root, 'DataView');
-
-	module.exports = DataView;
-
-
-/***/ },
-/* 471 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var getNative = __webpack_require__(418),
-	    root = __webpack_require__(424);
-
-	/* Built-in method references that are verified to be native. */
-	var Promise = getNative(root, 'Promise');
-
-	module.exports = Promise;
-
-
-/***/ },
-/* 472 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var getNative = __webpack_require__(418),
-	    root = __webpack_require__(424);
-
-	/* Built-in method references that are verified to be native. */
-	var Set = getNative(root, 'Set');
-
-	module.exports = Set;
-
-
-/***/ },
-/* 473 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var getNative = __webpack_require__(418),
-	    root = __webpack_require__(424);
-
-	/* Built-in method references that are verified to be native. */
-	var WeakMap = getNative(root, 'WeakMap');
-
-	module.exports = WeakMap;
-
-
-/***/ },
-/* 474 */
-/***/ function(module, exports) {
-
-	/** Used for built-in method references. */
-	var objectProto = Object.prototype;
-
-	/**
-	 * Used to resolve the
-	 * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
-	 * of values.
-	 */
-	var objectToString = objectProto.toString;
-
-	/**
-	 * The base implementation of `getTag`.
-	 *
-	 * @private
-	 * @param {*} value The value to query.
-	 * @returns {string} Returns the `toStringTag`.
-	 */
-	function baseGetTag(value) {
-	  return objectToString.call(value);
-	}
-
-	module.exports = baseGetTag;
-
-
-/***/ },
-/* 475 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var baseIsTypedArray = __webpack_require__(476),
-	    baseUnary = __webpack_require__(477),
-	    nodeUtil = __webpack_require__(478);
-
-	/* Node.js helper references. */
-	var nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
-
-	/**
-	 * Checks if `value` is classified as a typed array.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 3.0.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
-	 * @example
-	 *
-	 * _.isTypedArray(new Uint8Array);
-	 * // => true
-	 *
-	 * _.isTypedArray([]);
-	 * // => false
-	 */
-	var isTypedArray = nodeIsTypedArray ? baseUnary(nodeIsTypedArray) : baseIsTypedArray;
-
-	module.exports = isTypedArray;
-
-
-/***/ },
-/* 476 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var isLength = __webpack_require__(463),
-	    isObjectLike = __webpack_require__(110);
-
-	/** `Object#toString` result references. */
-	var argsTag = '[object Arguments]',
-	    arrayTag = '[object Array]',
-	    boolTag = '[object Boolean]',
-	    dateTag = '[object Date]',
-	    errorTag = '[object Error]',
-	    funcTag = '[object Function]',
-	    mapTag = '[object Map]',
-	    numberTag = '[object Number]',
-	    objectTag = '[object Object]',
-	    regexpTag = '[object RegExp]',
-	    setTag = '[object Set]',
-	    stringTag = '[object String]',
-	    weakMapTag = '[object WeakMap]';
-
-	var arrayBufferTag = '[object ArrayBuffer]',
-	    dataViewTag = '[object DataView]',
-	    float32Tag = '[object Float32Array]',
-	    float64Tag = '[object Float64Array]',
-	    int8Tag = '[object Int8Array]',
-	    int16Tag = '[object Int16Array]',
-	    int32Tag = '[object Int32Array]',
-	    uint8Tag = '[object Uint8Array]',
-	    uint8ClampedTag = '[object Uint8ClampedArray]',
-	    uint16Tag = '[object Uint16Array]',
-	    uint32Tag = '[object Uint32Array]';
-
-	/** Used to identify `toStringTag` values of typed arrays. */
-	var typedArrayTags = {};
-	typedArrayTags[float32Tag] = typedArrayTags[float64Tag] =
-	typedArrayTags[int8Tag] = typedArrayTags[int16Tag] =
-	typedArrayTags[int32Tag] = typedArrayTags[uint8Tag] =
-	typedArrayTags[uint8ClampedTag] = typedArrayTags[uint16Tag] =
-	typedArrayTags[uint32Tag] = true;
-	typedArrayTags[argsTag] = typedArrayTags[arrayTag] =
-	typedArrayTags[arrayBufferTag] = typedArrayTags[boolTag] =
-	typedArrayTags[dataViewTag] = typedArrayTags[dateTag] =
-	typedArrayTags[errorTag] = typedArrayTags[funcTag] =
-	typedArrayTags[mapTag] = typedArrayTags[numberTag] =
-	typedArrayTags[objectTag] = typedArrayTags[regexpTag] =
-	typedArrayTags[setTag] = typedArrayTags[stringTag] =
-	typedArrayTags[weakMapTag] = false;
-
-	/** Used for built-in method references. */
-	var objectProto = Object.prototype;
-
-	/**
-	 * Used to resolve the
-	 * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
-	 * of values.
-	 */
-	var objectToString = objectProto.toString;
-
-	/**
-	 * The base implementation of `_.isTypedArray` without Node.js optimizations.
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
-	 */
-	function baseIsTypedArray(value) {
-	  return isObjectLike(value) &&
-	    isLength(value.length) && !!typedArrayTags[objectToString.call(value)];
-	}
-
-	module.exports = baseIsTypedArray;
-
-
-/***/ },
-/* 477 */
-/***/ function(module, exports) {
-
-	/**
-	 * The base implementation of `_.unary` without support for storing metadata.
-	 *
-	 * @private
-	 * @param {Function} func The function to cap arguments for.
-	 * @returns {Function} Returns the new capped function.
-	 */
-	function baseUnary(func) {
-	  return function(value) {
-	    return func(value);
-	  };
-	}
-
-	module.exports = baseUnary;
-
-
-/***/ },
-/* 478 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(module) {var freeGlobal = __webpack_require__(425);
-
-	/** Detect free variable `exports`. */
-	var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
-
-	/** Detect free variable `module`. */
-	var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;
-
-	/** Detect the popular CommonJS extension `module.exports`. */
-	var moduleExports = freeModule && freeModule.exports === freeExports;
-
-	/** Detect free variable `process` from Node.js. */
-	var freeProcess = moduleExports && freeGlobal.process;
-
-	/** Used to access faster Node.js helpers. */
-	var nodeUtil = (function() {
-	  try {
-	    return freeProcess && freeProcess.binding('util');
-	  } catch (e) {}
-	}());
-
-	module.exports = nodeUtil;
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(479)(module)))
-
-/***/ },
-/* 479 */
-/***/ function(module, exports) {
-
-	module.exports = function(module) {
-		if(!module.webpackPolyfill) {
-			module.deprecate = function() {};
-			module.paths = [];
-			// module.parent = undefined by default
-			module.children = [];
-			module.webpackPolyfill = 1;
-		}
-		return module;
-	}
-
-
-/***/ },
-/* 480 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var isStrictComparable = __webpack_require__(481),
-	    keys = __webpack_require__(457);
-
-	/**
-	 * Gets the property names, values, and compare flags of `object`.
-	 *
-	 * @private
-	 * @param {Object} object The object to query.
-	 * @returns {Array} Returns the match data of `object`.
-	 */
-	function getMatchData(object) {
-	  var result = keys(object),
-	      length = result.length;
-
-	  while (length--) {
-	    var key = result[length],
-	        value = object[key];
-
-	    result[length] = [key, value, isStrictComparable(value)];
-	  }
-	  return result;
-	}
-
-	module.exports = getMatchData;
-
-
-/***/ },
-/* 481 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var isObject = __webpack_require__(421);
-
-	/**
-	 * Checks if `value` is suitable for strict equality comparisons, i.e. `===`.
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` if suitable for strict
-	 *  equality comparisons, else `false`.
-	 */
-	function isStrictComparable(value) {
-	  return value === value && !isObject(value);
-	}
-
-	module.exports = isStrictComparable;
-
-
-/***/ },
-/* 482 */
-/***/ function(module, exports) {
-
-	/**
-	 * A specialized version of `matchesProperty` for source values suitable
-	 * for strict equality comparisons, i.e. `===`.
-	 *
-	 * @private
-	 * @param {string} key The key of the property to get.
-	 * @param {*} srcValue The value to match.
-	 * @returns {Function} Returns the new spec function.
-	 */
-	function matchesStrictComparable(key, srcValue) {
-	  return function(object) {
-	    if (object == null) {
-	      return false;
-	    }
-	    return object[key] === srcValue &&
-	      (srcValue !== undefined || (key in Object(object)));
-	  };
-	}
-
-	module.exports = matchesStrictComparable;
-
-
-/***/ },
-/* 483 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var baseIsEqual = __webpack_require__(443),
-	    get = __webpack_require__(484),
-	    hasIn = __webpack_require__(495),
-	    isKey = __webpack_require__(493),
-	    isStrictComparable = __webpack_require__(481),
-	    matchesStrictComparable = __webpack_require__(482),
-	    toKey = __webpack_require__(494);
-
-	/** Used to compose bitmasks for comparison styles. */
-	var UNORDERED_COMPARE_FLAG = 1,
-	    PARTIAL_COMPARE_FLAG = 2;
-
-	/**
-	 * The base implementation of `_.matchesProperty` which doesn't clone `srcValue`.
-	 *
-	 * @private
-	 * @param {string} path The path of the property to get.
-	 * @param {*} srcValue The value to match.
-	 * @returns {Function} Returns the new spec function.
-	 */
-	function baseMatchesProperty(path, srcValue) {
-	  if (isKey(path) && isStrictComparable(srcValue)) {
-	    return matchesStrictComparable(toKey(path), srcValue);
-	  }
-	  return function(object) {
-	    var objValue = get(object, path);
-	    return (objValue === undefined && objValue === srcValue)
-	      ? hasIn(object, path)
-	      : baseIsEqual(srcValue, objValue, undefined, UNORDERED_COMPARE_FLAG | PARTIAL_COMPARE_FLAG);
-	  };
-	}
-
-	module.exports = baseMatchesProperty;
-
-
-/***/ },
-/* 484 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var baseGet = __webpack_require__(485);
-
-	/**
-	 * Gets the value at `path` of `object`. If the resolved value is
-	 * `undefined`, the `defaultValue` is returned in its place.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 3.7.0
-	 * @category Object
-	 * @param {Object} object The object to query.
-	 * @param {Array|string} path The path of the property to get.
-	 * @param {*} [defaultValue] The value returned for `undefined` resolved values.
-	 * @returns {*} Returns the resolved value.
-	 * @example
-	 *
-	 * var object = { 'a': [{ 'b': { 'c': 3 } }] };
-	 *
-	 * _.get(object, 'a[0].b.c');
-	 * // => 3
-	 *
-	 * _.get(object, ['a', '0', 'b', 'c']);
-	 * // => 3
-	 *
-	 * _.get(object, 'a.b.c', 'default');
-	 * // => 'default'
-	 */
-	function get(object, path, defaultValue) {
-	  var result = object == null ? undefined : baseGet(object, path);
-	  return result === undefined ? defaultValue : result;
-	}
-
-	module.exports = get;
-
-
-/***/ },
-/* 485 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var castPath = __webpack_require__(486),
-	    isKey = __webpack_require__(493),
-	    toKey = __webpack_require__(494);
-
-	/**
-	 * The base implementation of `_.get` without support for default values.
-	 *
-	 * @private
-	 * @param {Object} object The object to query.
-	 * @param {Array|string} path The path of the property to get.
-	 * @returns {*} Returns the resolved value.
-	 */
-	function baseGet(object, path) {
-	  path = isKey(path, object) ? [path] : castPath(path);
-
-	  var index = 0,
-	      length = path.length;
-
-	  while (object != null && index < length) {
-	    object = object[toKey(path[index++])];
-	  }
-	  return (index && index == length) ? object : undefined;
-	}
-
-	module.exports = baseGet;
-
-
-/***/ },
-/* 486 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var isArray = __webpack_require__(464),
-	    stringToPath = __webpack_require__(487);
-
-	/**
-	 * Casts `value` to a path array if it's not one.
-	 *
-	 * @private
-	 * @param {*} value The value to inspect.
-	 * @returns {Array} Returns the cast property path array.
-	 */
-	function castPath(value) {
-	  return isArray(value) ? value : stringToPath(value);
-	}
-
-	module.exports = castPath;
-
-
-/***/ },
-/* 487 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var memoizeCapped = __webpack_require__(488),
-	    toString = __webpack_require__(490);
-
-	/** Used to match property names within property paths. */
-	var reLeadingDot = /^\./,
-	    rePropName = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g;
-
-	/** Used to match backslashes in property paths. */
-	var reEscapeChar = /\\(\\)?/g;
-
-	/**
-	 * Converts `string` to a property path array.
-	 *
-	 * @private
-	 * @param {string} string The string to convert.
-	 * @returns {Array} Returns the property path array.
-	 */
-	var stringToPath = memoizeCapped(function(string) {
-	  string = toString(string);
-
-	  var result = [];
-	  if (reLeadingDot.test(string)) {
-	    result.push('');
-	  }
-	  string.replace(rePropName, function(match, number, quote, string) {
-	    result.push(quote ? string.replace(reEscapeChar, '$1') : (number || match));
-	  });
-	  return result;
-	});
-
-	module.exports = stringToPath;
-
-
-/***/ },
-/* 488 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var memoize = __webpack_require__(489);
-
-	/** Used as the maximum memoize cache size. */
-	var MAX_MEMOIZE_SIZE = 500;
-
-	/**
-	 * A specialized version of `_.memoize` which clears the memoized function's
-	 * cache when it exceeds `MAX_MEMOIZE_SIZE`.
-	 *
-	 * @private
-	 * @param {Function} func The function to have its output memoized.
-	 * @returns {Function} Returns the new memoized function.
-	 */
-	function memoizeCapped(func) {
-	  var result = memoize(func, function(key) {
-	    if (cache.size === MAX_MEMOIZE_SIZE) {
-	      cache.clear();
-	    }
-	    return key;
-	  });
-
-	  var cache = result.cache;
-	  return result;
-	}
-
-	module.exports = memoizeCapped;
-
-
-/***/ },
-/* 489 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var MapCache = __webpack_require__(428);
-
-	/** Error message constants. */
-	var FUNC_ERROR_TEXT = 'Expected a function';
-
-	/**
-	 * Creates a function that memoizes the result of `func`. If `resolver` is
-	 * provided, it determines the cache key for storing the result based on the
-	 * arguments provided to the memoized function. By default, the first argument
-	 * provided to the memoized function is used as the map cache key. The `func`
-	 * is invoked with the `this` binding of the memoized function.
-	 *
-	 * **Note:** The cache is exposed as the `cache` property on the memoized
-	 * function. Its creation may be customized by replacing the `_.memoize.Cache`
-	 * constructor with one whose instances implement the
-	 * [`Map`](http://ecma-international.org/ecma-262/7.0/#sec-properties-of-the-map-prototype-object)
-	 * method interface of `delete`, `get`, `has`, and `set`.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 0.1.0
-	 * @category Function
-	 * @param {Function} func The function to have its output memoized.
-	 * @param {Function} [resolver] The function to resolve the cache key.
-	 * @returns {Function} Returns the new memoized function.
-	 * @example
-	 *
-	 * var object = { 'a': 1, 'b': 2 };
-	 * var other = { 'c': 3, 'd': 4 };
-	 *
-	 * var values = _.memoize(_.values);
-	 * values(object);
-	 * // => [1, 2]
-	 *
-	 * values(other);
-	 * // => [3, 4]
-	 *
-	 * object.a = 2;
-	 * values(object);
-	 * // => [1, 2]
-	 *
-	 * // Modify the result cache.
-	 * values.cache.set(object, ['a', 'b']);
-	 * values(object);
-	 * // => ['a', 'b']
-	 *
-	 * // Replace `_.memoize.Cache`.
-	 * _.memoize.Cache = WeakMap;
-	 */
-	function memoize(func, resolver) {
-	  if (typeof func != 'function' || (resolver && typeof resolver != 'function')) {
-	    throw new TypeError(FUNC_ERROR_TEXT);
-	  }
-	  var memoized = function() {
-	    var args = arguments,
-	        key = resolver ? resolver.apply(this, args) : args[0],
-	        cache = memoized.cache;
-
-	    if (cache.has(key)) {
-	      return cache.get(key);
-	    }
-	    var result = func.apply(this, args);
-	    memoized.cache = cache.set(key, result) || cache;
-	    return result;
-	  };
-	  memoized.cache = new (memoize.Cache || MapCache);
-	  return memoized;
-	}
-
-	// Expose `MapCache`.
-	memoize.Cache = MapCache;
-
-	module.exports = memoize;
-
-
-/***/ },
-/* 490 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var baseToString = __webpack_require__(491);
-
-	/**
-	 * Converts `value` to a string. An empty string is returned for `null`
-	 * and `undefined` values. The sign of `-0` is preserved.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 4.0.0
-	 * @category Lang
-	 * @param {*} value The value to process.
-	 * @returns {string} Returns the string.
-	 * @example
-	 *
-	 * _.toString(null);
-	 * // => ''
-	 *
-	 * _.toString(-0);
-	 * // => '-0'
-	 *
-	 * _.toString([1, 2, 3]);
-	 * // => '1,2,3'
-	 */
-	function toString(value) {
-	  return value == null ? '' : baseToString(value);
-	}
-
-	module.exports = toString;
-
-
-/***/ },
-/* 491 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var Symbol = __webpack_require__(452),
-	    isSymbol = __webpack_require__(492);
-
-	/** Used as references for various `Number` constants. */
-	var INFINITY = 1 / 0;
-
-	/** Used to convert symbols to primitives and strings. */
-	var symbolProto = Symbol ? Symbol.prototype : undefined,
-	    symbolToString = symbolProto ? symbolProto.toString : undefined;
-
-	/**
-	 * The base implementation of `_.toString` which doesn't convert nullish
-	 * values to empty strings.
-	 *
-	 * @private
-	 * @param {*} value The value to process.
-	 * @returns {string} Returns the string.
-	 */
-	function baseToString(value) {
-	  // Exit early for strings to avoid a performance hit in some environments.
-	  if (typeof value == 'string') {
-	    return value;
-	  }
-	  if (isSymbol(value)) {
-	    return symbolToString ? symbolToString.call(value) : '';
-	  }
-	  var result = (value + '');
-	  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
-	}
-
-	module.exports = baseToString;
-
-
-/***/ },
-/* 492 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var isObjectLike = __webpack_require__(110);
-
-	/** `Object#toString` result references. */
-	var symbolTag = '[object Symbol]';
-
-	/** Used for built-in method references. */
-	var objectProto = Object.prototype;
-
-	/**
-	 * Used to resolve the
-	 * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
-	 * of values.
-	 */
-	var objectToString = objectProto.toString;
-
-	/**
-	 * Checks if `value` is classified as a `Symbol` primitive or object.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 4.0.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
-	 * @example
-	 *
-	 * _.isSymbol(Symbol.iterator);
-	 * // => true
-	 *
-	 * _.isSymbol('abc');
-	 * // => false
-	 */
-	function isSymbol(value) {
-	  return typeof value == 'symbol' ||
-	    (isObjectLike(value) && objectToString.call(value) == symbolTag);
-	}
-
-	module.exports = isSymbol;
-
-
-/***/ },
-/* 493 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var isArray = __webpack_require__(464),
-	    isSymbol = __webpack_require__(492);
-
-	/** Used to match property names within property paths. */
-	var reIsDeepProp = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,
-	    reIsPlainProp = /^\w*$/;
-
-	/**
-	 * Checks if `value` is a property name and not a property path.
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @param {Object} [object] The object to query keys on.
-	 * @returns {boolean} Returns `true` if `value` is a property name, else `false`.
-	 */
-	function isKey(value, object) {
-	  if (isArray(value)) {
-	    return false;
-	  }
-	  var type = typeof value;
-	  if (type == 'number' || type == 'symbol' || type == 'boolean' ||
-	      value == null || isSymbol(value)) {
-	    return true;
-	  }
-	  return reIsPlainProp.test(value) || !reIsDeepProp.test(value) ||
-	    (object != null && value in Object(object));
-	}
-
-	module.exports = isKey;
-
-
-/***/ },
-/* 494 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var isSymbol = __webpack_require__(492);
-
-	/** Used as references for various `Number` constants. */
-	var INFINITY = 1 / 0;
-
-	/**
-	 * Converts `value` to a string key if it's not a string or symbol.
-	 *
-	 * @private
-	 * @param {*} value The value to inspect.
-	 * @returns {string|symbol} Returns the key.
-	 */
-	function toKey(value) {
-	  if (typeof value == 'string' || isSymbol(value)) {
-	    return value;
-	  }
-	  var result = (value + '');
-	  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
-	}
-
-	module.exports = toKey;
-
-
-/***/ },
-/* 495 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var baseHasIn = __webpack_require__(496),
-	    hasPath = __webpack_require__(497);
-
-	/**
-	 * Checks if `path` is a direct or inherited property of `object`.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 4.0.0
-	 * @category Object
-	 * @param {Object} object The object to query.
-	 * @param {Array|string} path The path to check.
-	 * @returns {boolean} Returns `true` if `path` exists, else `false`.
-	 * @example
-	 *
-	 * var object = _.create({ 'a': _.create({ 'b': 2 }) });
-	 *
-	 * _.hasIn(object, 'a');
-	 * // => true
-	 *
-	 * _.hasIn(object, 'a.b');
-	 * // => true
-	 *
-	 * _.hasIn(object, ['a', 'b']);
-	 * // => true
-	 *
-	 * _.hasIn(object, 'b');
-	 * // => false
-	 */
-	function hasIn(object, path) {
-	  return object != null && hasPath(object, path, baseHasIn);
-	}
-
-	module.exports = hasIn;
-
-
-/***/ },
-/* 496 */
-/***/ function(module, exports) {
-
-	/**
-	 * The base implementation of `_.hasIn` without support for deep paths.
-	 *
-	 * @private
-	 * @param {Object} [object] The object to query.
-	 * @param {Array|string} key The key to check.
-	 * @returns {boolean} Returns `true` if `key` exists, else `false`.
-	 */
-	function baseHasIn(object, key) {
-	  return object != null && key in Object(object);
-	}
-
-	module.exports = baseHasIn;
-
-
-/***/ },
-/* 497 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var castPath = __webpack_require__(486),
-	    isArguments = __webpack_require__(460),
-	    isArray = __webpack_require__(464),
-	    isIndex = __webpack_require__(465),
-	    isKey = __webpack_require__(493),
-	    isLength = __webpack_require__(463),
-	    toKey = __webpack_require__(494);
-
-	/**
-	 * Checks if `path` exists on `object`.
-	 *
-	 * @private
-	 * @param {Object} object The object to query.
-	 * @param {Array|string} path The path to check.
-	 * @param {Function} hasFunc The function to check properties.
-	 * @returns {boolean} Returns `true` if `path` exists, else `false`.
-	 */
-	function hasPath(object, path, hasFunc) {
-	  path = isKey(path, object) ? [path] : castPath(path);
-
-	  var index = -1,
-	      length = path.length,
-	      result = false;
-
-	  while (++index < length) {
-	    var key = toKey(path[index]);
-	    if (!(result = object != null && hasFunc(object, key))) {
-	      break;
-	    }
-	    object = object[key];
-	  }
-	  if (result || ++index != length) {
-	    return result;
-	  }
-	  length = object ? object.length : 0;
-	  return !!length && isLength(length) && isIndex(key, length) &&
-	    (isArray(object) || isArguments(object));
-	}
-
-	module.exports = hasPath;
-
-
-/***/ },
-/* 498 */
-/***/ function(module, exports) {
-
-	/**
-	 * This method returns the first argument it receives.
-	 *
-	 * @static
-	 * @since 0.1.0
-	 * @memberOf _
-	 * @category Util
-	 * @param {*} value Any value.
-	 * @returns {*} Returns `value`.
-	 * @example
-	 *
-	 * var object = { 'a': 1 };
-	 *
-	 * console.log(_.identity(object) === object);
-	 * // => true
-	 */
-	function identity(value) {
-	  return value;
-	}
-
-	module.exports = identity;
-
-
-/***/ },
-/* 499 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var baseProperty = __webpack_require__(500),
-	    basePropertyDeep = __webpack_require__(501),
-	    isKey = __webpack_require__(493),
-	    toKey = __webpack_require__(494);
-
-	/**
-	 * Creates a function that returns the value at `path` of a given object.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 2.4.0
-	 * @category Util
-	 * @param {Array|string} path The path of the property to get.
-	 * @returns {Function} Returns the new accessor function.
-	 * @example
-	 *
-	 * var objects = [
-	 *   { 'a': { 'b': 2 } },
-	 *   { 'a': { 'b': 1 } }
-	 * ];
-	 *
-	 * _.map(objects, _.property('a.b'));
-	 * // => [2, 1]
-	 *
-	 * _.map(_.sortBy(objects, _.property(['a', 'b'])), 'a.b');
-	 * // => [1, 2]
-	 */
-	function property(path) {
-	  return isKey(path) ? baseProperty(toKey(path)) : basePropertyDeep(path);
-	}
-
-	module.exports = property;
-
-
-/***/ },
-/* 500 */
-/***/ function(module, exports) {
-
-	/**
-	 * The base implementation of `_.property` without support for deep paths.
-	 *
-	 * @private
-	 * @param {string} key The key of the property to get.
-	 * @returns {Function} Returns the new accessor function.
-	 */
-	function baseProperty(key) {
-	  return function(object) {
-	    return object == null ? undefined : object[key];
-	  };
-	}
-
-	module.exports = baseProperty;
-
-
-/***/ },
-/* 501 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var baseGet = __webpack_require__(485);
-
-	/**
-	 * A specialized version of `baseProperty` which supports deep paths.
-	 *
-	 * @private
-	 * @param {Array|string} path The path of the property to get.
-	 * @returns {Function} Returns the new accessor function.
-	 */
-	function basePropertyDeep(path) {
-	  return function(object) {
-	    return baseGet(object, path);
-	  };
-	}
-
-	module.exports = basePropertyDeep;
-
-
-/***/ },
-/* 502 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var toFinite = __webpack_require__(503);
-
-	/**
-	 * Converts `value` to an integer.
-	 *
-	 * **Note:** This method is loosely based on
-	 * [`ToInteger`](http://www.ecma-international.org/ecma-262/7.0/#sec-tointeger).
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 4.0.0
-	 * @category Lang
-	 * @param {*} value The value to convert.
-	 * @returns {number} Returns the converted integer.
-	 * @example
-	 *
-	 * _.toInteger(3.2);
-	 * // => 3
-	 *
-	 * _.toInteger(Number.MIN_VALUE);
-	 * // => 0
-	 *
-	 * _.toInteger(Infinity);
-	 * // => 1.7976931348623157e+308
-	 *
-	 * _.toInteger('3.2');
-	 * // => 3
-	 */
-	function toInteger(value) {
-	  var result = toFinite(value),
-	      remainder = result % 1;
-
-	  return result === result ? (remainder ? result - remainder : result) : 0;
-	}
-
-	module.exports = toInteger;
-
-
-/***/ },
-/* 503 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var toNumber = __webpack_require__(504);
-
-	/** Used as references for various `Number` constants. */
-	var INFINITY = 1 / 0,
-	    MAX_INTEGER = 1.7976931348623157e+308;
-
-	/**
-	 * Converts `value` to a finite number.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 4.12.0
-	 * @category Lang
-	 * @param {*} value The value to convert.
-	 * @returns {number} Returns the converted number.
-	 * @example
-	 *
-	 * _.toFinite(3.2);
-	 * // => 3.2
-	 *
-	 * _.toFinite(Number.MIN_VALUE);
-	 * // => 5e-324
-	 *
-	 * _.toFinite(Infinity);
-	 * // => 1.7976931348623157e+308
-	 *
-	 * _.toFinite('3.2');
-	 * // => 3.2
-	 */
-	function toFinite(value) {
-	  if (!value) {
-	    return value === 0 ? value : 0;
-	  }
-	  value = toNumber(value);
-	  if (value === INFINITY || value === -INFINITY) {
-	    var sign = (value < 0 ? -1 : 1);
-	    return sign * MAX_INTEGER;
-	  }
-	  return value === value ? value : 0;
-	}
-
-	module.exports = toFinite;
-
-
-/***/ },
-/* 504 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var isObject = __webpack_require__(421),
-	    isSymbol = __webpack_require__(492);
-
-	/** Used as references for various `Number` constants. */
-	var NAN = 0 / 0;
-
-	/** Used to match leading and trailing whitespace. */
-	var reTrim = /^\s+|\s+$/g;
-
-	/** Used to detect bad signed hexadecimal string values. */
-	var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
-
-	/** Used to detect binary string values. */
-	var reIsBinary = /^0b[01]+$/i;
-
-	/** Used to detect octal string values. */
-	var reIsOctal = /^0o[0-7]+$/i;
-
-	/** Built-in method references without a dependency on `root`. */
-	var freeParseInt = parseInt;
-
-	/**
-	 * Converts `value` to a number.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 4.0.0
-	 * @category Lang
-	 * @param {*} value The value to process.
-	 * @returns {number} Returns the number.
-	 * @example
-	 *
-	 * _.toNumber(3.2);
-	 * // => 3.2
-	 *
-	 * _.toNumber(Number.MIN_VALUE);
-	 * // => 5e-324
-	 *
-	 * _.toNumber(Infinity);
-	 * // => Infinity
-	 *
-	 * _.toNumber('3.2');
-	 * // => 3.2
-	 */
-	function toNumber(value) {
-	  if (typeof value == 'number') {
-	    return value;
-	  }
-	  if (isSymbol(value)) {
-	    return NAN;
-	  }
-	  if (isObject(value)) {
-	    var other = typeof value.valueOf == 'function' ? value.valueOf() : value;
-	    value = isObject(other) ? (other + '') : other;
-	  }
-	  if (typeof value != 'string') {
-	    return value === 0 ? value : +value;
-	  }
-	  value = value.replace(reTrim, '');
-	  var isBinary = reIsBinary.test(value);
-	  return (isBinary || reIsOctal.test(value))
-	    ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
-	    : (reIsBadHex.test(value) ? NAN : +value);
-	}
-
-	module.exports = toNumber;
-
-
-/***/ },
-/* 505 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.allTestsPassed = allTestsPassed;
-	function allTestsPassed(tests) {
-	  return tests.filter(function (test) {
-	    return !test.critical || test.passed;
-	  }).length === tests.length;
-	}
-
-/***/ },
-/* 506 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.loginError = loginError;
-	exports.loginSuccess = loginSuccess;
-	exports.loginRequest = loginRequest;
-	exports.login = login;
-
-	var _axios = __webpack_require__(349);
-
-	var _axios2 = _interopRequireDefault(_axios);
-
-	var _login = __webpack_require__(507);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function loginError(error) {
-	  return { error: error, type: _login.LOGGED_FAILED };
-	}
-
-	// You'll have a side effect here so (dispatch) => {} form is a good idea
-	function loginSuccess(response) {
-	  return function (dispatch) {
-	    dispatch({ response: response, type: _login.LOGGED_SUCCESSFULLY });
-	    // router.transitionTo('/dashboard');
-	  };
-	}
-
-	function loginRequest(email, password) {
-	  var user = { email: email, password: password };
-	  return { user: user, type: _login.LOGIN_ATTEMPT };
-	}
-
-	function login(userData) {
-	  console.log('data user: ', userData);
-
-	  return function (dispatch) {
-	    return _axios2.default.get('http://45.55.50.95:3000/api/allComerciantes').then(function (response) {
-	      if (response.status >= 200 && response.status < 300) {
-	        console.log('Response =', response);
-	        dispatch(loginSuccess(response));
-	      } else {
-	        var error = new Error(response.statusText);
-	        error.response = response;
-	        dispatch(loginError(error));
-	        throw error;
-	      }
-	    }).catch(function (error) {
-	      console.log(error);
-
-	      var err = new Error(error);
-	      error.response = response;
-	      dispatch(loginError(error));
-	      throw error;
-	    });
-	  };
-	}
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "login.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-
-/***/ },
-/* 507 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var LOGIN_ATTEMPT = exports.LOGIN_ATTEMPT = 'login_attempt';
-	var LOGGED_FAILED = exports.LOGGED_FAILED = 'logged_failed';
-	var LOGGED_SUCCESSFULLY = exports.LOGGED_SUCCESSFULLY = 'logged_successfully';
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "login.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-
-/***/ },
-/* 508 */
+/* 394 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -17145,501 +13056,13 @@ webpackJsonp([1],[
 	  value: true
 	});
 
-	var _getPrototypeOf = __webpack_require__(253);
-
-	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-	var _classCallCheck2 = __webpack_require__(279);
-
-	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-	var _createClass2 = __webpack_require__(280);
-
-	var _createClass3 = _interopRequireDefault(_createClass2);
-
-	var _possibleConstructorReturn2 = __webpack_require__(284);
-
-	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-	var _inherits2 = __webpack_require__(331);
-
-	var _inherits3 = _interopRequireDefault(_inherits2);
-
-	var _react = __webpack_require__(3);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _redux = __webpack_require__(105);
-
-	var _reactRedux = __webpack_require__(98);
-
-	var _NoMatchComponent = __webpack_require__(509);
-
-	var _NoMatchComponent2 = _interopRequireDefault(_NoMatchComponent);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var NoMatch = function (_Component) {
-	  (0, _inherits3.default)(NoMatch, _Component);
-
-	  function NoMatch() {
-	    (0, _classCallCheck3.default)(this, NoMatch);
-	    return (0, _possibleConstructorReturn3.default)(this, (NoMatch.__proto__ || (0, _getPrototypeOf2.default)(NoMatch)).apply(this, arguments));
-	  }
-
-	  (0, _createClass3.default)(NoMatch, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(_NoMatchComponent2.default, null)
-	      );
-	    }
-	  }]);
-	  return NoMatch;
-	}(_react.Component);
-
-	NoMatch.propTypes = {};
-
-	exports.default = NoMatch;
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-
-/***/ },
-/* 509 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _getPrototypeOf = __webpack_require__(253);
-
-	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-	var _classCallCheck2 = __webpack_require__(279);
-
-	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-	var _createClass2 = __webpack_require__(280);
-
-	var _createClass3 = _interopRequireDefault(_createClass2);
-
-	var _possibleConstructorReturn2 = __webpack_require__(284);
-
-	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-	var _inherits2 = __webpack_require__(331);
-
-	var _inherits3 = _interopRequireDefault(_inherits2);
-
-	var _react = __webpack_require__(3);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var NoMatchComponent = function (_Component) {
-	  (0, _inherits3.default)(NoMatchComponent, _Component);
-
-	  function NoMatchComponent() {
-	    (0, _classCallCheck3.default)(this, NoMatchComponent);
-	    return (0, _possibleConstructorReturn3.default)(this, (NoMatchComponent.__proto__ || (0, _getPrototypeOf2.default)(NoMatchComponent)).apply(this, arguments));
-	  }
-
-	  (0, _createClass3.default)(NoMatchComponent, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        'No encontrado'
-	      );
-	    }
-	  }]);
-	  return NoMatchComponent;
-	}(_react.Component);
-
-	NoMatchComponent.propTypes = {};
-
-	exports.default = NoMatchComponent;
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "NoMatch.component.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-
-/***/ },
-/* 510 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = configure;
-
-	var _redux = __webpack_require__(105);
-
-	var _reduxThunk = __webpack_require__(511);
-
-	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
-
-	var _middleware = __webpack_require__(512);
-
-	var _reducers = __webpack_require__(514);
-
-	var _reducers2 = _interopRequireDefault(_reducers);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function configure(initialState) {
-	  var create = window.devToolsExtension ? window.devToolsExtension()(_redux.createStore) : _redux.createStore;
-
-	  var createStoreWithMiddleware = (0, _redux.applyMiddleware)(_reduxThunk2.default, // lets us dispatch() functions
-	  _middleware.logger // neat middleware that logs actions
-	  )(create);
-
-	  var store = createStoreWithMiddleware(_reducers2.default, initialState);
-
-	  if (false) {
-	    module.hot.accept('../reducers', function () {
-	      var nextReducer = require('../reducers');
-	      store.replaceReducer(nextReducer);
-	    });
-	  }
-
-	  return store;
-	}
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-
-/***/ },
-/* 511 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	exports.__esModule = true;
-	function createThunkMiddleware(extraArgument) {
-	  return function (_ref) {
-	    var dispatch = _ref.dispatch;
-	    var getState = _ref.getState;
-	    return function (next) {
-	      return function (action) {
-	        if (typeof action === 'function') {
-	          return action(dispatch, getState, extraArgument);
-	        }
-
-	        return next(action);
-	      };
-	    };
-	  };
-	}
-
-	var thunk = createThunkMiddleware();
-	thunk.withExtraArgument = createThunkMiddleware;
-
-	exports['default'] = thunk;
-
-/***/ },
-/* 512 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.logger = undefined;
-
-	var _logger = __webpack_require__(513);
-
-	var _logger2 = _interopRequireDefault(_logger);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.logger = _logger2.default;
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-
-/***/ },
-/* 513 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	exports.default = function (store) {
-	  return function (next) {
-	    return function (action) {
-	      console.log(action);
-	      return next(action);
-	    };
-	  };
-	};
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "logger.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-
-/***/ },
-/* 514 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _reactRouterRedux = __webpack_require__(93);
-
-	var _redux = __webpack_require__(105);
-
-	var _semilleros = __webpack_require__(515);
-
-	var _semilleros2 = _interopRequireDefault(_semilleros);
-
-	var _dashboard = __webpack_require__(516);
-
-	var _dashboard2 = _interopRequireDefault(_dashboard);
-
-	var _login = __webpack_require__(531);
-
-	var _login2 = _interopRequireDefault(_login);
-
-	var _rol = __webpack_require__(532);
-
-	var _rol2 = _interopRequireDefault(_rol);
-
-	var _noticia = __webpack_require__(534);
-
-	var _noticia2 = _interopRequireDefault(_noticia);
-
-	var _actividad = __webpack_require__(535);
-
-	var _actividad2 = _interopRequireDefault(_actividad);
-
-	var _asignaciontareas = __webpack_require__(537);
-
-	var _asignaciontareas2 = _interopRequireDefault(_asignaciontareas);
-
-	var _correosenviados = __webpack_require__(539);
-
-	var _correosenviados2 = _interopRequireDefault(_correosenviados);
-
-	var _cuentacorreo = __webpack_require__(541);
-
-	var _cuentacorreo2 = _interopRequireDefault(_cuentacorreo);
-
-	var _detalletarea = __webpack_require__(543);
-
-	var _detalletarea2 = _interopRequireDefault(_detalletarea);
-
-	var _estudiantecurso = __webpack_require__(545);
-
-	var _estudiantecurso2 = _interopRequireDefault(_estudiantecurso);
-
-	var _grupo = __webpack_require__(547);
-
-	var _grupo2 = _interopRequireDefault(_grupo);
-
-	var _horarioscursos = __webpack_require__(549);
-
-	var _horarioscursos2 = _interopRequireDefault(_horarioscursos);
-
-	var _integrantesgrupo = __webpack_require__(551);
-
-	var _integrantesgrupo2 = _interopRequireDefault(_integrantesgrupo);
-
-	var _lidersemillero = __webpack_require__(552);
-
-	var _lidersemillero2 = _interopRequireDefault(_lidersemillero);
-
-	var _menuusuario = __webpack_require__(553);
-
-	var _menuusuario2 = _interopRequireDefault(_menuusuario);
-
-	var _nivel = __webpack_require__(555);
-
-	var _nivel2 = _interopRequireDefault(_nivel);
-
-	var _notificacion = __webpack_require__(557);
-
-	var _notificacion2 = _interopRequireDefault(_notificacion);
-
-	var _programa = __webpack_require__(558);
-
-	var _programa2 = _interopRequireDefault(_programa);
-
-	var _programassemilleros = __webpack_require__(559);
-
-	var _programassemilleros2 = _interopRequireDefault(_programassemilleros);
-
-	var _proyectos = __webpack_require__(560);
-
-	var _proyectos2 = _interopRequireDefault(_proyectos);
-
-	var _rolsemillero = __webpack_require__(561);
-
-	var _rolsemillero2 = _interopRequireDefault(_rolsemillero);
-
-	var _subpermisos = __webpack_require__(562);
-
-	var _subpermisos2 = _interopRequireDefault(_subpermisos);
-
-	var _tareas = __webpack_require__(564);
-
-	var _tareas2 = _interopRequireDefault(_tareas);
-
-	var _tipocurso = __webpack_require__(565);
-
-	var _tipocurso2 = _interopRequireDefault(_tipocurso);
-
-	var _tiponoticia = __webpack_require__(567);
-
-	var _tiponoticia2 = _interopRequireDefault(_tiponoticia);
-
-	var _tiponotificacion = __webpack_require__(568);
-
-	var _tiponotificacion2 = _interopRequireDefault(_tiponotificacion);
-
-	var _usuario = __webpack_require__(569);
-
-	var _usuario2 = _interopRequireDefault(_usuario);
-
-	var _permiso = __webpack_require__(570);
-
-	var _permiso2 = _interopRequireDefault(_permiso);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = (0, _redux.combineReducers)({
-	  routing: _reactRouterRedux.routerReducer,
-	  semilleros: _semilleros2.default,
-	  dashboard: _dashboard2.default,
-	  login: _login2.default,
-	  rol: _rol2.default,
-	  noticia: _noticia2.default,
-	  actividad: _actividad2.default,
-	  asignaciontareas: _asignaciontareas2.default,
-	  correosenviados: _correosenviados2.default,
-	  cuentacorreo: _cuentacorreo2.default,
-	  detalletarea: _detalletarea2.default,
-	  estudiantecurso: _estudiantecurso2.default,
-	  grupo: _grupo2.default,
-	  horarioscursos: _horarioscursos2.default,
-	  integrantesgrupo: _integrantesgrupo2.default,
-	  lidersemillero: _lidersemillero2.default,
-	  menuusuario: _menuusuario2.default,
-	  nivel: _nivel2.default,
-	  notificacion: _notificacion2.default,
-	  programa: _programa2.default,
-	  programassemilleros: _programassemilleros2.default,
-	  proyectos: _proyectos2.default,
-	  rolsemillero: _rolsemillero2.default,
-	  subpermisos: _subpermisos2.default,
-	  tareas: _tareas2.default,
-	  tipocurso: _tipocurso2.default,
-	  tiponoticia: _tiponoticia2.default,
-	  tiponotificacion: _tiponotificacion2.default,
-	  usuario: _usuario2.default,
-	  permiso: _permiso2.default
-	});
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-
-/***/ },
-/* 515 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.semillero = semillero;
-
-	var _redux = __webpack_require__(105);
-
-	var _semilleros = __webpack_require__(371);
-
-	var _immutable = __webpack_require__(396);
-
-	var _immutable2 = _interopRequireDefault(_immutable);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var initialState = new _immutable2.default.Map({
-	  data_list_semilleros: [],
-	  error: null,
-	  result: false
-	});
-
-	function semillero() {
-	  var state = arguments.length <= 0 || arguments[0] === undefined ? initialState : arguments[0];
-	  var action = arguments[1];
-
-	  switch (action.type) {
-	    case _semilleros.LISTAR_SEMILLEROS:
-	      return state.merge({
-	        data_list_semilleros: action.response.data,
-	        error: null,
-	        result: true
-	      });
-	    case _semilleros.INSERTAR_SEMILLERO:
-	      return state.merge({
-	        data_list_semilleros: action.response.data, // Valores del registro insertado
-	        err: null,
-	        result: true
-	      });
-	    default:
-	      return state;
-	  }
-	}
-
-	var Reducer = (0, _redux.combineReducers)({
-	  semillero: semillero
-	});
-
-	exports.default = Reducer;
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "semilleros.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-
-/***/ },
-/* 516 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _isomorphicFetch = __webpack_require__(517);
+	var _isomorphicFetch = __webpack_require__(395);
 
 	var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
 
-	var _reduxActions = __webpack_require__(519);
+	var _reduxActions = __webpack_require__(397);
 
-	var _immutable = __webpack_require__(396);
+	var _immutable = __webpack_require__(393);
 
 	var _immutable2 = _interopRequireDefault(_immutable);
 
@@ -17682,19 +13105,19 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "dashboard.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 517 */
+/* 395 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// the whatwg-fetch polyfill installs the fetch() function
 	// on the global object (window or self)
 	//
 	// Return that as the export for use in Webpack, Browserify etc.
-	__webpack_require__(518);
+	__webpack_require__(396);
 	module.exports = self.fetch.bind(self);
 
 
 /***/ },
-/* 518 */
+/* 396 */
 /***/ function(module, exports) {
 
 	(function(self) {
@@ -18133,7 +13556,7 @@ webpackJsonp([1],[
 
 
 /***/ },
-/* 519 */
+/* 397 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -18142,15 +13565,15 @@ webpackJsonp([1],[
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _createAction = __webpack_require__(520);
+	var _createAction = __webpack_require__(398);
 
 	var _createAction2 = _interopRequireDefault(_createAction);
 
-	var _handleAction = __webpack_require__(521);
+	var _handleAction = __webpack_require__(399);
 
 	var _handleAction2 = _interopRequireDefault(_handleAction);
 
-	var _handleActions = __webpack_require__(528);
+	var _handleActions = __webpack_require__(406);
 
 	var _handleActions2 = _interopRequireDefault(_handleActions);
 
@@ -18159,7 +13582,7 @@ webpackJsonp([1],[
 	exports.handleActions = _handleActions2['default'];
 
 /***/ },
-/* 520 */
+/* 398 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -18199,7 +13622,7 @@ webpackJsonp([1],[
 	module.exports = exports['default'];
 
 /***/ },
-/* 521 */
+/* 399 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -18207,7 +13630,7 @@ webpackJsonp([1],[
 	exports.__esModule = true;
 	exports['default'] = handleAction;
 
-	var _fluxStandardAction = __webpack_require__(522);
+	var _fluxStandardAction = __webpack_require__(400);
 
 	function isFunction(val) {
 	  return typeof val === 'function';
@@ -18235,7 +13658,7 @@ webpackJsonp([1],[
 	module.exports = exports['default'];
 
 /***/ },
-/* 522 */
+/* 400 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -18246,7 +13669,7 @@ webpackJsonp([1],[
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _lodashIsplainobject = __webpack_require__(523);
+	var _lodashIsplainobject = __webpack_require__(401);
 
 	var _lodashIsplainobject2 = _interopRequireDefault(_lodashIsplainobject);
 
@@ -18265,7 +13688,7 @@ webpackJsonp([1],[
 	}
 
 /***/ },
-/* 523 */
+/* 401 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -18276,9 +13699,9 @@ webpackJsonp([1],[
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var baseFor = __webpack_require__(524),
-	    isArguments = __webpack_require__(525),
-	    keysIn = __webpack_require__(526);
+	var baseFor = __webpack_require__(402),
+	    isArguments = __webpack_require__(403),
+	    keysIn = __webpack_require__(404);
 
 	/** `Object#toString` result references. */
 	var objectTag = '[object Object]';
@@ -18374,7 +13797,7 @@ webpackJsonp([1],[
 
 
 /***/ },
-/* 524 */
+/* 402 */
 /***/ function(module, exports) {
 
 	/**
@@ -18428,7 +13851,7 @@ webpackJsonp([1],[
 
 
 /***/ },
-/* 525 */
+/* 403 */
 /***/ function(module, exports) {
 
 	/**
@@ -18663,7 +14086,7 @@ webpackJsonp([1],[
 
 
 /***/ },
-/* 526 */
+/* 404 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -18674,8 +14097,8 @@ webpackJsonp([1],[
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var isArguments = __webpack_require__(525),
-	    isArray = __webpack_require__(527);
+	var isArguments = __webpack_require__(403),
+	    isArray = __webpack_require__(405);
 
 	/** Used to detect unsigned integer values. */
 	var reIsUint = /^\d+$/;
@@ -18801,7 +14224,7 @@ webpackJsonp([1],[
 
 
 /***/ },
-/* 527 */
+/* 405 */
 /***/ function(module, exports) {
 
 	/**
@@ -18987,7 +14410,7 @@ webpackJsonp([1],[
 
 
 /***/ },
-/* 528 */
+/* 406 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -18997,15 +14420,15 @@ webpackJsonp([1],[
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _handleAction = __webpack_require__(521);
+	var _handleAction = __webpack_require__(399);
 
 	var _handleAction2 = _interopRequireDefault(_handleAction);
 
-	var _ownKeys = __webpack_require__(529);
+	var _ownKeys = __webpack_require__(407);
 
 	var _ownKeys2 = _interopRequireDefault(_ownKeys);
 
-	var _reduceReducers = __webpack_require__(530);
+	var _reduceReducers = __webpack_require__(408);
 
 	var _reduceReducers2 = _interopRequireDefault(_reduceReducers);
 
@@ -19023,7 +14446,7 @@ webpackJsonp([1],[
 	module.exports = exports['default'];
 
 /***/ },
-/* 529 */
+/* 407 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -19048,7 +14471,7 @@ webpackJsonp([1],[
 	module.exports = exports['default'];
 
 /***/ },
-/* 530 */
+/* 408 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -19071,7 +14494,7 @@ webpackJsonp([1],[
 	module.exports = exports["default"];
 
 /***/ },
-/* 531 */
+/* 409 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -19085,9 +14508,9 @@ webpackJsonp([1],[
 
 	var _redux = __webpack_require__(105);
 
-	var _login = __webpack_require__(507);
+	var _login = __webpack_require__(410);
 
-	var _immutable = __webpack_require__(396);
+	var _immutable = __webpack_require__(393);
 
 	var _immutable2 = _interopRequireDefault(_immutable);
 
@@ -19143,7 +14566,24 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "login.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 532 */
+/* 410 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var LOGIN_ATTEMPT = exports.LOGIN_ATTEMPT = 'login_attempt';
+	var LOGGED_FAILED = exports.LOGGED_FAILED = 'logged_failed';
+	var LOGGED_SUCCESSFULLY = exports.LOGGED_SUCCESSFULLY = 'logged_successfully';
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "login.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+
+/***/ },
+/* 411 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -19157,9 +14597,9 @@ webpackJsonp([1],[
 
 	var _redux = __webpack_require__(105);
 
-	var _rol = __webpack_require__(533);
+	var _rol = __webpack_require__(412);
 
-	var _immutable = __webpack_require__(396);
+	var _immutable = __webpack_require__(393);
 
 	var _immutable2 = _interopRequireDefault(_immutable);
 
@@ -19202,7 +14642,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "rol.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 533 */
+/* 412 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -19236,7 +14676,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "rol.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 534 */
+/* 413 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -19252,7 +14692,7 @@ webpackJsonp([1],[
 
 	var _noticia = __webpack_require__(374);
 
-	var _immutable = __webpack_require__(396);
+	var _immutable = __webpack_require__(393);
 
 	var _immutable2 = _interopRequireDefault(_immutable);
 
@@ -19295,7 +14735,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "noticia.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 535 */
+/* 414 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -19309,9 +14749,9 @@ webpackJsonp([1],[
 
 	var _redux = __webpack_require__(105);
 
-	var _actividad = __webpack_require__(536);
+	var _actividad = __webpack_require__(415);
 
-	var _immutable = __webpack_require__(396);
+	var _immutable = __webpack_require__(393);
 
 	var _immutable2 = _interopRequireDefault(_immutable);
 
@@ -19354,7 +14794,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "actividad.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 536 */
+/* 415 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -19389,7 +14829,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "actividad.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 537 */
+/* 416 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -19403,9 +14843,9 @@ webpackJsonp([1],[
 
 	var _redux = __webpack_require__(105);
 
-	var _asignaciontareas = __webpack_require__(538);
+	var _asignaciontareas = __webpack_require__(417);
 
-	var _immutable = __webpack_require__(396);
+	var _immutable = __webpack_require__(393);
 
 	var _immutable2 = _interopRequireDefault(_immutable);
 
@@ -19448,7 +14888,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "asignaciontareas.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 538 */
+/* 417 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -19483,7 +14923,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "asignaciontareas.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 539 */
+/* 418 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -19497,9 +14937,9 @@ webpackJsonp([1],[
 
 	var _redux = __webpack_require__(105);
 
-	var _correosenviados = __webpack_require__(540);
+	var _correosenviados = __webpack_require__(419);
 
-	var _immutable = __webpack_require__(396);
+	var _immutable = __webpack_require__(393);
 
 	var _immutable2 = _interopRequireDefault(_immutable);
 
@@ -19542,7 +14982,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "correosenviados.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 540 */
+/* 419 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -19576,7 +15016,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "correosenviados.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 541 */
+/* 420 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -19590,9 +15030,9 @@ webpackJsonp([1],[
 
 	var _redux = __webpack_require__(105);
 
-	var _cuentacorreo = __webpack_require__(542);
+	var _cuentacorreo = __webpack_require__(421);
 
-	var _immutable = __webpack_require__(396);
+	var _immutable = __webpack_require__(393);
 
 	var _immutable2 = _interopRequireDefault(_immutable);
 
@@ -19635,7 +15075,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "cuentacorreo.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 542 */
+/* 421 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -19670,7 +15110,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "cuentacorreo.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 543 */
+/* 422 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -19684,9 +15124,9 @@ webpackJsonp([1],[
 
 	var _redux = __webpack_require__(105);
 
-	var _detalletarea = __webpack_require__(544);
+	var _detalletarea = __webpack_require__(423);
 
-	var _immutable = __webpack_require__(396);
+	var _immutable = __webpack_require__(393);
 
 	var _immutable2 = _interopRequireDefault(_immutable);
 
@@ -19729,7 +15169,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "detalletarea.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 544 */
+/* 423 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -19764,7 +15204,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "detalletarea.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 545 */
+/* 424 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -19778,9 +15218,9 @@ webpackJsonp([1],[
 
 	var _redux = __webpack_require__(105);
 
-	var _estudiantecurso = __webpack_require__(546);
+	var _estudiantecurso = __webpack_require__(425);
 
-	var _immutable = __webpack_require__(396);
+	var _immutable = __webpack_require__(393);
 
 	var _immutable2 = _interopRequireDefault(_immutable);
 
@@ -19823,7 +15263,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "estudiantecurso.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 546 */
+/* 425 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -19858,7 +15298,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "estudiantecurso.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 547 */
+/* 426 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -19872,9 +15312,9 @@ webpackJsonp([1],[
 
 	var _redux = __webpack_require__(105);
 
-	var _grupo = __webpack_require__(548);
+	var _grupo = __webpack_require__(427);
 
-	var _immutable = __webpack_require__(396);
+	var _immutable = __webpack_require__(393);
 
 	var _immutable2 = _interopRequireDefault(_immutable);
 
@@ -19917,7 +15357,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "grupo.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 548 */
+/* 427 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -19952,7 +15392,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "grupo.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 549 */
+/* 428 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -19966,9 +15406,9 @@ webpackJsonp([1],[
 
 	var _redux = __webpack_require__(105);
 
-	var _horarioscursos = __webpack_require__(550);
+	var _horarioscursos = __webpack_require__(429);
 
-	var _immutable = __webpack_require__(396);
+	var _immutable = __webpack_require__(393);
 
 	var _immutable2 = _interopRequireDefault(_immutable);
 
@@ -20011,7 +15451,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "horarioscursos.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 550 */
+/* 429 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -20046,7 +15486,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "horarioscursos.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 551 */
+/* 430 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -20056,7 +15496,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "integrantesgrupo.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 552 */
+/* 431 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -20070,9 +15510,9 @@ webpackJsonp([1],[
 
 	var _redux = __webpack_require__(105);
 
-	var _grupo = __webpack_require__(548);
+	var _grupo = __webpack_require__(427);
 
-	var _immutable = __webpack_require__(396);
+	var _immutable = __webpack_require__(393);
 
 	var _immutable2 = _interopRequireDefault(_immutable);
 
@@ -20115,7 +15555,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "lidersemillero.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 553 */
+/* 432 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -20129,9 +15569,9 @@ webpackJsonp([1],[
 
 	var _redux = __webpack_require__(105);
 
-	var _menuusuario = __webpack_require__(554);
+	var _menuusuario = __webpack_require__(433);
 
-	var _immutable = __webpack_require__(396);
+	var _immutable = __webpack_require__(393);
 
 	var _immutable2 = _interopRequireDefault(_immutable);
 
@@ -20174,7 +15614,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "menuusuario.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 554 */
+/* 433 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -20209,7 +15649,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "menuusuario.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 555 */
+/* 434 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -20223,9 +15663,9 @@ webpackJsonp([1],[
 
 	var _redux = __webpack_require__(105);
 
-	var _nivel = __webpack_require__(556);
+	var _nivel = __webpack_require__(435);
 
-	var _immutable = __webpack_require__(396);
+	var _immutable = __webpack_require__(393);
 
 	var _immutable2 = _interopRequireDefault(_immutable);
 
@@ -20268,7 +15708,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "nivel.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 556 */
+/* 435 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -20303,7 +15743,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "nivel.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 557 */
+/* 436 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -20313,7 +15753,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "notificacion.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 558 */
+/* 437 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -20323,7 +15763,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "programa.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 559 */
+/* 438 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -20333,7 +15773,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "programassemilleros.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 560 */
+/* 439 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -20343,7 +15783,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "proyectos.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 561 */
+/* 440 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -20353,7 +15793,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "rolsemillero.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 562 */
+/* 441 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -20367,9 +15807,9 @@ webpackJsonp([1],[
 
 	var _redux = __webpack_require__(105);
 
-	var _subpermisos = __webpack_require__(563);
+	var _subpermisos = __webpack_require__(442);
 
-	var _immutable = __webpack_require__(396);
+	var _immutable = __webpack_require__(393);
 
 	var _immutable2 = _interopRequireDefault(_immutable);
 
@@ -20412,7 +15852,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "subpermisos.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 563 */
+/* 442 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -20447,7 +15887,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "subpermisos.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 564 */
+/* 443 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -20457,7 +15897,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "tareas.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 565 */
+/* 444 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -20471,9 +15911,9 @@ webpackJsonp([1],[
 
 	var _redux = __webpack_require__(105);
 
-	var _tipocurso = __webpack_require__(566);
+	var _tipocurso = __webpack_require__(445);
 
-	var _immutable = __webpack_require__(396);
+	var _immutable = __webpack_require__(393);
 
 	var _immutable2 = _interopRequireDefault(_immutable);
 
@@ -20516,7 +15956,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "tipocurso.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 566 */
+/* 445 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -20551,7 +15991,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "tipocurso.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 567 */
+/* 446 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -20561,7 +16001,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "tiponoticia.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 568 */
+/* 447 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -20571,7 +16011,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "tiponotificacion.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 569 */
+/* 448 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -20581,7 +16021,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "usuario.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 570 */
+/* 449 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -20595,9 +16035,9 @@ webpackJsonp([1],[
 
 	var _redux = __webpack_require__(105);
 
-	var _permisos = __webpack_require__(571);
+	var _permisos = __webpack_require__(450);
 
-	var _immutable = __webpack_require__(396);
+	var _immutable = __webpack_require__(393);
 
 	var _immutable2 = _interopRequireDefault(_immutable);
 
@@ -20640,7 +16080,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "permiso.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 571 */
+/* 450 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/david/Documentos/Proyectos/ReactJS/ReactJS/FE-Visibilidad/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {

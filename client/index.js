@@ -13,7 +13,6 @@ import Container from './containers/container.jsx';
 import About from './containers/About';
 import Eventos from './containers/Eventos';
 import Header from './containers/Header';
-import Login from './containers/Login';
 
 import NoMatch from './containers/NoMatch'; // 404 o no encontrado
 
@@ -31,14 +30,12 @@ ReactDOM.render(
       <Route path={basename} component={Header}>
         <IndexRoute component={Index}/>
 
-        <Route path="/acercade" component={About}/>
-        <Route path="/eventos" component={Eventos}>
-          <Route path="recientes" component={About}/>
-        </Route>
-        <Route path="/noticias" component={Eventos}/>
-      </Route>     
+        <Route path="acercade" component={About}/>
+        <Route path="eventos" component={Eventos}/>
+        <Route path="recientes" component={About}/>
+        <Route path="noticias" component={Eventos}/>
+      </Route>
 
-      <Route path="login" component={ Login }></Route>
       <Route path="*" component={ NoMatch }/>
     </Router>
   </Provider>,
