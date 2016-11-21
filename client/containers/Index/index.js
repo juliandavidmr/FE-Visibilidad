@@ -17,7 +17,6 @@ class Index extends Component {
     };
   }
 
-
   componentWillMount() {
     const { actions_semilleros, actions_noticias } = this.props;
 

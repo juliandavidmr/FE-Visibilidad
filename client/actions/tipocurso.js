@@ -70,29 +70,3 @@ export function listar() {
         dispatch(error_listar(error));
       });
 }
-
-export function registrar(tipocurso_data) {
-  console.log('Action data tipocurso: ', tipocurso_data);
-
-  return dispatch => {
-    axios.post(TIPO_CURSO_POST_TIPO_CURSO, {
-      tcrs_idtipocurso: Math.floor((Math.random() * 800) + 1),
-      tcrs_descripcion: tipocurso_data.descripcion
-    })
-      .then(response => {
-        if (response.status >= 200 && response.status < 300 && response.data.result) {
-          console.log('Response registrar tipocurso: ', response);
-          dispatch(tipocurso_post_request(response));
-        } else {
-          const error = new Error(response.statusText);
-          error.response = response;
-
-          dispatch(error_registrar(error));
-        }
-      }).catch(error => {
-        const err = new Error(error);
-
-        dispatch(error_registrar(err));
-      });
-  };
-}

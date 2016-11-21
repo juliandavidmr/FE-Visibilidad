@@ -71,24 +71,3 @@ export function listar() {
         dispatch(error_listar(error));
       });
 }
-
-export function registrar(semillero_data) {
-  return dispatch => {
-    axios.post(SEMILLERO_POST_SEMILLERO)
-      .then(response => {
-        if (response.status >= 200 && response.status < 300) {
-          console.log('Response registrar semillero: ', response);
-          dispatch(semillero_post_request(response));
-        } else {
-          const error = new Error(response.statusText);
-          error.response = response;
-
-          dispatch(error_post_insert(error));
-        }
-      }).catch(error => {
-        const err = new Error(error);
-
-        dispatch(error_post_insert(err));
-      });
-  };
-}

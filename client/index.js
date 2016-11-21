@@ -21,7 +21,10 @@ import configure from './store';
 const store = configure();
 const history = syncHistoryWithStore(browserHistory, store);
 
-const basename = '/';
+const basename = '/Visibilidad';
+
+console.log('=> Basename: ', basename);
+console.log('=>> pathname: ',  window.location.pathname);
 
 ReactDOM.render(
   <Provider store={store}>

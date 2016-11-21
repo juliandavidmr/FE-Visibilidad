@@ -72,29 +72,3 @@ export function listar() {
         dispatch(errorListar(error));
       });
 }
-
-export function registrar(asignaciontarea_data) {
-  console.log('Registrar asignaciontareas: ', asignaciontarea_data);
-
-  return dispatch =>
-    axios.post(ASIGNACION_TAREAS_POST_ASIGNACION_TAREA, {
-      rol_idrol: Math.floor((Math.random() * 100) + 1),
-      rol_nombrerol: rol_data.descripcion
-    })
-      .then(function (response) {
-        if (response.status >= 200 && response.status < 300) {
-          console.log('=>=> Response registrar rol: ', response);
-          dispatch(asignacion_tareas_post_request(response));
-        } else {
-          const error = new Error(response.statusText);
-          error.response = response;
-
-          dispatch(error_post_insert(error));
-        }
-      })
-      .catch(function (error) {
-        const err = new Error(error);
-
-        dispatch(error_post_insert(err));
-      });
-}
